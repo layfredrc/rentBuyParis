@@ -24,3 +24,12 @@
 .container > div:last-child p {
   font-size: 15px;
 }
+
+@media (max-width: 600px) {
+  .container > div {
+    display: block;
+  }
+  .container > div:last-child p {
+    text-align-last: center;
+  }
+}
