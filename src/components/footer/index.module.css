@@ -1,0 +1,26 @@
+.container {
+  margin: 10px 0;
+}
+
+.container > div {
+  display: flex;
+  justify-content: space-around;
+}
+
+.container > div > div > div {
+  display: flex;
+  align-items: center;
+}
+
+.container > div > div > a {
+  display: flex;
+  margin: 1em 0;
+}
+
+.container > div > div > div p {
+  margin-left: 10px;
+}
+
+.container > div:last-child p {
+  font-size: 15px;
+}
