@@ -1,9 +1,6 @@
 .container {
   display: flex;
   justify-content: space-between;
-}
-.container-mobile {
-  display: flex;
   align-items: center;
 }
 .left {

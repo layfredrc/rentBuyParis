@@ -10,11 +10,13 @@ export default function Header() {
   return !isMobile ? (
     <header className={styles["container"]}>
       <div className={styles["left"]}>
-        <h2>RentBuyParis</h2>
         <Link href="/">
+          <h2>RentBuyParis</h2>
+        </Link>
+        <Link href="/accomodations">
           <a>Appartements à louer</a>
         </Link>
-        <Link href="/">
+        <Link href="/accomodations">
           <a>Biens à vendre</a>
         </Link>
       </div>
@@ -30,7 +32,7 @@ export default function Header() {
       </div>
     </header>
   ) : (
-    <header className={styles["container-mobile"]}>
+    <header className={styles["container"]}>
       <MdMenu size={30} style={{ marginRight: "20px" }} />
       <p style={{ fontSize: 20 }}>RentBuyParis</p>
     </header>
