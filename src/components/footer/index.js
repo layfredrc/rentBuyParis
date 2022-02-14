@@ -2,14 +2,14 @@ import Link from "next/link";
 
 import { MdLocationPin, MdOutlinePhone } from "react-icons/md";
 
-import styles from "./index.module.css";
+import styles from "./index.module.scss";
 
 export default function Footer() {
   return (
     <footer className={styles["container"]}>
       <div>
         <div>
-          <h2>RentBuyParis</h2>
+          <h2 className={styles["logo"]}>RentBuyParis</h2>
           <div>
             <MdLocationPin size={20} />
             <p style={{ marginBlock: "auto" }}>47 rue de Laborde 75008 Paris</p>

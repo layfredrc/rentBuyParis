@@ -1,0 +1,30 @@
+@import "../../styles/colors.module";
+
+.container {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	background-color: $bgColorPrimary;
+}
+.left {
+	display: flex;
+	align-items: center;
+}
+.left > * {
+	margin: 15px 40px;
+}
+.right {
+	display: flex;
+}
+.right div {
+	display: flex;
+	align-items: center;
+	margin: 0 25px;
+}
+.right div p {
+	margin-left: 10px;
+}
+
+.logo {
+	font-family: "Croissant One", cursive;
+}
