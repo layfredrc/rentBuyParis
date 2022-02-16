@@ -10,9 +10,106 @@
   background-color: #e5f9ff;
   display: flex;
   justify-content: space-between;
+  padding: 10px;
+}
+
+.header div:first-child p {
+  font-family: "Croissant One", cursive;
+  margin-left: 10px;
+  animation: 1s slidein-left;
 }
 
 .header > div {
   display: flex;
   align-items: center;
+}
+
+.right {
+  animation: 1s slidein-right;
+}
+
+.right p {
+  margin-left: 5px;
+  margin-right: 10px;
+}
+
+.content {
+  height: inherit;
+  padding: 40px;
+  display: grid;
+}
+
+.content a {
+  display: block;
+  margin: 20px 0;
+}
+
+.navigation {
+  flex: 1;
+}
+
+.info {
+  text-transform: uppercase;
+  font-weight: 600;
+  opacity: 80%;
+}
+
+.link {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.contact {
+  flex: 1;
+  margin-top: 50px;
+  text-align-last: center;
+  animation: 1s slidein-bottom;
+}
+
+.contact p {
+  margin: 20px 0;
+}
+
+.contact > div {
+  margin: 20px 0;
+}
+
+.information {
+  display: flex;
+  align-items: center;
+}
+.information span {
+  margin-left: 20px;
+}
+
+.brand {
+  font-size: 30px;
+  font-family: "Croissant one";
+  text-align: center;
+}
+
+@keyframes slidein-left {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes slidein-right {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+@keyframes slidein-bottom {
+  0% {
+    transform: translateY(100%);
+  }
+  100% {
+    transform: translateY(0);
+  }
 }
