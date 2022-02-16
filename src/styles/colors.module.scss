@@ -4,3 +4,12 @@ $availableColor: #15895f;
 $indisponibleColor: #c73a3a;
 $bgCircle: #a2d9e0;
 $colorTitleDetail: #3ea6c7;
+
+:export {
+	bgColorPrimary: $bgColorPrimary;
+	bgColorSecondary: $bgColorSecondary;
+	availableColor: $availableColor;
+	indisponibleColor: $indisponibleColor;
+	bgCircle: $bgCircle;
+	colorTitleDetail: $colorTitleDetail;
+}
