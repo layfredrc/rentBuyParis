@@ -13,7 +13,7 @@
   padding: 10px;
 }
 
-.header div:first-child p {
+.header > div:first-child p {
   font-family: "Croissant One", cursive;
   margin-left: 10px;
   animation: 1s slidein-left;
@@ -28,9 +28,24 @@
   animation: 1s slidein-right;
 }
 
+.right > div {
+  display: flex;
+  align-items: center;
+}
+
 .right p {
   margin-left: 5px;
   margin-right: 10px;
+}
+
+.select {
+  display: block !important;
+  position: absolute;
+  top: 50px;
+  margin-left: 18px;
+}
+.select_language > p {
+  margin-bottom: 10px;
 }
 
 .content {

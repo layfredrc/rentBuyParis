@@ -1,8 +1,19 @@
 import styles from "./index.module.scss";
 import { MdClose, MdLanguage, MdAttachMoney, MdPhone } from "react-icons/md";
 import Link from "next/link";
+import { useState } from "react";
+
+const langagues = ["Français", "English", "Russian"];
+const currencies = ["EUR", "USD", "RS"];
 
 export default function BurgerMenu({ setIsBurgerMenuOpened }) {
+  const [isLanguageSelectionOpened, setIsLanguageSelectionOpened] =
+    useState(false);
+  const [isCurrencySelectionOpened, setIsCurrencySelectionOpened] =
+    useState(false);
+  const [language, setLanguage] = useState(langagues[0]);
+  const [currency, setCurrency] = useState(currencies[0]);
+
   return (
     <div className={styles.container}>
       <header className={styles.header}>
@@ -11,13 +22,58 @@ export default function BurgerMenu({ setIsBurgerMenuOpened }) {
           <p>RentBuyParis</p>
         </div>
         <div className={styles.right}>
-          <MdLanguage size={20} onClick={() => setIsBurgerMenuOpened(false)} />
-          <p>Français</p>
-          <MdAttachMoney
-            size={20}
-            onClick={() => setIsBurgerMenuOpened(false)}
-          />
-          <p>EUR</p>
+          <div
+            onClick={() =>
+              setIsLanguageSelectionOpened(
+                isLanguageSelectionOpened ? false : true
+              )
+            }
+          >
+            <MdLanguage size={20} />
+            <p>{language}</p>
+          </div>
+          {isLanguageSelectionOpened && (
+            <div className={styles.select}>
+              {langagues
+                .filter((lang) => lang != language)
+                .map((lang) => (
+                  <p
+                    onClick={() => {
+                      setLanguage(lang);
+                      setIsLanguageSelectionOpened(false);
+                    }}
+                  >
+                    {lang}
+                  </p>
+                ))}
+            </div>
+          )}
+          <div
+            onClick={() =>
+              setIsCurrencySelectionOpened(
+                isCurrencySelectionOpened ? false : true
+              )
+            }
+          >
+            <MdAttachMoney size={20} />
+            <p>{currency}</p>
+            {isCurrencySelectionOpened && (
+              <div className={styles.select}>
+                {currencies
+                  .filter((curr) => curr != currency)
+                  .map((curr) => (
+                    <p
+                      onClick={() => {
+                        setCurrency(curr);
+                        setIsCurrencySelectionOpened(false);
+                      }}
+                    >
+                      {curr}
+                    </p>
+                  ))}
+              </div>
+            )}
+          </div>
         </div>
       </header>
       <div className={styles.content}>
