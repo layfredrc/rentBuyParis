@@ -4,7 +4,7 @@ import { MdLanguage, MdAttachMoney, MdMenu } from "react-icons/md";
 import styles from "./index.module.scss";
 import useSizeScreen from "../../lib/use/useSizeScreen";
 
-export default function Header() {
+export default function Header({ setIsBurgerMenuOpened }) {
   const isMobile = useSizeScreen();
 
   return !isMobile ? (
@@ -33,7 +33,11 @@ export default function Header() {
     </header>
   ) : (
     <header className={styles["container"]}>
-      <MdMenu size={30} style={{ marginRight: "20px" }} />
+      <MdMenu
+        size={30}
+        style={{ marginRight: "20px" }}
+        onClick={() => setIsBurgerMenuOpened(true)}
+      />
       <p style={{ fontSize: 20 }}>RentBuyParis</p>
     </header>
   );
