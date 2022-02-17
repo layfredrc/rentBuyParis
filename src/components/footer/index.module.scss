@@ -1,6 +1,6 @@
 @import "../../styles/colors.module";
 .container {
-	margin: 10px 0;
+	padding: 30px 10px 10px 10px;
 	background-color: $bgColorSecondary;
 	color: white;
 }
@@ -13,6 +13,11 @@
 .container > div > div > div {
 	display: flex;
 	align-items: center;
+	margin: 20px 0;
+}
+
+.container > div > div > h2 {
+	font-size: 20px;
 }
 
 .container > div > div > a {
@@ -20,12 +25,9 @@
 	margin: 1em 0;
 }
 
-.container > div > div > div p {
-	margin-left: 10px;
-}
-
 .container > div:last-child p {
 	font-size: 15px;
+	margin-top: 15px;
 }
 
 .logo {
@@ -33,10 +35,17 @@
 }
 
 @media (max-width: 600px) {
+	.container {
+		padding: 40px 10px 20px 30px;
+	}
 	.container > div {
 		display: block;
 	}
+	.container > div:first-child > div {
+		margin-bottom: 50px;
+	}
 	.container > div:last-child p {
 		text-align-last: center;
+		margin-top: 50px;
 	}
 }
