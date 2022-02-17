@@ -41,7 +41,7 @@ export default function Header({ setIsBurgerMenuOpened }) {
 		<header className={styles["container"]}>
 			<MdMenu
 				size={25}
-				style={{ marginRight: "20px" }}
+				style={{ marginRight: "15px" }}
 				onClick={() => setIsBurgerMenuOpened(true)}
 			/>
 			<p className={styles["logo"]}>RentBuyParis</p>
