@@ -4,6 +4,7 @@
   position: fixed;
   background-color: white;
   height: 100%;
+  z-index: 1;
 }
 
 .header {
@@ -44,7 +45,7 @@
   top: 50px;
   margin-left: 18px;
 }
-.select_language > p {
+.select > p {
   margin-bottom: 10px;
 }
 
@@ -76,7 +77,6 @@
 
 .contact {
   flex: 1;
-  margin-top: 50px;
   text-align-last: center;
   animation: 1s slidein-bottom;
 }
