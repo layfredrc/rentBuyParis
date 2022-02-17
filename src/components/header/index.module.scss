@@ -2,10 +2,11 @@
 
 .container {
 	display: flex;
-	justify-content: space-between;
 	align-items: center;
 	background-color: $bgColorPrimary;
+	padding: 10px;
 }
+
 .left {
 	display: flex;
 	align-items: center;
@@ -27,4 +28,10 @@
 
 .logo {
 	font-family: "Croissant One", cursive;
+}
+
+@media (min-width: 769px) {
+	.container {
+		justify-content: space-between;
+	}
 }

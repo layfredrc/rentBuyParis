@@ -38,7 +38,7 @@ export default function Header({ setIsBurgerMenuOpened }) {
         style={{ marginRight: "20px" }}
         onClick={() => setIsBurgerMenuOpened(true)}
       />
-      <p style={{ fontSize: 20 }}>RentBuyParis</p>
+      <p className={styles["logo"]}>RentBuyParis</p>
     </header>
   );
 }
