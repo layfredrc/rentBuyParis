@@ -4,7 +4,7 @@ import { bgColorPrimary } from "../../styles/colors.module.scss";
 import heroImg from "../../../public/assets/images/hero.jpg";
 import Image from "next/image";
 
-export default function Hero({}) {
+export default function Hero({ }) {
 	return (
 		<HeroContainer className=''>
 			<Slogan>
@@ -54,7 +54,7 @@ const HeroContainer = styled.div`
 	background-color: ${bgColorPrimary};
 	max-width: 100vw;
 	height: 500px;
-	padding: 3rem 10rem 3rem 2rem;
+	padding: 2rem 2rem 3rem 2rem;
 `;
 
 const Slogan = styled.div`
@@ -63,7 +63,8 @@ const Slogan = styled.div`
 		font-weight: 600;
 		text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 		line-height: 1.2;
-		width: 420px;
+		
+	
 
 		span {
 			font-family: "Croissant One", cursive;
@@ -76,7 +77,6 @@ const Slogan = styled.div`
 const HeroContentWrapper = styled.div`
 	display: flex;
 	justify-content: space-between;
-	width: 400px;
 	transform: translate(0px, -25px);
 
 	.text-content {
@@ -84,7 +84,7 @@ const HeroContentWrapper = styled.div`
 			margin-top: 3rem;
 			font-weight: 500;
 			font-size: 16px;
-			width: 150px;
+			width: 160px;
 		}
 
 		span {
@@ -110,5 +110,6 @@ const HeroContentWrapper = styled.div`
 	}
 
 	.hero-image {
+		
 	}
 `;
