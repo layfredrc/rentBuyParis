@@ -8,6 +8,10 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@mantine/core": "^3.6.8",
+    "@mantine/dates": "^3.6.8",
+    "@mantine/hooks": "^3.6.8",
+    "dayjs": "^1.10.7",
     "next": "12.0.9",
     "node-sass": "^6.0.1",
     "react": "17.0.2",
