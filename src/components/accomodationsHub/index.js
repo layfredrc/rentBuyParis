@@ -1,5 +1,7 @@
+import useSizeScreen from "../../lib/use/useSizeScreen";
 import CalendarDates from "../calendar";
 import HorizontalCard from "../card/horizontal";
+import VerticalCard from "../card/vertical";
 import styles from "./index.module.css";
 
 const data = {
@@ -14,6 +16,8 @@ const data = {
 };
 
 export default function AccomodationsHub() {
+	const isMobile = useSizeScreen(600);
+
 	return (
 		<div className={styles.container}>
 			<div></div>
@@ -22,7 +26,11 @@ export default function AccomodationsHub() {
 				<div className={styles.content}>
 					<div className={styles.filters}></div>
 					<div className={styles.accomodations}>
-						<HorizontalCard data={data} />
+						{!isMobile ? (
+							<HorizontalCard data={data} />
+						) : (
+							<VerticalCard data={data} />
+						)}
 					</div>
 				</div>
 			</div>
