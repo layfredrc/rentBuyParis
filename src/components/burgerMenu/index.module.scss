@@ -17,7 +17,6 @@
 .header > div:first-child p {
 	font-family: "Croissant One", cursive;
 	margin-left: 10px;
-	animation: 1s slidein-left;
 }
 
 .header > div {
@@ -91,15 +90,6 @@
 	font-size: 30px;
 	font-family: "Croissant one";
 	text-align: center;
-}
-
-@keyframes slidein-left {
-	0% {
-		transform: translateX(-100%);
-	}
-	100% {
-		transform: translateX(0);
-	}
 }
 
 @keyframes slidein-right {

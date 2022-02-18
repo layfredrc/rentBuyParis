@@ -1,3 +1,9 @@
 .main {
 	margin: 0 80px;
 }
+
+@media (max-width: 600px) {
+	.main {
+		margin: 0 20px;
+	}
+}
