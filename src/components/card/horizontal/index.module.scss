@@ -1,0 +1,53 @@
+.container {
+	display: flex;
+	border-radius: 5px;
+	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25);
+	margin: 10px 0;
+}
+
+.container img {
+	width: 300px;
+	height: 180px;
+	border-radius: 5px 0 0px 5px;
+}
+
+.container > div {
+	width: 100%;
+	justify-content: space-between;
+	display: flex;
+	flex-direction: column;
+}
+
+.container > div > div > div > p > span {
+	font-family: "Croissant One", cursive;
+}
+
+.container > div > div > div {
+	margin-bottom: 10px;
+}
+
+.container > div > div > div:last-child {
+	margin-bottom: 0px;
+}
+
+.container > div {
+	padding: 20px 30px;
+}
+
+.container > div > div:last-child {
+	display: flex;
+	justify-content: space-between;
+}
+
+.details {
+	display: flex;
+}
+
+.details > div {
+	margin-right: 15px;
+	display: flex;
+	align-items: center;
+}
+.details > div > span {
+	margin-left: 5px;
+}
