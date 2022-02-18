@@ -23,3 +23,18 @@
 .container > div > div > div {
 	margin-right: 50px;
 }
+
+@media (max-width: 600px) {
+	.container {
+		padding: 8px 20px;
+	}
+	.container > div > div {
+		display: block;
+	}
+	.container > div > div > div {
+		margin-right: 10px;
+	}
+	.container > div > div > div:first-child {
+		margin-bottom: 10px;
+	}
+}
