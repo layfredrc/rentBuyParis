@@ -1,8 +1,11 @@
 import useSizeScreen from "../../lib/use/useSizeScreen";
+import Button from "../button";
 import CalendarDates from "../calendar";
 import HorizontalCard from "../card/horizontal";
 import VerticalCard from "../card/vertical";
 import styles from "./index.module.css";
+
+import { MdFilterAlt } from "react-icons/md";
 
 const data = [
 	{
@@ -71,7 +74,17 @@ export default function AccomodationsHub() {
 			<div className={styles.main}>
 				<CalendarDates title="Quand voulez-vous venir ?" />
 				<div className={styles.content}>
-					<div className={styles.filters}></div>
+					<div className={styles.filters}>
+						{isMobile ? (
+							<Button
+								title="Appliquer des filtres"
+								padding="15px"
+								icon={<MdFilterAlt color="white" size={18} />}
+							/>
+						) : (
+							<></>
+						)}
+					</div>
 					<div className={styles.accomodations}>
 						{data.map((d) =>
 							!isMobile ? (
