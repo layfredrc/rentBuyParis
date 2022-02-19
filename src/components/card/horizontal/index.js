@@ -13,44 +13,47 @@ import styles from "./index.module.scss";
 
 export default function HorizontalCard({ data }) {
 	return (
-		<div className={styles["container"]}>
-			<img src={data.src} />
-			<div>
+		<Link href={`/accomodation/${data.id}`}>
+			<div className={styles["container"]}>
+				<img src={data.src} />
 				<div>
 					<div>
-						<p>
-							<span>{data.name}</span>, {data.arrondissement}ème arrondissement
-						</p>
-					</div>
-					<div>
-						<RiMapPin2Line />
-						{data.street}
-					</div>
-					<div className={styles.details}>
-						<div style={{ color: "#15895F" }}>
-							<RiCheckboxCircleLine color="#15895F" />
-							<span>{data.isDisponible ? "Disponible" : "Indisponible"}</span>
+						<div>
+							<p>
+								<span>{data.name}</span>, {data.arrondissement}ème
+								arrondissement
+							</p>
 						</div>
 						<div>
-							<RiHotelBedFill />
-							<span>{data.nbRooms} chambres</span>
+							<RiMapPin2Line />
+							{data.street}
 						</div>
+						<div className={styles.details}>
+							<div style={{ color: "#15895F" }}>
+								<RiCheckboxCircleLine color="#15895F" />
+								<span>{data.isDisponible ? "Disponible" : "Indisponible"}</span>
+							</div>
+							<div>
+								<RiHotelBedFill />
+								<span>{data.nbRooms} chambres</span>
+							</div>
+							<div>
+								<GiResize />
+								<span> {data.size} m²</span>
+							</div>
+						</div>
+					</div>
+					<div style={{ display: "flex", justifyContent: "space-between" }}>
 						<div>
-							<GiResize />
-							<span> {data.size} m²</span>
+							<span style={{ fontSize: "20px", fontWeight: "600" }}>
+								{data.price}€
+							</span>{" "}
+							par mois
 						</div>
+						<Button title="Réserver" />
 					</div>
-				</div>
-				<div style={{ display: "flex", justifyContent: "space-between" }}>
-					<div>
-						<span style={{ fontSize: "20px", fontWeight: "600" }}>
-							{data.price}€
-						</span>{" "}
-						par mois
-					</div>
-					<Button title="Réserver" />
 				</div>
 			</div>
-		</div>
+		</Link>
 	);
 }

@@ -9,7 +9,7 @@ export default function Selector({ values, defaultValue, icon }) {
 		<div>
 			<div
 				onClick={() => setIsOpened(isOpened ? false : true)}
-				style={{ display: "flex" }}
+				style={{ display: "flex", alignItems: "center" }}
 			>
 				{icon}
 				<p>{selectedValue}</p>
