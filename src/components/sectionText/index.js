@@ -4,6 +4,9 @@ import { bgColorPrimary, bgCircle } from "../../styles/colors.module.scss";
 import paris1 from "../../../public/assets/images/paris-1.jpg";
 import paris2 from "../../../public/assets/images/popup-image.jpg";
 import paris3 from "../../../public/assets/images/paris-3.jpg";
+import paris4 from "../../../public/assets/images/paris-4.png";
+import paris5 from "../../../public/assets/images/paris-5.png";
+import paris6 from "../../../public/assets/images/paris-6.png";
 import Image from "next/image";
 export default function SectionText({}) {
 	const isMobile = useSizeScreen();
@@ -42,75 +45,90 @@ export default function SectionText({}) {
 
 				<div className='right'>
 					<Paris1>
-						<Image src={paris1} width={300} height={200} />
+						<Image src={paris1} width={250} height={150} />
 					</Paris1>
 					<Paris2>
-						<Image src={paris2} width={350} height={200} />
+						<Image src={paris2} width={300} height={150} />
 					</Paris2>
 					<Paris3>
-						<Image src={paris3} width={300} height={200} />
+						<Image src={paris3} width={250} height={150} />
 					</Paris3>
 				</div>
 			</StayInParis>
 			<ListYourProperty>
-				<h1>List your property</h1>
-				<p>
-					Contact me if you wish to list your property on my site. I can take
-					pictures, estimate it, and advise you free of charge.{" "}
-				</p>
-				<p>
-					For rentals, I publish only furnished flats since I usually don’t work
-					with empty apartments.
-				</p>
-				<p>
-					I prefer quality to quantity, to respect the time of my clients, I
-					will insist on the updated availabilities of my calendars.
-				</p>
+				<div className='left'>
+					<Image src={paris4} height={400} width={300} className='paris4' />
+				</div>
+				<div className='right'>
+					<h1>List your property</h1>
+					<p>
+						Contact me if you wish to list your property on my site. I can take
+						pictures, estimate it, and advise you free of charge.
+					</p>
+					<p>
+						For rentals, I publish only furnished flats since I usually don’t
+						work with empty apartments.
+					</p>
+					<p>
+						I prefer quality to quantity, to respect the time of my clients, I
+						will insist on the updated availabilities of my calendars.
+					</p>
+				</div>
 			</ListYourProperty>
 			<RealEstatePriceInParis>
-				<h1>Real estate price in Paris</h1>
-				<p>
-					Average price of a square meter is around 10 000€ a m². In the nice
-					neighborhoods it rises around 15 000€ and for the most exceptionnal
-					properties, to buy a square meter can go up to 20 000 or 25 000€.
-				</p>
-				<p>
-					Everything depends of the shape of the place and building, the
-					district, public transportation and schools around. Tell me what you
-					want, I’ll find you what you need.{" "}
-				</p>
-				<p>
-					For rent, it’s approximately between 30 and 50€ a square meter, but
-					again it really depends of many features such as quality of the
-					building and furniture, area, rental period, services included...
-				</p>
+				<div className='left'>
+					<h1>Real estate price in Paris</h1>
+					<p>
+						Average price of a square meter is around 10 000€ a m². In the nice
+						neighborhoods it rises around 15 000€ and for the most exceptionnal
+						properties, to buy a square meter can go up to 20 000 or 25 000€.
+					</p>
+					<p>
+						Everything depends of the shape of the place and building, the
+						district, public transportation and schools around. Tell me what you
+						want, I’ll find you what you need.{" "}
+					</p>
+					<p>
+						For rent, it’s approximately between 30 and 50€ a square meter, but
+						again it really depends of many features such as quality of the
+						building and furniture, area, rental period, services included...
+					</p>
+				</div>
+				<div className='right'>
+					<Image src={paris5} height={400} width={300} />
+				</div>
 			</RealEstatePriceInParis>
 			<ServicesForOwnersAndTenants>
-				<h1>Services for owners and tenants</h1>
-				<p>
-					My main mission is to introduce serious tenants to serious owners. My
-					fee is paid by the tenant and I therefore ask reasonable amounts from
-					the owners.
-				</p>
-				<p>
-					My oral advices on the phone or in person are free to establish a
-					relation of trust between both parties.
-				</p>
-				<p>
-					Basically the owner has to deliver a clean and functional apartment
-					and the tenant has to pay on time.
-				</p>
-				<p>
-					To save time, little problems can be solved by the owner, but I will
-					be glad to help, to translate or to resolve problems myself.
-				</p>
+				<div className='left'>
+					<Image src={paris6} />
+				</div>
+				<div className='right'>
+					<h1>Services for owners and tenants</h1>
+					<p>
+						My main mission is to introduce serious tenants to serious owners.
+						My fee is paid by the tenant and I therefore ask reasonable amounts
+						from the owners.
+					</p>
+					<p>
+						My oral advices on the phone or in person are free to establish a
+						relation of trust between both parties.
+					</p>
+					<p>
+						Basically the owner has to deliver a clean and functional apartment
+						and the tenant has to pay on time.
+					</p>
+					<p>
+						To save time, little problems can be solved by the owner, but I will
+						be glad to help, to translate or to resolve problems myself.
+					</p>
 
-				<p>
-					My fee to go check out the flat will be of 50€, but it will be
-					possible to video call me to show me what’s wrong.
-				</p>
+					<p>
+						My fee to go check out the flat will be of 50€, but it will be
+						possible to video call me to show me what’s wrong.
+					</p>
 
-				<p>Just contact me, there’s pretty much nothing I cannot do !</p>
+					<p>Just contact me, there’s pretty much nothing I cannot do !</p>
+				</div>
 			</ServicesForOwnersAndTenants>
 		</SectionTextContainer>
 	) : (
@@ -213,15 +231,26 @@ const SectionTextContainer = styled.div`
 	h1 {
 		font-size: 36px;
 	}
+
+	@media screen and (min-width: 1024px) {
+		padding: 5rem;
+	}
+	@media screen and (min-width: 1440px) {
+		padding: 5rem 15rem 5rem 15rem;
+	}
+
+	@media screen and (min-width: 2550px) {
+		padding: 0rem 28rem 0rem 28rem;
+	}
 `;
 
 const SectionTextContainerMobile = styled.div`
-	padding: 0rem 2rem 3rem 2rem;
+	padding: 8rem 2rem 3rem 2rem;
 
 	h1 {
 		margin-top: 2rem;
 		line-height: 1.3;
-		font-size: 28px;
+		font-size: 24px;
 		font-weight: 500;
 	}
 
@@ -231,7 +260,7 @@ const SectionTextContainerMobile = styled.div`
 
 	p {
 		margin-top: 1rem;
-		font-size: 24px;
+		font-size: 18px;
 	}
 `;
 
@@ -243,6 +272,10 @@ const StayInParis = styled.div`
 		font-family: 48px;
 		line-height: 1.2;
 		margin-bottom: 2.5rem;
+
+		@media screen and (min-width: 2550px) {
+			margin-top: 5rem;
+		}
 	}
 
 	span {
@@ -251,7 +284,17 @@ const StayInParis = styled.div`
 
 	p {
 		margin-top: 1rem;
-		font-size: 24px;
+		font-size: 16px;
+		font-weight: 300;
+		line-height: 1.2;
+
+		@media screen and (min-width: 1440px) {
+			font-size: 18px;
+		}
+
+		@media screen and (min-width: 2550px) {
+			font-size: 20px;
+		}
 	}
 
 	.left {
@@ -267,7 +310,7 @@ const StayInParis = styled.div`
 const Paris1 = styled.div`
 	position: absolute;
 	top: 130px;
-	right: 0px;
+	right: -50px;
 	z-index: 1;
 	box-shadow: 0 0.5rem 4rem rgba(${bgCircle}, 0.4);
 	outline-offset: 1rem;
@@ -278,27 +321,133 @@ const Paris1 = styled.div`
 		box-shadow: 0 2.5rem 4rem rgba(${bgCircle}, 0.5);
 		z-index: 20;
 	}
+
+	@media screen and (min-width: 1440px) {
+		top: 100px;
+		right: 0px;
+	}
+	@media screen and (min-width: 2550px) {
+		top: 200px;
+		right: 200px;
+	}
 `;
 const Paris2 = styled(Paris1)`
 	position: absolute;
-	top: 300px;
-	right: 50px;
+	top: 260px;
+	right: -20px;
 	z-index: 0;
+
+	@media screen and (min-width: 1440px) {
+		top: 230px;
+		right: 50px;
+	}
+	@media screen and (min-width: 2550px) {
+		top: 320px;
+		right: 250px;
+	}
 `;
 const Paris3 = styled(Paris1)`
 	position: absolute;
-	top: 480px;
-	right: 150px;
+	top: 400px;
+	right: 120px;
+
+	@media screen and (min-width: 1440px) {
+		top: 360px;
+		right: 200px;
+	}
+
+	@media screen and (min-width: 2550px) {
+		top: 450px;
+		right: 400px;
+	}
 `;
 
 const ListYourProperty = styled.div`
+	margin-top: 4rem;
 	display: flex;
+	justify-content: space-between;
+	h1 {
+		font-family: 48px;
+		line-height: 1.2;
+		margin-top: 2rem;
+		margin-bottom: 2.5rem;
+	}
+
+	p {
+		margin-top: 1rem;
+		font-size: 18px;
+		font-weight: 300;
+		line-height: 1.2;
+	}
+
+	.left {
+		width: 50%;
+
+		margin-left: 1.5rem;
+
+		@media screen and (min-width: 1024px) {
+			padding-left: 2rem;
+		}
+
+		@media screen and (min-width: 1440px) {
+			padding-left: 2rem;
+		}
+	}
+
+	.right {
+		width: 50%;
+	}
 `;
-const RealEstatePriceInParis = styled.div`
-	display: flex;
+const RealEstatePriceInParis = styled(ListYourProperty)`
+	h1 {
+		margin-top: 0;
+		font-size: 28px;
+	}
+	.left {
+		width: 55%;
+
+		@media screen and (min-width: 1024px) {
+			padding-left: 0rem;
+		}
+
+		@media screen and (min-width: 1440px) {
+			padding-left: 0rem;
+		}
+	}
+	.right {
+		width: 45%;
+
+		@media screen and (min-width: 1024px) {
+			padding-left: 5rem;
+		}
+
+		@media screen and (min-width: 1440px) {
+			padding-left: 10rem;
+		}
+	}
 `;
-const ServicesForOwnersAndTenants = styled.div`
-	display: flex;
+const ServicesForOwnersAndTenants = styled(RealEstatePriceInParis)`
+	.left {
+		width: 35%;
+		margin-left: 1.5rem;
+		margin-top: 5rem;
+
+		@media screen and (min-width: 1024px) {
+			padding-left: 2rem;
+		}
+
+		@media screen and (min-width: 1440px) {
+			padding-left: 2rem;
+		}
+		@media screen and (min-width: 2550px) {
+			padding-left: 2rem;
+			margin-top: 0;
+		}
+	}
+
+	.right {
+		width: 65%;
+	}
 `;
 
 const RectangleBackground = styled.div`
