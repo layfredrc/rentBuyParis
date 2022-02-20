@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 import {
 	RiMapPin2Line,
@@ -6,19 +7,17 @@ import {
 	RiHotelBedFill,
 } from "react-icons/ri";
 import { GiResize } from "react-icons/gi";
-import Button from "../../button";
-import Apartment from "../../../../public/assets/images/image 2.png";
+import Button from "../button";
 
 import styles from "./index.module.scss";
-import Link from "next/link";
 
-export default function VerticalCard({ data }) {
+export default function Card({ data }) {
 	return (
 		<Link href={`/accomodation/${data.id}`}>
 			<div className={styles["container"]}>
-				<Image src={Apartment} />
+				<img src={data.src} />
 				<div>
-					<div>
+					<div className={styles.informations}>
 						<div>
 							<p>
 								<span>{data.name}</span>, {data.arrondissement}ème
@@ -26,35 +25,29 @@ export default function VerticalCard({ data }) {
 							</p>
 						</div>
 						<div>
-							<RiMapPin2Line size={20} style={{ marginRight: "5px" }} />
-							<span>{data.street}</span>
+							<RiMapPin2Line style={{ marginRight: "5px" }} />
+							{data.street}
 						</div>
 						<div className={styles.details}>
 							<div style={{ color: "#15895F" }}>
-								<RiCheckboxCircleLine color="#15895F" size={20} />
+								<RiCheckboxCircleLine color="#15895F" />
 								<span>{data.isDisponible ? "Disponible" : "Indisponible"}</span>
 							</div>
 							<div>
-								<RiHotelBedFill size={20} />
-								<span>{data.nbRooms} chambres</span>
+								<RiHotelBedFill />
+								<span>{data.nbRooms}</span>
 							</div>
 							<div>
-								<GiResize size={20} />
+								<GiResize />
 								<span> {data.size} m²</span>
 							</div>
 						</div>
 					</div>
-					<div style={{ display: "flex", justifyContent: "space-between" }}>
+					<div className={styles.order}>
 						<div>
-							<span
-								style={{
-									fontSize: "20px",
-									fontWeight: "600",
-									marginRight: "5px",
-								}}
-							>
+							<span style={{ fontSize: "20px", fontWeight: "600" }}>
 								{data.price}€
-							</span>
+							</span>{" "}
 							par mois
 						</div>
 						<Button title="Réserver" />

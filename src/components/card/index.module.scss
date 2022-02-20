@@ -1,0 +1,77 @@
+.container {
+	display: flex;
+	border-radius: 5px;
+	box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25), 0 4px 4px rgba(0, 0, 0, 0.25);
+	margin: 10px 0;
+}
+.container img {
+	width: 300px;
+	height: 180px;
+	border-radius: 5px 0 0 5px;
+}
+.container > div {
+	width: 100%;
+	justify-content: space-between;
+	display: flex;
+	flex-direction: column;
+}
+.container > div > div > div > p > span {
+	font-family: "Croissant One", cursive;
+}
+.order {
+	margin-bottom: 10px;
+}
+.container > div > div > div:last-child {
+	margin-bottom: 0;
+}
+.container > div {
+	padding: 20px 30px;
+}
+.informations > div {
+	margin-bottom: 15px;
+}
+.container > div > div:last-child {
+	display: flex;
+	justify-content: space-between;
+}
+.order {
+	display: flex;
+	justify-content: space-between;
+}
+.details {
+	display: flex;
+}
+.details > div {
+	margin-right: 15px;
+	display: flex;
+	align-items: center;
+}
+.details > div > span {
+	margin-left: 5px;
+}
+@media (max-width: 600px) {
+	.container {
+		display: block;
+	}
+	.container > div {
+		padding: 20px 20px 5px 20px;
+	}
+	.container img {
+		height: auto;
+		width: 100%;
+	}
+	.container > div {
+		width: auto;
+	}
+	.details {
+		justify-content: space-between;
+	}
+	.details > div {
+		margin-right: 0;
+	}
+	.container > div > div:last-child {
+		justify-content: space-around !important;
+		align-items: center;
+		margin-top: 20px;
+	}
+}

@@ -1,11 +1,10 @@
 import useSizeScreen from "../../lib/use/useSizeScreen";
 import Button from "../button";
 import CalendarDates from "../calendar";
-import HorizontalCard from "../card/horizontal";
-import VerticalCard from "../card/vertical";
 import styles from "./index.module.css";
 
 import { MdFilterAlt } from "react-icons/md";
+import Card from "../card";
 
 const data = [
 	{
@@ -86,13 +85,9 @@ export default function AccomodationsHub() {
 						)}
 					</div>
 					<div className={styles.accomodations}>
-						{data.map((d) =>
-							!isMobile ? (
-								<HorizontalCard data={d} />
-							) : (
-								<VerticalCard data={d} />
-							)
-						)}
+						{data.map((d) => (
+							<Card data={d} key={d.id} />
+						))}
 					</div>
 				</div>
 			</div>
