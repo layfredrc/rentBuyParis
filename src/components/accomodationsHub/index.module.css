@@ -2,11 +2,58 @@
 	margin: 0 80px;
 }
 
+.accomodations {
+	position: relative;
+}
+
+.decoration {
+	position: absolute;
+	background-color: #e5f9ff;
+	width: 80%;
+	height: 200px;
+	z-index: -1;
+	bottom: 0;
+	top: -25px;
+	left: -20px;
+}
+
+@media (max-width: 1024px) {
+	.main {
+		margin: 0 10px;
+	}
+}
 @media (max-width: 768px) {
 	.main {
 		margin: 0 20px;
 	}
 	.filters {
-		margin: 20px 15% 0 15%;
+		margin: 20px 15% 25px 15%;
+	}
+	.decoration {
+		width: 80%;
+		height: 200px;
+		z-index: -1;
+		bottom: 0;
+		top: -10px;
+		left: -10px;
+	}
+}
+
+@media (min-width: 1024px) {
+	.content {
+		display: flex;
+		margin-top: 70px;
+	}
+	.filters {
+		flex: 1;
+		display: block;
+		margin: 0;
+	}
+	.filters > div {
+		margin-right: 50px;
+		margin-bottom: 30px;
+	}
+	.accomodations {
+		flex: 2;
 	}
 }
