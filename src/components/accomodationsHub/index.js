@@ -76,7 +76,9 @@ export default function AccomodationsHub() {
 
 	return (
 		<div className={styles.container}>
-			<div></div>
+			<div className={styles.header}>
+				<h1>Trouver votre bonheur avec RentBuyParis.</h1>
+			</div>
 			<div className={styles.main}>
 				<CalendarDates title="Quand voulez-vous venir ?" />
 				<div className={styles.content}>
