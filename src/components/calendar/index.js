@@ -11,7 +11,7 @@ export default function CalendarDates({ title }) {
 	]);
 	return (
 		<div className={styles.container}>
-			<h2>{title}</h2>
+			<h2 style={title ? { marginBottom: "15px" } : {}}>{title}</h2>
 			<div>
 				<div>
 					<DatePicker
@@ -29,7 +29,7 @@ export default function CalendarDates({ title }) {
 						onChange={setValue}
 					/>
 				</div>
-				<Button title="Chercher" />
+				<Button title="Chercher" padding="0px 5%" />
 			</div>
 		</div>
 	);
