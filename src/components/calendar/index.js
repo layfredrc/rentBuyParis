@@ -24,7 +24,6 @@ export default function CalendarDates({ title }) {
 					<DateRangePicker
 						placeholder="Date de sortie"
 						rightSection={<GiExitDoor size={20} />}
-						value={value}
 						size="md"
 						radius="0px"
 						onChange={setValue}

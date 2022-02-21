@@ -67,7 +67,7 @@ const data = [
 ];
 
 export default function AccomodationsHub() {
-	const isMobile = useSizeScreen(768);
+	const isMobile = useSizeScreen(1023);
 
 	const marks = [
 		{ value: 0, label: "0€" },
