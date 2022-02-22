@@ -1,86 +1,68 @@
-@import "../../styles/colors.module";
-
 .container {
 	position: fixed;
-	background-color: white;
+	background-color: #fff;
 	height: 100%;
+	width: 100%;
 	z-index: 1;
+	overflow: hidden;
+	display: flex;
+	flex-direction: column;
 }
-
 .header {
 	background-color: #e5f9ff;
 	display: flex;
 	justify-content: space-between;
 	padding: 10px;
 }
-
 .header > div:first-child p {
 	font-family: "Croissant One", cursive;
 	margin-left: 10px;
 }
-
 .header > div {
 	display: flex;
 	align-items: center;
 }
-
 .right {
 	animation: 1s slidein-right;
 }
-
 .right > div {
 	display: flex;
 	align-items: center;
 }
-
 .right p {
 	margin-left: 5px;
 	margin-right: 10px;
 }
-
 .content {
-	padding: 40px;
-	display: grid;
-	height: 100%;
-	height: -moz-available; /* WebKit-based browsers will ignore this. */
-	height: -webkit-fill-available; /* Mozilla-based browsers will ignore this. */
-	height: stretch;
+	flex: 1;
+	padding: 40px 40px 10px 40px;
+	justify-content: space-between;
+	display: flex;
+	flex-direction: column;
 }
-
 .content a {
 	display: block;
 	margin: 20px 0;
 }
-
-.navigation {
-	flex: 1;
-}
-
 .info {
 	text-transform: uppercase;
 	font-weight: 600;
 	opacity: 80%;
 }
-
 .link {
 	font-size: 20px;
 	font-weight: 600;
 }
-
 .contact {
-	flex: 1;
-	text-align-last: center;
+	text-align: center;
 	animation: 1s slidein-bottom;
 }
-
 .contact p {
 	margin: 20px 0;
 }
-
 .contact > div {
 	margin: 20px 0;
 }
-
 .information {
 	display: flex;
 	align-items: center;
@@ -88,13 +70,11 @@
 .information span {
 	margin-left: 20px;
 }
-
 .brand {
 	font-size: 30px;
 	font-family: "Croissant one";
 	text-align: center;
 }
-
 @keyframes slidein-right {
 	0% {
 		transform: translateX(100%);
