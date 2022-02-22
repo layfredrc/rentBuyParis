@@ -8,65 +8,7 @@ import Card from "../card";
 import Filter from "../filter";
 import { Checkbox, NumberInput, RangeSlider } from "@mantine/core";
 
-const data = [
-	{
-		id: 1,
-		src: "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1980&q=80",
-		name: "Joséphine",
-		arrondissement: "15",
-		street: "10 rue de Rivoli 75015",
-		isDisponible: true,
-		nbRooms: 2,
-		size: 30,
-		price: 1500,
-	},
-	{
-		id: 2,
-		src: "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1980&q=80",
-		name: "Joséphine",
-		arrondissement: "15",
-		street: "10 rue de Rivoli 75015",
-		isDisponible: true,
-		nbRooms: 2,
-		size: 30,
-		price: 1500,
-	},
-	{
-		id: 3,
-		src: "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1980&q=80",
-		name: "Joséphine",
-		arrondissement: "15",
-		street: "10 rue de Rivoli 75015",
-		isDisponible: true,
-		nbRooms: 2,
-		size: 30,
-		price: 1500,
-	},
-	{
-		id: 4,
-		src: "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1980&q=80",
-		name: "Joséphine",
-		arrondissement: "15",
-		street: "10 rue de Rivoli 75015",
-		isDisponible: true,
-		nbRooms: 2,
-		size: 30,
-		price: 1500,
-	},
-	{
-		id: 5,
-		src: "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1980&q=80",
-		name: "Joséphine",
-		arrondissement: "15",
-		street: "10 rue de Rivoli 75015",
-		isDisponible: true,
-		nbRooms: 2,
-		size: 30,
-		price: 1500,
-	},
-];
-
-export default function AccomodationsHub() {
+export default function AccomodationsHub({ rents }) {
 	const isMobile = useSizeScreen(1023);
 
 	const marks = [
@@ -83,13 +25,13 @@ export default function AccomodationsHub() {
 				<CalendarDates title="Quand voulez-vous venir ?" />
 				<div className={styles.content}>
 					<div className={styles.filters}>
-						{isMobile && (
+						<div>
 							<CustomButton
 								title="Appliquer des filtres"
 								padding="15px"
 								icon={<MdFilterAlt color="white" size={18} />}
 							/>
-						)}
+						</div>
 						{!isMobile && (
 							<>
 								<Filter title="Quartier">
@@ -165,8 +107,8 @@ export default function AccomodationsHub() {
 					</div>
 					<div className={styles.accomodations}>
 						<div className={styles.decoration} />
-						{data.map((d) => (
-							<Card data={d} key={d.id} />
+						{rents.data.map((d) => (
+							<Card data={d.attributes} key={d.id} />
 						))}
 					</div>
 				</div>

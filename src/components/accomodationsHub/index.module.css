@@ -1,25 +1,21 @@
 .header {
-	background-image: url("../../../public/assets/images/popup-image.jpg");
+	background-image: url(../../../public/assets/images/popup-image.jpg);
 	background-position: center;
 	padding: 10em 5em 15em 40em;
 }
-
 .header h1 {
 	font-size: 40px;
 	font-weight: 600;
-	color: white;
+	color: #fff;
 }
-
 .main {
 	margin: 0 80px;
 	position: relative;
 	top: -50px;
 }
-
 .accomodations {
 	position: relative;
 }
-
 .decoration {
 	position: absolute;
 	background-color: #e5f9ff;
@@ -30,7 +26,27 @@
 	top: -25px;
 	left: -20px;
 }
-
+@media (min-width: 1024px) {
+	.content {
+		display: flex;
+		margin-top: 70px;
+	}
+	.filters {
+		flex: 1;
+		display: block;
+		margin: 0;
+	}
+	.filters > div {
+		margin-right: 50px;
+		margin-bottom: 30px;
+	}
+	.filters > div:first-child {
+		display: none;
+	}
+	.accomodations {
+		flex: 2;
+	}
+}
 @media (max-width: 1024px) {
 	.main {
 		margin: 0 10px;
@@ -50,31 +66,10 @@
 	.filters {
 		margin: 20px 15% 25px 15%;
 	}
-	.decoration {
-		width: 80%;
-		height: 200px;
-		z-index: -1;
-		bottom: 0;
-		top: -10px;
-		left: -10px;
-	}
-}
-
-@media (min-width: 1024px) {
-	.content {
-		display: flex;
-		margin-top: 70px;
-	}
-	.filters {
-		flex: 1;
+	.filter > div:first-child {
 		display: block;
-		margin: 0;
 	}
-	.filters > div {
-		margin-right: 50px;
-		margin-bottom: 30px;
-	}
-	.accomodations {
-		flex: 2;
+	.decoration {
+		display: none;
 	}
 }

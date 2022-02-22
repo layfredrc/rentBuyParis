@@ -3,12 +3,7 @@
 	border-radius: 5px;
 	box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25), 0 4px 4px rgba(0, 0, 0, 0.25);
 	margin: 10px 0;
-	background-color: white;
-}
-.container img {
-	width: 300px;
-	height: 180px;
-	border-radius: 5px 0 0 5px;
+	background-color: #fff;
 }
 .container > div {
 	width: 100%;
@@ -27,6 +22,9 @@
 }
 .container > div {
 	padding: 20px 30px;
+}
+.container > div:first-child {
+	padding: 0;
 }
 .informations > div {
 	margin-bottom: 15px;
@@ -57,9 +55,8 @@
 	.container > div {
 		padding: 20px 20px 5px 20px;
 	}
-	.container img {
-		height: auto;
-		width: 100%;
+	.container > div:first-child {
+		height: 16em;
 	}
 	.container > div {
 		width: auto;

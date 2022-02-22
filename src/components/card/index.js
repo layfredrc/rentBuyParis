@@ -11,17 +11,24 @@ import Button from "../button";
 
 import styles from "./index.module.scss";
 
-export default function Card({ data }) {
+export default function Card({ data, key }) {
 	return (
-		<Link href={`/accomodation/${data.id}`}>
+		<Link href={`/accomodation/${key}`}>
 			<div className={styles["container"]}>
-				<img src={data.src} />
-				<div>
+				<div style={{ flex: 1, position: "relative" }}>
+					{data.photos.data.map((photo) => (
+						<Image
+							src={`${process.env.NEXT_PUBLIC_URL}${photo.attributes.url}`}
+							layout="fill"
+							objectFit="cover"
+						/>
+					))}
+				</div>
+				<div style={{ flex: 2 }}>
 					<div className={styles.informations}>
 						<div>
 							<p>
-								<span>{data.name}</span>, {data.arrondissement}ème
-								arrondissement
+								<span>{data.name}</span>, {data.district}ème arrondissement
 							</p>
 						</div>
 						<div>
@@ -35,7 +42,7 @@ export default function Card({ data }) {
 							</div>
 							<div>
 								<RiHotelBedFill />
-								<span>{data.nbRooms}</span>
+								<span>{data.space}</span>
 							</div>
 							<div>
 								<GiResize />
@@ -46,7 +53,7 @@ export default function Card({ data }) {
 					<div className={styles.order}>
 						<div>
 							<span style={{ fontSize: "20px", fontWeight: "600" }}>
-								{data.price}€
+								{data.price.value}€
 							</span>{" "}
 							par mois
 						</div>
