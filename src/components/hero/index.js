@@ -9,10 +9,9 @@ import { MdMapsHomeWork } from "react-icons/md";
 import useSizeScreen from "../../lib/use/useSizeScreen";
 
 export default function Hero({}) {
-	const isMobile = useSizeScreen();
 	return (
 		<>
-			<HeroContainer className=''>
+			<HeroContainer>
 				<Slogan>
 					<h1 className='slogan-title'>
 						Locations et ventes d'appartements à <br /> <span>Paris</span>
@@ -26,29 +25,26 @@ export default function Hero({}) {
 							des conditions idéales et des prix convenables<span>.</span>
 						</h4>
 
-						{!isMobile && (
-							<div className='buttons'>
-								<Button
-									title={"Location d'appartements"}
-									icon={
-										<MdMapsHomeWork
-											size={25}
-											style={{ marginRight: "15px", color: "white" }}
-										/>
-									}
-								/>
-								<Button
-									title={"Biens à vendre / chasser"}
-									icon={
-										<GiHouseKeys
-											size={25}
-											style={{ marginRight: "15px", color: "white" }}
-										/>
-									}
-									className='hero-button-right'
-								/>
-							</div>
-						)}
+						<ButtonContainerDesktop>
+							<Button
+								title={"Location d'appartements"}
+								icon={
+									<MdMapsHomeWork
+										size={25}
+										style={{ marginRight: "15px", color: "white" }}
+									/>
+								}
+							/>
+							<Button
+								title={"Biens à vendre / chasser"}
+								icon={
+									<GiHouseKeys
+										size={25}
+										style={{ marginRight: "15px", color: "white" }}
+									/>
+								}
+							/>
+						</ButtonContainerDesktop>
 
 						<div className='digits'>
 							<h3>
@@ -73,8 +69,30 @@ export default function Hero({}) {
 							className='hero-image'
 						/>
 					</ImageWrapper>
+					<ButtonContainerMobile>
+						<Button
+							title={"Location d'appartements"}
+							icon={
+								<MdMapsHomeWork
+									size={15}
+									style={{ marginRight: "5px", color: "white" }}
+								/>
+							}
+							padding={"12px 8px"}
+						/>
+						<Button
+							title={"Biens à vendre / chasser"}
+							icon={
+								<GiHouseKeys
+									size={15}
+									style={{ marginRight: "5px", color: "white" }}
+								/>
+							}
+							padding={"12px 8px"}
+						/>
+					</ButtonContainerMobile>
 					<CalendarWrapper>
-						<CalendarDates />
+						<CalendarDates title={"Quand voulez-vous venir ?"} />
 					</CalendarWrapper>
 				</HeroContentWrapper>
 			</HeroContainer>
@@ -85,11 +103,10 @@ export default function Hero({}) {
 const HeroContainer = styled.div`
 	background-color: ${bgColorPrimary};
 	max-width: 100vw;
-	padding: 2rem;
 
 	@media screen and (max-width: 768px) {
 		background-color: ${bgColorPrimary};
-		padding: 2rem;
+		padding: 2rem 2rem 0rem 2rem;
 	}
 
 	@media screen and (min-width: 768px) {
@@ -144,27 +161,28 @@ const HeroContentWrapper = styled.div`
 	justify-content: space-between;
 	transform: translateY(-25px);
 	position: relative;
-
 	@media screen and (min-width: 1024px) {
 		transform: translateY(-2rem);
+		height: 350px;
 	}
 	@media screen and (min-width: 1440px) {
+		height: 400px;
 		transform: translateY(-5rem);
 	}
 
 	.text-content {
+		height: min-content;
 		h4 {
 			margin-top: 3rem;
 			font-weight: 500;
 			font-size: 16px;
-			width: 160px;
+			width: 100%;
 			@media screen and (max-width: 425px) {
 				font-size: 12px;
-				width: 120px;
 			}
 
 			@media screen and (min-width: 768px) {
-				width: 300px;
+				width: 320px;
 				font-size: 18px;
 			}
 			@media screen and (min-width: 1024px) {
@@ -180,17 +198,6 @@ const HeroContentWrapper = styled.div`
 
 		span {
 			color: #3ea6c7;
-		}
-
-		.buttons {
-			display: flex;
-			justify-content: space-between;
-			font-size: 12px;
-			margin-top: 2rem;
-
-			@media screen and (max-width: 1440px) {
-				font-size: 12px;
-			}
 		}
 
 		.digits {
@@ -218,7 +225,7 @@ const HeroContentWrapper = styled.div`
 					font-size: 12px;
 				}
 				@media screen and (min-width: 1024px) {
-					width: 250px;
+					width: 265px;
 					font-size: 14px;
 				}
 				@media screen and (min-width: 1440px) {
@@ -245,7 +252,6 @@ const HeroContentWrapper = styled.div`
 			@media screen and (min-width: 768px) {
 				width: 200px;
 				font-size: 24px;
-				width: 160px;
 			}
 			@media screen and (min-width: 1024px) {
 				width: 300px;
@@ -260,17 +266,22 @@ const HeroContentWrapper = styled.div`
 
 const CalendarWrapper = styled.div`
 	position: absolute;
-	bottom: -10rem;
+	bottom: -18rem;
 	width: 100%;
+
+	@media screen and (min-width: 600px) {
+		bottom: -11rem;
+	}
 
 	@media screen and (min-width: 768px) {
 		bottom: -8rem;
 	}
+
 	@media screen and (min-width: 1024px) {
-		bottom: 0rem;
+		bottom: -6rem;
 	}
 	@media screen and (min-width: 1440px) {
-		bottom: 0rem;
+		bottom: -4.5rem;
 	}
 `;
 
@@ -287,11 +298,55 @@ const ImageWrapper = styled.div`
 	}
 
 	@media screen and (min-width: 1024px) {
-		transform: translate(2rem, -6rem);
-		height: 400px;
+		transform: translate(2rem, -11rem);
+		height: 500px;
 	}
 	@media screen and (min-width: 1440px) {
-		transform: translate(2rem, -6rem);
-		height: 500px;
+		transform: translate(2rem, -9rem);
+	}
+`;
+
+const ButtonContainerDesktop = styled.div`
+	display: flex;
+	justify-content: space-between;
+	font-size: 12px;
+	margin-top: 2rem;
+
+	@media screen and (max-width: 599px) {
+		display: none;
+	}
+
+	@media screen and (min-width: 768px) {
+		font-size: 10px;
+	}
+
+	@media screen and (min-width: 1040px) {
+		font-size: 12px;
+	}
+`;
+
+const ButtonContainerMobile = styled.div`
+	position: absolute;
+	bottom: -5rem;
+	display: flex;
+	justify-content: space-between;
+	width: 100%;
+
+	@media screen and (min-width: 320px) {
+		font-size: 8px;
+	}
+
+	@media screen and (min-width: 375px) {
+		font-size: 8px;
+	}
+	@media screen and (min-width: 425px) {
+		font-size: 9px;
+	}
+
+	@media screen and (min-width: 600px) {
+		display: none;
+	}
+
+	@media screen and (max-width: 1440px) {
 	}
 `;

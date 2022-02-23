@@ -3,6 +3,7 @@ import Hero from "../components/hero";
 import SectionText from "../components/sectionText";
 import styled from "styled-components";
 import { bgColorPrimary, bgColorSecondary } from "../styles/colors.module.scss";
+import SectionAvailableNow from "../components/sectionAvailableNow";
 export default function Home() {
 	return (
 		<div>
@@ -14,6 +15,7 @@ export default function Home() {
 			<HeroWrapper>
 				<Hero />
 			</HeroWrapper>
+			<SectionAvailableNow />
 
 			<SectionText />
 		</div>
