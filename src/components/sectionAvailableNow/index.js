@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { BsArrowRight } from "react-icons/bs";
 
 import Link from "next/link";
-export default function SectionAvailableNow({}) {
+export default function SectionAvailableNow({ rents }) {
 	return (
 		<SectionAvailableNowContainer>
 			<h3 className='sectionHeaderTitle'>
@@ -22,33 +22,9 @@ export default function SectionAvailableNow({}) {
 			</div>
 
 			<div className='scrolling-wrapper-flexbox'>
-				<div className='card'>
-					<h2>Card</h2>
-				</div>
-				<div className='card'>
-					<h2>Card</h2>
-				</div>
-				<div className='card'>
-					<h2>Card</h2>
-				</div>
-				<div className='card'>
-					<h2>Card</h2>
-				</div>
-				<div className='card'>
-					<h2>Card</h2>
-				</div>
-				<div className='card'>
-					<h2>Card</h2>
-				</div>
-				<div className='card'>
-					<h2>Card</h2>
-				</div>
-				<div className='card'>
-					<h2>Card</h2>
-				</div>
-				<div className='card'>
-					<h2>Card</h2>
-				</div>
+				{rents.data.map((d) => (
+					<Card data={d.attributes} key={d.id} />
+				))}
 			</div>
 		</SectionAvailableNowContainer>
 	);
@@ -107,30 +83,23 @@ const SectionAvailableNowContainer = styled.div`
 	}
 
 	.scrolling-wrapper-flexbox {
-		display: flex;
-		flex-wrap: nowrap;
-		overflow-x: auto;
-
-		.card {
-			flex: 0 0 auto;
-			margin-right: 3px;
-		}
-
-		.card {
-			border: 2px solid $red;
-			width: 150px;
-			height: 75px;
-			background: black;
-		}
+		-ms-overflow-style: none; /* IE and Edge */
+		scrollbar-width: none; /* Firefox */
 	}
 
-	.scrolling-wrapper-flexbox {
-		height: 80px;
-		margin-bottom: 20px;
-		width: 100%;
-		-webkit-overflow-scrolling: touch;
-		&::-webkit-scrollbar {
-			display: none;
+	.scrolling-wrapper-flexbox::-webkit-scrollbar {
+		display: none;
+	}
+
+	@media screen and (max-width: 600px) {
+		.scrolling-wrapper-flexbox {
+			white-space: nowrap;
+			display: flex;
+			overflow-x: scroll;
+		}
+
+		.scrolling-wrapper-flexbox > div {
+			margin-right: 16px;
 		}
 	}
 `;

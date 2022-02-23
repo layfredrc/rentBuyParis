@@ -4,7 +4,13 @@ import SectionText from "../components/sectionText";
 import styled from "styled-components";
 import { bgColorPrimary, bgColorSecondary } from "../styles/colors.module.scss";
 import SectionAvailableNow from "../components/sectionAvailableNow";
-export default function Home() {
+import axios from "axios";
+
+const Home = ({ rents, error }) => {
+	if (error) {
+		return <div>An error occured: {error.message}</div>;
+	}
+
 	return (
 		<div>
 			<Head>
@@ -15,12 +21,34 @@ export default function Home() {
 			<HeroWrapper>
 				<Hero />
 			</HeroWrapper>
-			<SectionAvailableNow />
+			<SectionAvailableNow rents={rents} />
 
 			<SectionText />
 		</div>
 	);
-}
+};
+
+Home.getInitialProps = async (ctx) => {
+	try {
+		const qs = require("qs");
+		const query = qs.stringify(
+			{
+				populate: "*",
+			},
+			{
+				encodeValuesOnly: true,
+			}
+		);
+
+		const res = await axios.get(
+			`${process.env.NEXT_PUBLIC_STRAPI_URL}/api/rents?${query}`
+		);
+		const rents = res.data;
+		return { rents };
+	} catch (error) {
+		return { error };
+	}
+};
 
 const HeroWrapper = styled.div`
 	@media screen and (min-width: 768px) {
@@ -31,17 +59,15 @@ const HeroWrapper = styled.div`
 	@media screen and (min-width: 1024px) {
 		background-color: ${bgColorPrimary};
 		padding: 0rem 2rem 0rem 2rem;
-
 	}
 	@media screen and (min-width: 1440px) {
 		background-color: ${bgColorPrimary};
 		padding: 0rem 12rem 0rem 12rem;
-
 	}
 	@media screen and (min-width: 2550px) {
 		background-color: ${bgColorPrimary};
 		padding: 0rem 25rem 0rem 25rem;
-
 	}
 `;
 
+export default Home;
