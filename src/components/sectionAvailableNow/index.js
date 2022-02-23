@@ -1,24 +1,55 @@
 import Card from "../card";
 import styled from "styled-components";
 import { BsArrowRight } from "react-icons/bs";
-import { GiHouseKeys } from "react-icons/gi";
-import { MdMapsHomeWork } from "react-icons/md";
-import Button from "../button";
+
 import Link from "next/link";
 export default function SectionAvailableNow({}) {
 	return (
 		<SectionAvailableNowContainer>
-			<h3>
-				<span>--</span> Disponible maintenant
+			<h3 className='sectionHeaderTitle'>
+				<span>🔑</span> Disponible maintenant
 			</h3>
 
-			<h1>Les appartements disponibles</h1>
+			<div className='sectionHeader'>
+				<h1 className='sectionTitle'>Les appartements disponibles</h1>
 
-			<Link href={"/accomodations"}>
-				<div>
-					Tout explorer <BsArrowRight />
+				<Link href={"/accomodations"}>
+					<div className='exploreAll'>
+						Tout explorer{" "}
+						<BsArrowRight size={20} style={{ transform: "translateY(5px)" }} />
+					</div>
+				</Link>
+			</div>
+
+			<div className='scrolling-wrapper-flexbox'>
+				<div className='card'>
+					<h2>Card</h2>
 				</div>
-			</Link>
+				<div className='card'>
+					<h2>Card</h2>
+				</div>
+				<div className='card'>
+					<h2>Card</h2>
+				</div>
+				<div className='card'>
+					<h2>Card</h2>
+				</div>
+				<div className='card'>
+					<h2>Card</h2>
+				</div>
+				<div className='card'>
+					<h2>Card</h2>
+				</div>
+				<div className='card'>
+					<h2>Card</h2>
+				</div>
+				<div className='card'>
+					<h2>Card</h2>
+				</div>
+				<div className='card'>
+					<h2>Card</h2>
+				</div>
+			</div>
 		</SectionAvailableNowContainer>
 	);
 }
@@ -28,15 +59,13 @@ const SectionAvailableNowContainer = styled.div`
 	margin-top: 4rem;
 	padding: 2rem 2rem 3rem 2rem;
 
-	.buttons {
-		display: flex;
-		justify-content: space-between;
-		font-size: 12px;
-		margin-top: 2rem;
+	@media screen and (min-width: 320px) {
+		margin-top: 15rem;
+	}
+	@media screen and (min-width: 425px) {
+	}
 
-		@media screen and (max-width: 1440px) {
-			font-size: 12px;
-		}
+	@media screen and (min-width: 768px) {
 	}
 
 	@media screen and (min-width: 1024px) {
@@ -50,14 +79,58 @@ const SectionAvailableNowContainer = styled.div`
 		padding: 0rem 28rem 0rem 28rem;
 	}
 
-	h3 {
-		font-size: 20px;
+	.sectionHeaderTitle {
+		font-size: 13px;
 		font-weight: 500;
-		letter-spacing: 20%;
+		letter-spacing: 2px;
 		text-transform: uppercase;
+	}
 
-		span {
-			letter-spacing: 1%;
+	.sectionHeader {
+		display: flex;
+		justify-content: space-between;
+	}
+
+	.sectionTitle {
+		margin-top: 1rem;
+		font-weight: 600;
+		font-size: 20px;
+	}
+
+	.exploreAll {
+		font-weight: 600;
+		font-size: 16px;
+
+		@media screen and (max-width: 768px) {
+			display: none;
+		}
+	}
+
+	.scrolling-wrapper-flexbox {
+		display: flex;
+		flex-wrap: nowrap;
+		overflow-x: auto;
+
+		.card {
+			flex: 0 0 auto;
+			margin-right: 3px;
+		}
+
+		.card {
+			border: 2px solid $red;
+			width: 150px;
+			height: 75px;
+			background: black;
+		}
+	}
+
+	.scrolling-wrapper-flexbox {
+		height: 80px;
+		margin-bottom: 20px;
+		width: 100%;
+		-webkit-overflow-scrolling: touch;
+		&::-webkit-scrollbar {
+			display: none;
 		}
 	}
 `;
