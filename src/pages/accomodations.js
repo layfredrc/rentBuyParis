@@ -33,7 +33,9 @@ Accomodations.getInitialProps = async (ctx) => {
 			}
 		);
 
-		const res = await axios.get(`http://localhost:1337/api/rents?${query}`);
+		const res = await axios.get(
+			`${process.env.NEXT_PUBLIC_STRAPI_URL}/api/rents?${query}`
+		);
 		const rents = res.data;
 		return { rents };
 	} catch (error) {

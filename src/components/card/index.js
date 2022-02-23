@@ -1,14 +1,16 @@
 import Image from "next/image";
 import Link from "next/link";
-
 import {
 	RiMapPin2Line,
 	RiCheckboxCircleLine,
 	RiHotelBedFill,
 } from "react-icons/ri";
 import { GiResize } from "react-icons/gi";
+
+// Components
 import Button from "../button";
 
+// Style
 import styles from "./index.module.scss";
 
 export default function Card({ data, key }) {
@@ -18,7 +20,7 @@ export default function Card({ data, key }) {
 				<div style={{ flex: 1, position: "relative" }}>
 					{data.photos.data.map((photo) => (
 						<Image
-							src={`${process.env.NEXT_PUBLIC_URL}${photo.attributes.url}`}
+							src={`${process.env.NEXT_PUBLIC_STRAPI_URL}${photo.attributes.url}`}
 							layout="fill"
 							objectFit="cover"
 						/>
