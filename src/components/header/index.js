@@ -1,50 +1,49 @@
 import Link from "next/link";
 import { MdLanguage, MdAttachMoney, MdMenu } from "react-icons/md";
 
-import styles from "./index.module.scss";
-import useSizeScreen from "../../lib/use/useSizeScreen";
 import Selector from "../selector";
+
+import styles from "./index.module.scss";
 
 const languages = ["Français", "English", "Russian"];
 const currencies = ["EUR", "USD", "RS"];
 
 export default function Header({ setIsBurgerMenuOpened }) {
-	const isMobile = useSizeScreen();
-
-	return !isMobile ? (
-		<header className={styles["container"]}>
-			<div className={styles["left"]}>
-				<Link href="/">
-					<a className={styles["logo"]}>RentBuyParis</a>
-				</Link>
-				<Link href="/accomodations">
-					<a>Appartements à louer</a>
-				</Link>
-				<Link href="/accomodations">
-					<a>Biens à vendre</a>
-				</Link>
-			</div>
-			<div className={styles["right"]}>
-				<Selector
-					values={languages}
-					defaultValue={languages[0]}
-					icon={<MdLanguage size={20} />}
+	return (
+		<>
+			<header className={styles["container"] + " " + styles["desktop"]}>
+				<div className={styles["left"]}>
+					<Link href="/">
+						<a className={styles["logo"]}>RentBuyParis</a>
+					</Link>
+					<Link href="/accomodations">
+						<a>Appartements à louer</a>
+					</Link>
+					<Link href="/accomodations">
+						<a>Biens à vendre</a>
+					</Link>
+				</div>
+				<div className={styles["right"]}>
+					<Selector
+						values={languages}
+						defaultValue={languages[0]}
+						icon={<MdLanguage size={20} />}
+					/>
+					<Selector
+						values={currencies}
+						defaultValue={currencies[0]}
+						icon={<MdAttachMoney size={20} />}
+					/>
+				</div>
+			</header>
+			<header className={styles["container"] + " " + styles["mobile"]}>
+				<MdMenu
+					size={25}
+					style={{ marginRight: "15px" }}
+					onClick={() => setIsBurgerMenuOpened(true)}
 				/>
-				<Selector
-					values={currencies}
-					defaultValue={currencies[0]}
-					icon={<MdAttachMoney size={20} />}
-				/>
-			</div>
-		</header>
-	) : (
-		<header className={styles["container"]}>
-			<MdMenu
-				size={25}
-				style={{ marginRight: "15px" }}
-				onClick={() => setIsBurgerMenuOpened(true)}
-			/>
-			<p className={styles["logo"]}>RentBuyParis</p>
-		</header>
+				<p className={styles["logo"]}>RentBuyParis</p>
+			</header>
+		</>
 	);
 }

@@ -7,7 +7,9 @@
 	padding: 10px;
 	max-width: 100vw;
 }
-
+.mobile {
+	display: none;
+}
 .left {
 	display: flex;
 	align-items: center;
@@ -46,5 +48,14 @@
 @media (min-width: 769px) {
 	.container {
 		justify-content: space-between;
+	}
+}
+
+@media (max-width: 768px) {
+	.mobile {
+		display: flex;
+	}
+	.desktop {
+		display: none;
 	}
 }
