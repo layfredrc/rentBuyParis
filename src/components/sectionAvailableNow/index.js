@@ -23,7 +23,7 @@ export default function SectionAvailableNow({ rents }) {
 
 			<div className='scrolling-wrapper-flexbox'>
 				{rents.data.map((d) => (
-					<Card data={d.attributes} key={d.id} />
+					<Card data={d.attributes} key={d.id} vertical />
 				))}
 			</div>
 		</SectionAvailableNowContainer>
@@ -42,6 +42,7 @@ const SectionAvailableNowContainer = styled.div`
 	}
 
 	@media screen and (min-width: 768px) {
+		margin-top: 3rem;
 	}
 
 	@media screen and (min-width: 1024px) {
@@ -60,17 +61,27 @@ const SectionAvailableNowContainer = styled.div`
 		font-weight: 500;
 		letter-spacing: 2px;
 		text-transform: uppercase;
+
+		@media screen and (min-width: 768px){
+			font-size: 18px;
+			
+		}
 	}
 
 	.sectionHeader {
 		display: flex;
 		justify-content: space-between;
+		margin-top: 1rem;
+		margin-bottom: 1.5rem;
 	}
 
 	.sectionTitle {
-		margin-top: 1rem;
 		font-weight: 600;
 		font-size: 20px;
+
+		@media screen and (min-width: 768px) {
+			font-size: 26px;
+		}
 	}
 
 	.exploreAll {
@@ -80,6 +91,7 @@ const SectionAvailableNowContainer = styled.div`
 		@media screen and (max-width: 768px) {
 			display: none;
 		}
+
 	}
 
 	.scrolling-wrapper-flexbox {
@@ -91,7 +103,7 @@ const SectionAvailableNowContainer = styled.div`
 		display: none;
 	}
 
-	@media screen and (max-width: 600px) {
+	
 		.scrolling-wrapper-flexbox {
 			white-space: nowrap;
 			display: flex;
@@ -99,7 +111,7 @@ const SectionAvailableNowContainer = styled.div`
 		}
 
 		.scrolling-wrapper-flexbox > div {
-			margin-right: 16px;
+			margin-right: 2.5rem;
 		}
-	}
+	
 `;
