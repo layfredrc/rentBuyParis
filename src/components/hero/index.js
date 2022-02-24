@@ -3,7 +3,7 @@ import { bgColorPrimary } from "../../styles/colors.module.scss";
 import heroImg from "../../../public/assets/images/hero.jpg";
 import CalendarDates from "../calendar";
 import Image from "next/image";
-import Button from "../button";
+import { Button } from "@mantine/core";
 import { GiHouseKeys } from "react-icons/gi";
 import { MdMapsHomeWork } from "react-icons/md";
 import useSizeScreen from "../../lib/use/useSizeScreen";
@@ -27,23 +27,21 @@ export default function Hero({}) {
 
 						<ButtonContainerDesktop>
 							<Button
-								title={"Location d'appartements"}
-								icon={
-									<MdMapsHomeWork
-										size={25}
-										style={{ marginRight: "15px", color: "white" }}
-									/>
-								}
-							/>
+								size='md'
+								color='dark'
+								radius={0}
+								leftIcon={<MdMapsHomeWork size={25} />}
+							>
+								Location d'appartements
+							</Button>
 							<Button
-								title={"Biens à vendre / chasser"}
-								icon={
-									<GiHouseKeys
-										size={25}
-										style={{ marginRight: "15px", color: "white" }}
-									/>
-								}
-							/>
+								size='md'
+								color='dark'
+								radius={0}
+								leftIcon={<GiHouseKeys size={25} />}
+							>
+								Biens à vendre / chasser
+							</Button>
 						</ButtonContainerDesktop>
 
 						<div className='digits'>
@@ -196,7 +194,7 @@ const HeroContentWrapper = styled.div`
 			}
 		}
 
-		span {
+		.digits span {
 			color: #3ea6c7;
 		}
 

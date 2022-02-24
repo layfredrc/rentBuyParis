@@ -1,8 +1,7 @@
-import { Checkbox, NumberInput, RangerSlider } from "@mantine/core";
+import { Button, Checkbox, NumberInput, RangerSlider } from "@mantine/core";
 import { MdFilterAlt } from "react-icons/md";
 
 // Components
-import Button from "../button";
 import Filter from "../filter";
 
 // Style
@@ -18,10 +17,14 @@ export default function Filters() {
 		<div>
 			<div className={styles.mobile}>
 				<Button
-					title="Appliquer des filtres"
-					padding="15px"
-					icon={<MdFilterAlt color="white" size={18} />}
-				/>
+					color="dark"
+					radius={0}
+					size="md"
+					style={{ padding: "0 60px" }}
+					leftIcon={<MdFilterAlt color="white" size={18} />}
+				>
+					Appliquer des filtres
+				</Button>
 			</div>
 			<div className={styles.desktop}>
 				<Filter title="Quartier">

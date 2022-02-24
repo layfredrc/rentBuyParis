@@ -6,9 +6,7 @@ import {
 	RiHotelBedFill,
 } from "react-icons/ri";
 import { GiResize } from "react-icons/gi";
-
-// Components
-import Button from "../button";
+import { Button } from "@mantine/core";
 
 // Style
 import styles from "./index.module.scss";
@@ -59,7 +57,14 @@ export default function Card({ data, key }) {
 							</span>{" "}
 							par mois
 						</div>
-						<Button title="Réserver" />
+						<Button
+							color="dark"
+							radius={0}
+							size="md"
+							style={{ padding: "10px 30px" }}
+						>
+							Réserver
+						</Button>
 					</div>
 				</div>
 			</div>
