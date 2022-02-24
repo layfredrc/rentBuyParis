@@ -9,6 +9,7 @@
 @media (max-width: 1024px) {
 	.mobile {
 		display: block;
+		text-align: center;
 	}
 	.desktop {
 		display: none;

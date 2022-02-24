@@ -16,10 +16,10 @@ export default function Header({ setIsBurgerMenuOpened }) {
 					<Link href="/">
 						<a className={styles["logo"]}>RentBuyParis</a>
 					</Link>
-					<Link href="/accomodations">
+					<Link href="/accomodations?property=rent">
 						<a>Appartements à louer</a>
 					</Link>
-					<Link href="/accomodations">
+					<Link href="/accomodations?property=buy">
 						<a>Biens à vendre</a>
 					</Link>
 				</div>

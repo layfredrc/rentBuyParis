@@ -38,7 +38,7 @@ export default function BurgerMenu({ setIsBurgerMenuOpened }) {
 							Accueil
 						</a>
 					</Link>
-					<Link href="/accomodations">
+					<Link href="/accomodations?property=rent">
 						<a
 							className={styles.link}
 							onClick={() => setIsBurgerMenuOpened(false)}
@@ -46,7 +46,7 @@ export default function BurgerMenu({ setIsBurgerMenuOpened }) {
 							Location d’appartement
 						</a>
 					</Link>
-					<Link href="/accomodations">
+					<Link href="/accomodations?property=buy">
 						<a
 							className={styles.link}
 							onClick={() => setIsBurgerMenuOpened(false)}

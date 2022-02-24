@@ -8,10 +8,20 @@
 	font-weight: 600;
 	color: #fff;
 }
+.header p {
+	font-size: 20px;
+	font-weight: 400;
+	line-height: 1.2em;
+	margin-top: 15px;
+	color: #fff;
+}
 .main {
 	margin: 0 80px;
 	position: relative;
 	top: -50px;
+}
+.notification {
+	display: flex;
 }
 .accomodations {
 	position: relative;
@@ -57,13 +67,22 @@
 	.filters {
 		margin: 20px 15% 25px 15%;
 	}
+	.notification {
+		display: block;
+	}
+	.accomodations {
+		margin-top: 60px;
+	}
+	.decoration {
+		display: none;
+	}
 }
 @media (max-width: 768px) {
 	.main {
 		position: relative;
 		top: -50px;
 	}
-	.decoration {
-		display: none;
+	.accomodations {
+		margin-top: 0px;
 	}
 }
