@@ -16,18 +16,18 @@ export default function Card({ data, key, vertical }) {
 	return !vertical ? (
 		<Link href={`/accomodation/${key}`}>
 			<CardHorizontal>
-				<div className='container'>
+				<div className="container">
 					<div style={{ flex: 1, position: "relative" }}>
 						{data.photos.data.map((photo) => (
 							<Image
-								src={`${process.env.NEXT_PUBLIC_STRAPI_URL}${photo.attributes.url}`}
-								layout='fill'
-								objectFit='cover'
+								src={photo.attributes.url}
+								layout="fill"
+								objectFit="cover"
 							/>
 						))}
 					</div>
 					<div style={{ flex: 2 }}>
-						<div className='informations'>
+						<div className="informations">
 							<div>
 								<p>
 									<span>{data.name}</span>, {data.district}ème arrondissement
@@ -37,9 +37,9 @@ export default function Card({ data, key, vertical }) {
 								<RiMapPin2Line style={{ marginRight: "5px" }} />
 								{data.street}
 							</div>
-							<div className='details'>
+							<div className="details">
 								<div style={{ color: "#15895F" }}>
-									<RiCheckboxCircleLine color='#15895F' />
+									<RiCheckboxCircleLine color="#15895F" />
 									<span>
 										{data.isDisponible ? "Disponible" : "Indisponible"}
 									</span>
@@ -54,7 +54,7 @@ export default function Card({ data, key, vertical }) {
 								</div>
 							</div>
 						</div>
-						<div className='order'>
+						<div className="order">
 							<div>
 								<span style={{ fontSize: "20px", fontWeight: "600" }}>
 									{data.price.value}€
@@ -77,18 +77,18 @@ export default function Card({ data, key, vertical }) {
 	) : (
 		<Link href={`/accomodation/${key}`}>
 			<CardVertical>
-				<div className='container'>
+				<div className="container">
 					<div style={{ flex: 1, position: "relative" }}>
 						{data.photos.data.map((photo) => (
 							<Image
-								src={`${process.env.NEXT_PUBLIC_STRAPI_URL}${photo.attributes.url}`}
-								layout='fill'
-								objectFit='cover'
+								src={photo.attributes.url}
+								layout="fill"
+								objectFit="cover"
 							/>
 						))}
 					</div>
 					<div style={{ flex: 2 }}>
-						<div className='informations'>
+						<div className="informations">
 							<div>
 								<p>
 									<span>{data.name}</span>, {data.district}ème arrondissement
@@ -98,9 +98,9 @@ export default function Card({ data, key, vertical }) {
 								<RiMapPin2Line style={{ marginRight: "5px" }} />
 								{data.street}
 							</div>
-							<div className='details'>
+							<div className="details">
 								<div style={{ color: "#15895F" }}>
-									<RiCheckboxCircleLine color='#15895F' />
+									<RiCheckboxCircleLine color="#15895F" />
 									<span>
 										{data.isDisponible ? "Disponible" : "Indisponible"}
 									</span>
@@ -115,7 +115,7 @@ export default function Card({ data, key, vertical }) {
 								</div>
 							</div>
 						</div>
-						<div className='order'>
+						<div className="order">
 							<div>
 								<span style={{ fontSize: "20px", fontWeight: "600" }}>
 									{data.price.value}€
@@ -131,7 +131,6 @@ export default function Card({ data, key, vertical }) {
 								Réserver
 							</Button>
 						</div>
-
 					</div>
 				</div>
 			</CardVertical>
