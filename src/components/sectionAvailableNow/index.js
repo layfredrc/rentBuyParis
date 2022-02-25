@@ -1,7 +1,7 @@
 import Card from "../card";
 import styled from "styled-components";
 import { BsArrowRight } from "react-icons/bs";
-
+import { Button } from "@mantine/core";
 import Link from "next/link";
 export default function SectionAvailableNow({ rents }) {
 	return (
@@ -13,7 +13,7 @@ export default function SectionAvailableNow({ rents }) {
 			<div className='sectionHeader'>
 				<h1 className='sectionTitle'>Les appartements disponibles</h1>
 
-				<Link href={"/accomodations"}>
+				<Link href={"/accomodations?property=rent"}>
 					<div className='exploreAll'>
 						Tout explorer{" "}
 						<BsArrowRight size={20} style={{ transform: "translateY(5px)" }} />
@@ -26,6 +26,17 @@ export default function SectionAvailableNow({ rents }) {
 					<Card data={d.attributes} key={d.id} vertical />
 				))}
 			</div>
+			<ButtonMobileContainer>
+				<Link href={'/accomodations?property=rent'}>
+					<Button
+						size='md'
+						variant="default"
+						radius={0}
+						className='hero-button-mobile'>
+						Tout explorer
+					</Button>
+				</Link>
+			</ButtonMobileContainer>
 		</SectionAvailableNowContainer>
 	);
 }
@@ -36,7 +47,7 @@ const SectionAvailableNowContainer = styled.div`
 	padding: 2rem 2rem 3rem 2rem;
 
 	@media screen and (min-width: 320px) {
-		margin-top: 15rem;
+		margin-top: 16rem;
 	}
 	@media screen and (min-width: 425px) {
 	}
@@ -46,6 +57,7 @@ const SectionAvailableNowContainer = styled.div`
 	}
 
 	@media screen and (min-width: 1024px) {
+		margin-top: 5rem;
 		padding: 5rem;
 	}
 	@media screen and (min-width: 1440px) {
@@ -62,8 +74,15 @@ const SectionAvailableNowContainer = styled.div`
 		letter-spacing: 2px;
 		text-transform: uppercase;
 
+		@media screen and (min-width: 375px){
+			font-size: 14px;
+			letter-spacing: 4px;
+			
+		}
+
 		@media screen and (min-width: 768px){
 			font-size: 18px;
+			letter-spacing: 4px;
 			
 		}
 	}
@@ -115,3 +134,20 @@ const SectionAvailableNowContainer = styled.div`
 		}
 	
 `;
+
+const ButtonMobileContainer = styled.div` 
+	margin-top: 2rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	align-content: center;
+
+	.hero-button-mobile {
+		font-family: "Montserrat", sans-serif;
+		box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+		@media screen and (min-width: 768px) {
+			display: none;
+		}
+	}
+`

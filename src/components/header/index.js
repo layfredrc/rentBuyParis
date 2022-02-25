@@ -13,13 +13,13 @@ export default function Header({ setIsBurgerMenuOpened }) {
 		<>
 			<header className={styles["container"] + " " + styles["desktop"]}>
 				<div className={styles["left"]}>
-					<Link href="/">
+					<Link href='/'>
 						<a className={styles["logo"]}>RentBuyParis</a>
 					</Link>
-					<Link href="/accomodations?property=rent">
+					<Link href='/accomodations?property=rent'>
 						<a>Appartements à louer</a>
 					</Link>
-					<Link href="/accomodations?property=buy">
+					<Link href='/accomodations?property=buy'>
 						<a>Biens à vendre</a>
 					</Link>
 				</div>
@@ -42,7 +42,9 @@ export default function Header({ setIsBurgerMenuOpened }) {
 					style={{ marginRight: "15px" }}
 					onClick={() => setIsBurgerMenuOpened(true)}
 				/>
-				<p className={styles["logo"]}>RentBuyParis</p>
+				<Link href={"/"}>
+					<p className={styles["logo"]}>RentBuyParis</p>
+				</Link>
 			</header>
 		</>
 	);

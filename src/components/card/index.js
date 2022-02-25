@@ -4,46 +4,59 @@ import {
 	RiMapPin2Line,
 	RiCheckboxCircleLine,
 	RiHotelBedFill,
+	RiCloseCircleLine,
 } from "react-icons/ri";
+import { IoLocationSharp } from "react-icons/io5";
+
 import { GiResize } from "react-icons/gi";
 import { Button } from "@mantine/core";
 
-// Style
-import styles from "./index.module.scss";
 import styled from "styled-components";
 
 export default function Card({ data, key, vertical }) {
 	return !vertical ? (
 		<Link href={`/accomodation/${key}`}>
 			<CardHorizontal>
-				<div className="container">
+				<div className='container'>
 					<div style={{ flex: 1, position: "relative" }}>
 						{data.photos.data.map((photo) => (
 							<Image
 								src={photo.attributes.url}
-								layout="fill"
-								objectFit="cover"
+								layout='fill'
+								objectFit='cover'
 							/>
 						))}
 					</div>
 					<div style={{ flex: 2 }}>
-						<div className="informations">
+						<div className='informations'>
 							<div>
 								<p>
 									<span>{data.name}</span>, {data.district}ème arrondissement
 								</p>
 							</div>
-							<div>
-								<RiMapPin2Line style={{ marginRight: "5px" }} />
+							<div className='street'>
+								<IoLocationSharp style={{ marginRight: "5px" }} />
 								{data.street}
 							</div>
-							<div className="details">
-								<div style={{ color: "#15895F" }}>
-									<RiCheckboxCircleLine color="#15895F" />
-									<span>
-										{data.isDisponible ? "Disponible" : "Indisponible"}
-									</span>
-								</div>
+							<div className='details'>
+								{data.isDisponible ? (
+									<div style={{ color: "#15895F" }}>
+										<RiCheckboxCircleLine
+											color='#15895F'
+											style={{ marginRight: "5px" }}
+										/>
+										<span>Disponible</span>
+									</div>
+								) : (
+									<div style={{ color: "#C52323" }}>
+										<RiCloseCircleLine
+											color='#C52323'
+											style={{ marginRight: "5px" }}
+										/>
+										<span>Indisponible</span>
+									</div>
+								)}
+
 								<div>
 									<RiHotelBedFill />
 									<span>{data.space}</span>
@@ -54,7 +67,7 @@ export default function Card({ data, key, vertical }) {
 								</div>
 							</div>
 						</div>
-						<div className="order">
+						<div className='order'>
 							<div>
 								<span style={{ fontSize: "20px", fontWeight: "600" }}>
 									{data.price.value}€
@@ -62,11 +75,10 @@ export default function Card({ data, key, vertical }) {
 								par mois
 							</div>
 							<Button
-								color="dark"
+								color='dark'
 								radius={0}
-								size="md"
-								style={{ padding: "10px 30px" }}
-							>
+								size='md'
+								style={{ fontFamily: "'Montserrat',sans-serif" }}>
 								Réserver
 							</Button>
 						</div>
@@ -77,34 +89,45 @@ export default function Card({ data, key, vertical }) {
 	) : (
 		<Link href={`/accomodation/${key}`}>
 			<CardVertical>
-				<div className="container">
+				<div className='container'>
 					<div style={{ flex: 1, position: "relative" }}>
 						{data.photos.data.map((photo) => (
 							<Image
 								src={photo.attributes.url}
-								layout="fill"
-								objectFit="cover"
+								layout='fill'
+								objectFit='cover'
 							/>
 						))}
 					</div>
 					<div style={{ flex: 2 }}>
-						<div className="informations">
+						<div className='informations'>
 							<div>
 								<p>
 									<span>{data.name}</span>, {data.district}ème arrondissement
 								</p>
 							</div>
-							<div>
-								<RiMapPin2Line style={{ marginRight: "5px" }} />
+							<div className='street'>
+								<IoLocationSharp style={{ marginRight: "5px" }} />
 								{data.street}
 							</div>
-							<div className="details">
-								<div style={{ color: "#15895F" }}>
-									<RiCheckboxCircleLine color="#15895F" />
-									<span>
-										{data.isDisponible ? "Disponible" : "Indisponible"}
-									</span>
-								</div>
+							<div className='details'>
+								{data.isDisponible ? (
+									<div style={{ color: "#15895F" }}>
+										<RiCheckboxCircleLine
+											color='#15895F'
+											style={{ marginRight: "5px" }}
+										/>
+										<span>Disponible</span>
+									</div>
+								) : (
+									<div style={{ color: "#C52323" }}>
+										<RiCloseCircleLine
+											color='#C52323'
+											style={{ marginRight: "5px" }}
+										/>
+										<span>Indisponible</span>
+									</div>
+								)}
 								<div>
 									<RiHotelBedFill />
 									<span>{data.space}</span>
@@ -115,7 +138,7 @@ export default function Card({ data, key, vertical }) {
 								</div>
 							</div>
 						</div>
-						<div className="order">
+						<div className='order'>
 							<div>
 								<span style={{ fontSize: "20px", fontWeight: "600" }}>
 									{data.price.value}€
@@ -123,11 +146,10 @@ export default function Card({ data, key, vertical }) {
 								par mois
 							</div>
 							<Button
-								color="dark"
+								color='dark'
 								radius={0}
-								size="md"
-								style={{ padding: "10px 30px" }}
-							>
+								size='sm'
+								style={{ fontFamily: "'Montserrat',sans-serif" }}>
 								Réserver
 							</Button>
 						</div>
@@ -161,6 +183,7 @@ const CardHorizontal = styled.div`
 	}
 	.order {
 		margin-bottom: 10px;
+		margin-top: 10px;
 	}
 	.container > div > div > div:last-child {
 		margin-bottom: 0;
@@ -192,6 +215,10 @@ const CardHorizontal = styled.div`
 	}
 	.details > div > span {
 		margin-left: 5px;
+	}
+	.street {
+		font-family: "Lora", serif;
+		font-weight: 600;
 	}
 
 	@media (max-width: 600px) {
@@ -248,7 +275,9 @@ const CardVertical = styled.div`
 	.container > div > div > div > p > span {
 		font-family: "Croissant One", cursive;
 	}
-
+	.informations > div {
+		margin-bottom: 15px;
+	}
 	.order {
 		margin-bottom: 10px;
 	}
@@ -272,5 +301,10 @@ const CardVertical = styled.div`
 		justify-content: space-around !important;
 		align-items: center;
 		margin-top: 20px;
+	}
+
+	.street {
+		font-family: "Lora", serif;
+		font-weight: 600;
 	}
 `;

@@ -1,6 +1,7 @@
 /* RESET CSS */
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Croissant+One&family=Montserrat:wght@300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600;700&display=swap");
 
 html,
 body,
@@ -128,4 +129,7 @@ q:after {
 table {
 	border-collapse: collapse;
 	border-spacing: 0;
+}
+a {
+	cursor: pointer;
 }

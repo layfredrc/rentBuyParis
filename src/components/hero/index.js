@@ -6,7 +6,7 @@ import Image from "next/image";
 import { Button } from "@mantine/core";
 import { GiHouseKeys } from "react-icons/gi";
 import { MdMapsHomeWork } from "react-icons/md";
-import useSizeScreen from "../../lib/use/useSizeScreen";
+import Link from "next/link";
 
 export default function Hero({}) {
 	return (
@@ -26,22 +26,26 @@ export default function Hero({}) {
 						</h4>
 
 						<ButtonContainerDesktop>
-							<Button
-								size='md'
-								color='dark'
-								radius={0}
-								leftIcon={<MdMapsHomeWork size={25} />}
-							>
-								Location d'appartements
-							</Button>
-							<Button
-								size='md'
-								color='dark'
-								radius={0}
-								leftIcon={<GiHouseKeys size={25} />}
-							>
-								Biens à vendre / chasser
-							</Button>
+							<Link href={"/accomodations?property=rent"}>
+								<Button
+									size='sm'
+									color='dark'
+									radius={0}
+									className='hero-button-desktop'
+									leftIcon={<MdMapsHomeWork size={15} />}>
+									Location <br /> d'appartements
+								</Button>
+							</Link>
+							<Link href={"/accomodations?property=buy"}>
+								<Button
+									size='sm'
+									color='dark'
+									radius={0}
+									className='hero-button-desktop'
+									leftIcon={<GiHouseKeys size={15} />}>
+									Biens à vendre <br /> / chasser
+								</Button>
+							</Link>
 						</ButtonContainerDesktop>
 
 						<div className='digits'>
@@ -55,7 +59,9 @@ export default function Hero({}) {
 							<h3>
 								0<span>+</span>
 								<br />
-								<p>Appartements à vendre? On s'occupe du vôtre ! </p>
+								<p>
+									Appartements à vendre? <br /> On s'occupe du vôtre !
+								</p>
 							</h3>
 						</div>
 					</div>
@@ -68,26 +74,26 @@ export default function Hero({}) {
 						/>
 					</ImageWrapper>
 					<ButtonContainerMobile>
-						<Button
-							title={"Location d'appartements"}
-							icon={
-								<MdMapsHomeWork
-									size={15}
-									style={{ marginRight: "5px", color: "white" }}
-								/>
-							}
-							padding={"12px 8px"}
-						/>
-						<Button
-							title={"Biens à vendre / chasser"}
-							icon={
-								<GiHouseKeys
-									size={15}
-									style={{ marginRight: "5px", color: "white" }}
-								/>
-							}
-							padding={"12px 8px"}
-						/>
+						<Link href={"/accomodations?property=rent"}>
+							<Button
+								size='xs'
+								color='dark'
+								radius={0}
+								leftIcon={<MdMapsHomeWork size={15} />}
+								className='hero-button-mobile'>
+								Location <br /> d'appartements
+							</Button>
+						</Link>
+						<Link href={"/accomodations?property=buy"}>
+							<Button
+								size='xs'
+								color='dark'
+								radius={0}
+								leftIcon={<GiHouseKeys size={15} />}
+								className='hero-button-mobile'>
+								Biens à vendre <br /> / chasser
+							</Button>
+						</Link>
 					</ButtonContainerMobile>
 					<CalendarWrapper>
 						<CalendarDates title={"Quand voulez-vous venir ?"} />
@@ -223,11 +229,11 @@ const HeroContentWrapper = styled.div`
 					font-size: 12px;
 				}
 				@media screen and (min-width: 1024px) {
-					width: 265px;
+					width: 260px;
 					font-size: 14px;
 				}
 				@media screen and (min-width: 1440px) {
-					width: 290px;
+					width: 300px;
 				}
 
 				@media screen and (min-width: 2550px) {
@@ -315,11 +321,22 @@ const ButtonContainerDesktop = styled.div`
 	}
 
 	@media screen and (min-width: 768px) {
-		font-size: 10px;
+		.hero-button-desktop {
+			width: 150px;
+			font-size: 10px;
+			font-family: "Montserrat", sans-serif;
+		}
 	}
 
-	@media screen and (min-width: 1040px) {
-		font-size: 12px;
+	@media screen and (min-width: 1024px) {
+		.hero-button-desktop {
+			width: 200px;
+			font-size: 12px;
+			font-family: "Montserrat", sans-serif;
+			br {
+				display: none;
+			}
+		}
 	}
 `;
 
@@ -330,15 +347,36 @@ const ButtonContainerMobile = styled.div`
 	justify-content: space-between;
 	width: 100%;
 
+	.hero-button-mobile {
+		width: 120px;
+		height: 40px;
+		font-size: 8px;
+
+		font-family: "Montserrat", sans-serif;
+	}
+
 	@media screen and (min-width: 320px) {
 		font-size: 8px;
 	}
 
 	@media screen and (min-width: 375px) {
 		font-size: 8px;
+
+		.hero-button-mobile {
+			width: 140px;
+			font-size: 10px;
+		}
 	}
 	@media screen and (min-width: 425px) {
+		bottom: -6rem;
+
 		font-size: 9px;
+		justify-content: space-around;
+		.hero-button-mobile {
+			width: 150px;
+			height: 50px;
+			font-size: 10px;
+		}
 	}
 
 	@media screen and (min-width: 600px) {

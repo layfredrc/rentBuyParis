@@ -12,7 +12,7 @@ export default function BurgerMenu({ setIsBurgerMenuOpened }) {
 			<header className={styles.header}>
 				<div className={styles.left}>
 					<MdClose size={25} onClick={() => setIsBurgerMenuOpened(false)} />
-					<p>RentBuyParis</p>
+					<Link href={"/"}><p>RentBuyParis</p></Link>
 				</div>
 				<div className={styles.right}>
 					<Selector
@@ -30,7 +30,7 @@ export default function BurgerMenu({ setIsBurgerMenuOpened }) {
 			<div className={styles.content}>
 				<div className={styles.navigation}>
 					<p className={styles.info}>Information</p>
-					<Link href="/">
+					<Link href={"/"}>
 						<a
 							className={styles.link}
 							onClick={() => setIsBurgerMenuOpened(false)}

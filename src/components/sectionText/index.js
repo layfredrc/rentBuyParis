@@ -250,7 +250,7 @@ const SectionTextContainer = styled.div`
 `;
 
 const SectionTextContainerMobile = styled.div`
-	padding: 8rem 2rem 3rem 2rem;
+	padding: 0rem 2rem 3rem 2rem;
 
 	h1 {
 		margin-top: 2rem;

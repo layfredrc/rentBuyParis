@@ -37,3 +37,11 @@
 		margin-bottom: 10px;
 	}
 }
+
+.calendarButton {
+	font-family: "Montserrat", sans-serif;
+
+	@media screen and (max-width: 600px) {
+		height: 95px;
+	}
+}

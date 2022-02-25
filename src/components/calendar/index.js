@@ -3,6 +3,7 @@ import { DateRangePicker, DatePicker } from "@mantine/dates";
 import { useState } from "react";
 import { GiExitDoor, GiEntryDoor } from "react-icons/gi";
 import styles from "./index.module.scss";
+import styled from "styled-components";
 
 export default function CalendarDates({ title }) {
 	const [value, setValue] = useState([
@@ -29,7 +30,7 @@ export default function CalendarDates({ title }) {
 						onChange={setValue}
 					/>
 				</div>
-				<Button color="dark" radius={0} size="md" style={{ padding: "0 50px" }}>
+				<Button color="dark" radius={0} size="md" className={styles.calendarButton} >
 					Chercher
 				</Button>
 			</div>
