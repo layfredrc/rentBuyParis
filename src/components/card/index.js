@@ -253,20 +253,16 @@ const CardHorizontal = styled.div`
 `;
 
 const CardVertical = styled.div`
-	img {
-		border-radius: 5px 5px 0px 0px;
-	}
-
+	cursor: pointer;
 	.container {
 		display: block;
-		border-radius: 5px;
 		box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25), 0 4px 4px rgba(0, 0, 0, 0.25);
 		margin: 10px 0;
 		background-color: #fff;
 		width: 100%;
 	}
 	.container > div {
-		padding: 20px 20px 5px 20px;
+		padding: 20px 60px 5px 20px;
 		width: 100%;
 		justify-content: space-between;
 		display: flex;

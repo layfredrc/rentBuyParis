@@ -4,7 +4,7 @@ import { MdLanguage, MdAttachMoney, MdMenu } from "react-icons/md";
 import Selector from "../selector";
 
 import styles from "./index.module.scss";
-
+import styled from "styled-components";
 const languages = ["Français", "English", "Russian"];
 const currencies = ["EUR", "USD", "RS"];
 
@@ -16,12 +16,19 @@ export default function Header({ setIsBurgerMenuOpened }) {
 					<Link href='/'>
 						<a className={styles["logo"]}>RentBuyParis</a>
 					</Link>
-					<Link href='/accomodations?property=rent'>
-						<a>Appartements à louer</a>
-					</Link>
-					<Link href='/accomodations?property=buy'>
-						<a>Biens à vendre</a>
-					</Link>
+					<RectangleBackgroundContainer>
+						<RectangleBackground />
+						<Link href='/accomodations?property=rent'>
+							<a>Appartements à louer</a>
+						</Link>
+					</RectangleBackgroundContainer>
+
+					<RectangleBackgroundContainer>
+						<RectangleBackground />
+						<Link href='/accomodations?property=buy'>
+							<a>Biens à vendre</a>
+						</Link>
+					</RectangleBackgroundContainer>
 				</div>
 				<div className={styles["right"]}>
 					<Selector
@@ -49,3 +56,18 @@ export default function Header({ setIsBurgerMenuOpened }) {
 		</>
 	);
 }
+
+const RectangleBackground = styled.div`
+	position: absolute;
+	top: 5px;
+	right: 10px;
+	width: 93px;
+	height: 18px;
+	z-index: -1;
+	background-color: white;
+`;
+
+const RectangleBackgroundContainer = styled.div`
+	position: relative;
+	z-index: 2;
+`;

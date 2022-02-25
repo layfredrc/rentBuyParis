@@ -65,6 +65,7 @@ const SectionAvailableNowContainer = styled.div`
 	}
 
 	@media screen and (min-width: 2550px) {
+		margin-top: 15rem;
 		padding: 0rem 28rem 0rem 28rem;
 	}
 
@@ -106,7 +107,7 @@ const SectionAvailableNowContainer = styled.div`
 	.exploreAll {
 		font-weight: 600;
 		font-size: 16px;
-
+		cursor: pointer;
 		@media screen and (max-width: 768px) {
 			display: none;
 		}

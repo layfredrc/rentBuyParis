@@ -287,6 +287,10 @@ const CalendarWrapper = styled.div`
 	@media screen and (min-width: 1440px) {
 		bottom: -4.5rem;
 	}
+
+	@media screen and (min-width: 2550px) {
+		bottom: -8.5rem;
+	}
 `;
 
 const ImageWrapper = styled.div`

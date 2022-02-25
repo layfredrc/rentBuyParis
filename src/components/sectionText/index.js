@@ -8,7 +8,7 @@ import paris4 from "../../../public/assets/images/paris-4.png";
 import paris5 from "../../../public/assets/images/paris-5.png";
 import paris6 from "../../../public/assets/images/paris-6.png";
 import Image from "next/image";
-export default function SectionText({ }) {
+export default function SectionText({}) {
 	const isMobile = useSizeScreen();
 
 	return (
@@ -21,20 +21,20 @@ export default function SectionText({ }) {
 							<span>RentBuyParis</span>
 						</h1>
 						<p>
-							Hi, I’m Stephan Jaquet, offering rentals starting from one month and
-							sometimes property for sale in Paris and in France. If you want to
-							invest, I can also hunt the flat or house you wish to buy. I’m
-							parisian and I personally know all the apartments published on my
-							site since I take most of the pictures myself.
+							Hi, I’m Stephan Jaquet, offering rentals starting from one month
+							and sometimes property for sale in Paris and in France. If you
+							want to invest, I can also hunt the flat or house you wish to buy.
+							I’m parisian and I personally know all the apartments published on
+							my site since I take most of the pictures myself.
 						</p>
 						<p>
-							I’m in the parisian real estate business since 2012 and I know local
-							prices, I don’t list anything overpriced on my site, except for
-							sales sometimes, but they are more negociable.
+							I’m in the parisian real estate business since 2012 and I know
+							local prices, I don’t list anything overpriced on my site, except
+							for sales sometimes, but they are more negociable.
 						</p>
 						<p>
-							My reasonable fee is always paid by the tenant, it’s easier that way
-							for me to negociate the best price from the owner.
+							My reasonable fee is always paid by the tenant, it’s easier that
+							way for me to negociate the best price from the owner.
 						</p>
 						<p>Check my commission section.</p>
 						<p>
@@ -63,8 +63,8 @@ export default function SectionText({ }) {
 					<div className='right'>
 						<h1>List your property</h1>
 						<p>
-							Contact me if you wish to list your property on my site. I can take
-							pictures, estimate it, and advise you free of charge.
+							Contact me if you wish to list your property on my site. I can
+							take pictures, estimate it, and advise you free of charge.
 						</p>
 						<p>
 							For rentals, I publish only furnished flats since I usually don’t
@@ -80,19 +80,21 @@ export default function SectionText({ }) {
 					<div className='left'>
 						<h1>Real estate price in Paris</h1>
 						<p>
-							Average price of a square meter is around 10 000€ a m². In the nice
-							neighborhoods it rises around 15 000€ and for the most exceptionnal
-							properties, to buy a square meter can go up to 20 000 or 25 000€.
+							Average price of a square meter is around 10 000€ a m². In the
+							nice neighborhoods it rises around 15 000€ and for the most
+							exceptionnal properties, to buy a square meter can go up to 20 000
+							or 25 000€.
 						</p>
 						<p>
 							Everything depends of the shape of the place and building, the
-							district, public transportation and schools around. Tell me what you
-							want, I’ll find you what you need.{" "}
+							district, public transportation and schools around. Tell me what
+							you want, I’ll find you what you need.{" "}
 						</p>
 						<p>
-							For rent, it’s approximately between 30 and 50€ a square meter, but
-							again it really depends of many features such as quality of the
-							building and furniture, area, rental period, services included...
+							For rent, it’s approximately between 30 and 50€ a square meter,
+							but again it really depends of many features such as quality of
+							the building and furniture, area, rental period, services
+							included...
 						</p>
 					</div>
 					<div className='right'>
@@ -107,20 +109,20 @@ export default function SectionText({ }) {
 						<h1>Services for owners and tenants</h1>
 						<p>
 							My main mission is to introduce serious tenants to serious owners.
-							My fee is paid by the tenant and I therefore ask reasonable amounts
-							from the owners.
+							My fee is paid by the tenant and I therefore ask reasonable
+							amounts from the owners.
 						</p>
 						<p>
 							My oral advices on the phone or in person are free to establish a
 							relation of trust between both parties.
 						</p>
 						<p>
-							Basically the owner has to deliver a clean and functional apartment
-							and the tenant has to pay on time.
+							Basically the owner has to deliver a clean and functional
+							apartment and the tenant has to pay on time.
 						</p>
 						<p>
-							To save time, little problems can be solved by the owner, but I will
-							be glad to help, to translate or to resolve problems myself.
+							To save time, little problems can be solved by the owner, but I
+							will be glad to help, to translate or to resolve problems myself.
 						</p>
 
 						<p>
@@ -145,8 +147,8 @@ export default function SectionText({ }) {
 					sometimes property for sale in Paris and in France.
 					<br />
 					If you want to invest, I can also hunt the flat or house you wish to
-					buy. I’m parisian and I personally know all the apartments published on
-					my site since I take most of the pictures myself.
+					buy. I’m parisian and I personally know all the apartments published
+					on my site since I take most of the pictures myself.
 				</p>
 				<p>
 					I’m in the parisian real estate business since 2012 and I know local
@@ -154,8 +156,8 @@ export default function SectionText({ }) {
 					sometimes, but they are more negociable.
 				</p>
 				<p>
-					My reasonable fee is always paid by the tenant, it’s easier that way for
-					me to negociate the best price from the owner.
+					My reasonable fee is always paid by the tenant, it’s easier that way
+					for me to negociate the best price from the owner.
 				</p>
 				<p>Check my commission section.</p>
 				<p>
@@ -175,8 +177,8 @@ export default function SectionText({ }) {
 					with empty apartments.
 				</p>
 				<p>
-					I prefer quality to quantity, to respect the time of my clients, I will
-					insist on the updated availabilities of my calendars.
+					I prefer quality to quantity, to respect the time of my clients, I
+					will insist on the updated availabilities of my calendars.
 				</p>
 				<h1>Real estate price in Paris</h1>
 
@@ -186,14 +188,14 @@ export default function SectionText({ }) {
 					properties, to buy a square meter can go up to 20 000 or 25 000€.
 				</p>
 				<p>
-					Everything depends of the shape of the place and building, the district,
-					public transportation and schools around. Tell me what you want, I’ll
-					find you what you need.{" "}
+					Everything depends of the shape of the place and building, the
+					district, public transportation and schools around. Tell me what you
+					want, I’ll find you what you need.{" "}
 				</p>
 				<p>
 					For rent, it’s approximately between 30 and 50€ a square meter, but
-					again it really depends of many features such as quality of the building
-					and furniture, area, rental period, services included...
+					again it really depends of many features such as quality of the
+					building and furniture, area, rental period, services included...
 				</p>
 				<h1>Services for owners and tenants</h1>
 
@@ -207,17 +209,17 @@ export default function SectionText({ }) {
 					relation of trust between both parties.
 				</p>
 				<p>
-					Basically the owner has to deliver a clean and functional apartment and
-					the tenant has to pay on time.
+					Basically the owner has to deliver a clean and functional apartment
+					and the tenant has to pay on time.
 				</p>
 				<p>
-					To save time, little problems can be solved by the owner, but I will be
-					glad to help, to translate or to resolve problems myself.
+					To save time, little problems can be solved by the owner, but I will
+					be glad to help, to translate or to resolve problems myself.
 				</p>
 
 				<p>
-					My fee to go check out the flat will be of 50€, but it will be possible
-					to video call me to show me what’s wrong.
+					My fee to go check out the flat will be of 50€, but it will be
+					possible to video call me to show me what’s wrong.
 				</p>
 
 				<p>Just contact me, there’s pretty much nothing I cannot do !</p>
@@ -234,18 +236,20 @@ const SectionTextContainer = styled.div`
 		font-size: 36px;
 	}
 
-	@media screen and (max-width: 768.5px){
+	@media screen and (max-width: 768.5px) {
 		display: none;
 	}
 	@media screen and (min-width: 1024px) {
-		padding: 5rem;
+		padding: 15rem 5rem 5rem 5rem;
+		margin-top: -19.3rem;
 	}
 	@media screen and (min-width: 1440px) {
-		padding: 5rem 15rem 5rem 15rem;
+		padding: 15rem 15rem 5rem 15rem;
 	}
 
 	@media screen and (min-width: 2550px) {
-		padding: 0rem 28rem 0rem 28rem;
+		margin-top: -14.3rem;
+		padding: 15rem 28rem 0rem 28rem;
 	}
 `;
 
@@ -268,10 +272,9 @@ const SectionTextContainerMobile = styled.div`
 		font-size: 18px;
 	}
 
-	@media screen and (min-width: 768.2px){
+	@media screen and (min-width: 768.2px) {
 		display: none;
 	}
-
 `;
 
 const StayInParis = styled.div`
@@ -438,20 +441,15 @@ const RealEstatePriceInParis = styled(ListYourProperty)`
 `;
 const ServicesForOwnersAndTenants = styled(RealEstatePriceInParis)`
 	.left {
-		width: 35%;
-		margin-left: 1.5rem;
-		margin-top: 5rem;
-
+		width: 40%;
+		margin-top: 0rem;
+		padding-left: 1.5rem;
 		@media screen and (min-width: 1024px) {
-			padding-left: 2rem;
 		}
 
 		@media screen and (min-width: 1440px) {
-			padding-left: 2rem;
 		}
 		@media screen and (min-width: 2550px) {
-			padding-left: 2rem;
-			margin-top: 0;
 		}
 	}
 
