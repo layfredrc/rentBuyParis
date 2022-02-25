@@ -1,3 +1,6 @@
+.button {
+	padding: 0 60px;
+}
 @media (min-width: 1024px) {
 	.mobile {
 		display: none;
@@ -13,5 +16,10 @@
 	}
 	.desktop {
 		display: none;
+	}
+}
+@media (max-width: 450px) {
+	.button {
+		padding: 0 10%;
 	}
 }

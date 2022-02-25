@@ -6,7 +6,7 @@ export default function Selector({ values, defaultValue, icon }) {
 	const [selectedValue, setSelectedValue] = useState(defaultValue);
 
 	return (
-		<div>
+		<div className={styles.container}>
 			<div
 				onClick={() => setIsOpened(isOpened ? false : true)}
 				style={{ display: "flex", alignItems: "center" }}

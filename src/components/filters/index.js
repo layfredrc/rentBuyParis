@@ -1,4 +1,4 @@
-import { Button, Checkbox, NumberInput, RangerSlider } from "@mantine/core";
+import { Button, Checkbox, NumberInput, RangeSlider } from "@mantine/core";
 import { MdFilterAlt } from "react-icons/md";
 
 // Components
@@ -20,7 +20,7 @@ export default function Filters() {
 					color="dark"
 					radius={0}
 					size="md"
-					style={{ padding: "0 60px" }}
+					className={styles.button}
 					leftIcon={<MdFilterAlt color="white" size={18} />}
 				>
 					Appliquer des filtres
@@ -30,7 +30,7 @@ export default function Filters() {
 				<Filter title="Quartier">
 					<div style={{ display: "flex" }}>
 						<div style={{ width: "4.5em", marginRight: "10px" }}>
-							<NumberInput defaultValue={0} required />
+							<NumberInput defaultValue={1} required min={1} max={20} />
 						</div>
 						<span style={{ minWidth: "max-content", alignSelf: "center" }}>
 							ème arr (Trocadéro)
@@ -38,8 +38,7 @@ export default function Filters() {
 					</div>
 				</Filter>
 				<Filter title="Prix">
-					<div></div>
-					{/* <RangerSlider
+					<RangeSlider
 						defaultValue={[20, 80]}
 						marks={marks}
 						color="#3EA6C7"
@@ -50,7 +49,7 @@ export default function Filters() {
 								color: theme.black,
 							},
 						})}
-					/> */}
+					/>
 				</Filter>
 				<Filter title="Capacité">
 					<Checkbox
