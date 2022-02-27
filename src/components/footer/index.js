@@ -1,7 +1,7 @@
 import Link from "next/link";
 
-import { MdLocationPin, MdOutlinePhone } from "react-icons/md";
-
+import { BsTelephone } from "react-icons/bs";
+import { HiOutlineLocationMarker } from "react-icons/hi"
 import styles from "./index.module.scss";
 
 export default function Footer() {
@@ -11,11 +11,11 @@ export default function Footer() {
 				<div>
 					<h2 className={styles["logo"]}>RentBuyParis</h2>
 					<div>
-						<MdLocationPin size={20} />
-						<p style={{ marginBlock: "auto" }}>47 rue de Laborde 75008 Paris</p>
+						<HiOutlineLocationMarker size={20} style={{ marginRight: "5px" }} />
+						<p>47 rue de Laborde 75008 Paris</p>
 					</div>
 					<div>
-						<MdOutlinePhone size={20} />
+						<BsTelephone size={20} style={{ marginRight: "5px" }} />
 						<p>+33672644444</p>
 					</div>
 				</div>

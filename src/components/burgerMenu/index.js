@@ -1,7 +1,16 @@
 import styles from "./index.module.scss";
 import { MdClose, MdLanguage, MdAttachMoney, MdPhone } from "react-icons/md";
+import { AiOutlineMail } from "react-icons/ai";
+import { BsTelephone } from "react-icons/bs";
+import Image from "next/image";
 import Link from "next/link";
 import Selector from "../selector";
+
+import whatsapp from "../../../public/assets/images/WhatsApp.png";
+import viber from "../../../public/assets/images/Viber.png";
+import telegram from "../../../public/assets/images/Telegram.png";
+import signal from "../../../public/assets/images/Signal.png";
+import youtube from "../../../public/assets/images/Youtube.png";
 
 const languages = ["Français", "English", "Russian"];
 const currencies = ["EUR", "USD", "RS"];
@@ -12,7 +21,9 @@ export default function BurgerMenu({ setIsBurgerMenuOpened }) {
 			<header className={styles.header}>
 				<div className={styles.left}>
 					<MdClose size={25} onClick={() => setIsBurgerMenuOpened(false)} />
-					<Link href={"/"}><p>RentBuyParis</p></Link>
+					<Link href={"/"}>
+						<p>RentBuyParis</p>
+					</Link>
 				</div>
 				<div className={styles.right}>
 					<Selector
@@ -33,33 +44,29 @@ export default function BurgerMenu({ setIsBurgerMenuOpened }) {
 					<Link href={"/"}>
 						<a
 							className={styles.link}
-							onClick={() => setIsBurgerMenuOpened(false)}
-						>
+							onClick={() => setIsBurgerMenuOpened(false)}>
 							Accueil
 						</a>
 					</Link>
-					<Link href="/accomodations?property=rent">
+					<Link href='/accomodations?property=rent'>
 						<a
 							className={styles.link}
-							onClick={() => setIsBurgerMenuOpened(false)}
-						>
+							onClick={() => setIsBurgerMenuOpened(false)}>
 							Location d’appartement
 						</a>
 					</Link>
-					<Link href="/accomodations?property=buy">
+					<Link href='/accomodations?property=buy'>
 						<a
 							className={styles.link}
-							onClick={() => setIsBurgerMenuOpened(false)}
-						>
+							onClick={() => setIsBurgerMenuOpened(false)}>
 							Biens à vendre / chasser
 						</a>
 					</Link>
-					<Link href="/">
+					<Link href='/'>
 						<a
 							className={styles.link}
 							style={{ marginTop: "50px" }}
-							onClick={() => setIsBurgerMenuOpened(false)}
-						>
+							onClick={() => setIsBurgerMenuOpened(false)}>
 							Terms and conditions
 						</a>
 					</Link>
@@ -70,12 +77,19 @@ export default function BurgerMenu({ setIsBurgerMenuOpened }) {
 						Stephan Jaquet
 					</h2>
 					<div className={styles.information}>
-						<MdPhone size={20} />
+						<BsTelephone size={20} />
 						<span>+33 6 72 64 44 44</span>
 					</div>
 					<div className={styles.information}>
-						<MdPhone size={20} />
+						<AiOutlineMail size={20} />
 						<span> info@rentbuyparis.com</span>
+					</div>
+					<div className={styles.social}>
+						<Image src={telegram} />
+						<Image src={youtube} />
+						<Image src={whatsapp} />
+						<Image src={viber} />
+						<Image src={signal} />
 					</div>
 					<div></div>
 					<p>Please send a SMS if I am not answering</p>

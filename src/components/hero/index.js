@@ -335,7 +335,7 @@ const ButtonContainerDesktop = styled.div`
 	@media screen and (min-width: 1024px) {
 		.hero-button-desktop {
 			width: 200px;
-			font-size: 12px;
+			font-size: 11px;
 			font-family: "Montserrat", sans-serif;
 			br {
 				display: none;

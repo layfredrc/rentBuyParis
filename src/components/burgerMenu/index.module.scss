@@ -36,7 +36,6 @@
 .content {
 	flex: 1;
 	padding: 40px 40px 10px 40px;
-	justify-content: space-between;
 	display: flex;
 	flex-direction: column;
 }
@@ -54,14 +53,20 @@
 	font-weight: 600;
 }
 .contact {
+	margin-top: 3rem;
 	text-align: center;
 	animation: 1s slidein-bottom;
+	font-weight: 600;
 }
 .contact p {
 	margin: 20px 0;
 }
 .contact > div {
 	margin: 20px 0;
+}
+.social {
+	display: flex;
+	justify-content: space-between;
 }
 .information {
 	display: flex;
