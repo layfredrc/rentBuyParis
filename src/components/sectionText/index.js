@@ -8,7 +8,7 @@ import paris4 from "../../../public/assets/images/paris-4.png";
 import paris5 from "../../../public/assets/images/paris-5.png";
 import paris6 from "../../../public/assets/images/paris-6.png";
 import Image from "next/image";
-export default function SectionText({}) {
+export default function SectionText({ }) {
 	const isMobile = useSizeScreen();
 
 	return (
@@ -46,19 +46,19 @@ export default function SectionText({}) {
 
 					<div className='right'>
 						<Paris1>
-							<Image src={paris1} width={250} height={150} />
+							<Image src={paris1} width={250} height={150} alt="paris-image" />
 						</Paris1>
 						<Paris2>
-							<Image src={paris2} width={300} height={150} />
+							<Image src={paris2} width={300} height={150} alt="paris-image" />
 						</Paris2>
 						<Paris3>
-							<Image src={paris3} width={250} height={150} />
+							<Image src={paris3} width={250} height={150} alt="paris-image" />
 						</Paris3>
 					</div>
 				</StayInParis>
 				<ListYourProperty>
 					<div className='left'>
-						<Image src={paris4} height={400} width={300} className='paris4' />
+						<Image src={paris4} height={400} width={300} className='paris4' alt="paris-image" />
 					</div>
 					<div className='right'>
 						<h1>List your property</h1>
@@ -98,7 +98,7 @@ export default function SectionText({}) {
 						</p>
 					</div>
 					<div className='right'>
-						<Image src={paris5} height={400} width={300} />
+						<Image src={paris5} height={400} width={300} alt="paris-image" />
 					</div>
 				</RealEstatePriceInParis>
 				<ServicesForOwnersAndTenants>

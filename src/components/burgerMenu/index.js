@@ -85,11 +85,11 @@ export default function BurgerMenu({ setIsBurgerMenuOpened }) {
 						<span> info@rentbuyparis.com</span>
 					</div>
 					<div className={styles.social}>
-						<Image src={telegram} />
-						<Image src={youtube} />
-						<Image src={whatsapp} />
-						<Image src={viber} />
-						<Image src={signal} />
+						<Image src={telegram} alt='telegram' />
+						<Image src={youtube} alt='youtube' />
+						<Image src={whatsapp} alt='whatsapp' />
+						<Image src={viber} alt='viber' />
+						<Image src={signal} alt='signal' />
 					</div>
 					<div></div>
 					<p>Please send a SMS if I am not answering</p>

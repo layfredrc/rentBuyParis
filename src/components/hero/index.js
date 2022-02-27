@@ -20,10 +20,10 @@ export default function Hero({}) {
 
 				<HeroContentWrapper>
 					<div className='text-content'>
-						<h4>
+						<h2>
 							Appartements à louer et à vendre en plein centre de Paris, dans
 							des conditions idéales et des prix convenables<span>.</span>
-						</h4>
+						</h2>
 
 						<ButtonContainerDesktop>
 							<Link href={"/accomodations?property=rent"}>
@@ -71,6 +71,7 @@ export default function Hero({}) {
 							alt='RentBuyParis'
 							layout='fill'
 							className='hero-image'
+							alt='rentbuyparis'
 						/>
 					</ImageWrapper>
 					<ButtonContainerMobile>
@@ -176,7 +177,7 @@ const HeroContentWrapper = styled.div`
 
 	.text-content {
 		height: min-content;
-		h4 {
+		h2 {
 			margin-top: 3rem;
 			font-weight: 500;
 			font-size: 16px;

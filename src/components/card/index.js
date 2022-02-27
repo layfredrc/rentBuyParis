@@ -24,6 +24,7 @@ export default function Card({ data, key, vertical }) {
 								src={photo.attributes.url}
 								layout='fill'
 								objectFit='cover'
+								alt='card-image'
 							/>
 						))}
 					</div>
@@ -96,6 +97,7 @@ export default function Card({ data, key, vertical }) {
 								src={photo.attributes.url}
 								layout='fill'
 								objectFit='cover'
+								alt='card-image'
 							/>
 						))}
 					</div>
