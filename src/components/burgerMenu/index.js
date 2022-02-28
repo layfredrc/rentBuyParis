@@ -1,5 +1,5 @@
 import styles from "./index.module.scss";
-import { MdClose, MdLanguage, MdAttachMoney, MdPhone } from "react-icons/md";
+import { MdClose, MdLanguage, MdAttachMoney } from "react-icons/md";
 import { AiOutlineMail } from "react-icons/ai";
 import { BsTelephone } from "react-icons/bs";
 import Image from "next/image";

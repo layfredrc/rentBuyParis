@@ -65,7 +65,10 @@ const DetailsCardContainer = styled.div`
 		grid-template-columns: repeat(4, 1fr);
 	}
 	@media screen and (min-width: 1024px) {
-		width: 75%;
+		grid-template-columns: repeat(4, 0fr);
+		grid-column-gap: 15px;
+	}
+	@media screen and (min-width: 1440px) {
 	}
 `;
 const DetailsCard = styled.div`
@@ -90,15 +93,18 @@ const DetailsCard = styled.div`
 	@media screen and (min-width: 375px) {
 		width: 120px;
 	}
+	@media screen and (min-width: 1024px) {
+		width: 100px;
+	}
 `;
 
 const TextContent = styled.div`
 	margin-top: 2rem;
-	font-size: 15px;
+	font-size: 14px;
 	font-weight: 500;
 	line-height: 1.2;
 
 	@media screen and (min-width: 1024px) {
-		width: 70%;
+		width: 90%;
 	}
 `;

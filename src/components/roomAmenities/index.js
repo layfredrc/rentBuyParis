@@ -164,12 +164,35 @@ const RoomAmenitiesContainer = styled.div`
 	}
 
 	h3 {
-		font-size: 20px;
+		font-size: 16px;
 		font-weight: 600;
 		line-height: 2;
+
+		@media screen and (min-width: 1024px) {
+			font-size: 20px;
+		}
 	}
 
 	li {
 		line-height: 1.8;
+		font-weight: 400;
+	}
+
+	@media screen and (min-width: 768px) {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		grid-gap: 20px;
+		height: 400px;
+		.rules {
+			transform: translateY(-10rem);
+		}
+
+		.front-desk {
+			transform: translateY(-10rem);
+		}
+
+		.devices {
+			transform: translateX(2rem);
+		}
 	}
 `;

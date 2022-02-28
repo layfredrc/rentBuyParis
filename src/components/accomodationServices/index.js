@@ -59,7 +59,7 @@ const ServicesCardContainer = styled.div`
 	grid-gap: 20px;
 
 	@media screen and (min-width: 1024px) {
-		grid-template-columns: repeat(2, 340px);
+		grid-template-columns: repeat(2, 0fr);
 		height: auto;
 		width: 75%;
 	}
@@ -81,12 +81,12 @@ const ServicesCard = styled.div`
 	}
 
 	@media screen and (min-width: 1024px) {
-		width: 300px;
+		width: 250px;
 	}
 
 	.text-content {
 		width: 65%;
-
+		margin-top: 0.75rem;
 		h4 {
 			font-size: 11px;
 			font-weight: 600;
@@ -95,7 +95,7 @@ const ServicesCard = styled.div`
 		}
 
 		h5 {
-			font-size: 13px;
+			font-size: 11px;
 			font-weight: 600;
 		}
 
@@ -113,7 +113,7 @@ export const SectionTitle = styled.h3`
 `;
 export const SectionTitleContainer = styled.div`
 	position: relative;
-	margin-bottom: 2rem;
+	margin-bottom: 1rem;
 `;
 
 export const CircleBackground = styled.div`
