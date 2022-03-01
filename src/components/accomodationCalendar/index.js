@@ -14,7 +14,7 @@ import telegram from "../../../public/assets/images/Telegram.png";
 import signal from "../../../public/assets/images/Signal.png";
 import youtube from "../../../public/assets/images/Youtube.png";
 
-export default function AccomodationCalendar({}) {
+export default function AccomodationCalendar({ }) {
 	const [value, setValue] = useState([
 		new Date(2021, 11, 1),
 		new Date(2021, 11, 5),
@@ -96,6 +96,7 @@ const Wrapper = styled.div`
 `;
 
 const AccomodationCalendarContainer = styled.div`
+	background-color: white;
 	border: 1px solid #d5d5d5;
 	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 	border-radius: 10px;

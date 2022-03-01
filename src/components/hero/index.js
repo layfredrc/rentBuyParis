@@ -8,7 +8,7 @@ import { GiHouseKeys } from "react-icons/gi";
 import { MdMapsHomeWork } from "react-icons/md";
 import Link from "next/link";
 
-export default function Hero({}) {
+export default function Hero({ }) {
 	return (
 		<>
 			<HeroContainer>
@@ -127,7 +127,7 @@ const HeroContainer = styled.div`
 	}
 
 	@media screen and (min-width: 1440px) {
-		margin-bottom: -8rem;
+		margin-bottom: -9rem;
 	}
 `;
 
@@ -312,6 +312,10 @@ const ImageWrapper = styled.div`
 	}
 	@media screen and (min-width: 1440px) {
 		transform: translate(2rem, -9rem);
+	}
+	@media screen and (min-width: 2560px) {
+		transform: translate(4rem, -10rem);
+		height: 600px;
 	}
 `;
 

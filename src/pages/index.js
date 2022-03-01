@@ -57,16 +57,21 @@ const HeroWrapper = styled.div`
 	}
 
 	@media screen and (min-width: 1024px) {
-		background-color: ${bgColorPrimary};
-		padding: 0rem 2rem 0rem 2rem;
+
 	}
 	@media screen and (min-width: 1440px) {
-		background-color: ${bgColorPrimary};
 		padding: 0rem 12rem 0rem 12rem;
 	}
+	@media screen and (min-width: 1800px) {
+		padding: 0rem 20rem 0rem 20rem;
+	}
+
+	@media screen and (min-width: 2100px) {
+		padding: 0rem 24rem 0rem 24rem;
+	}
+
 	@media screen and (min-width: 2550px) {
-		background-color: ${bgColorPrimary};
-		padding: 0rem 25rem 0rem 25rem;
+		padding: 0rem 30rem 0rem 30rem;
 	}
 `;
 

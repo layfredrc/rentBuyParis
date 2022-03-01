@@ -64,9 +64,17 @@ const SectionAvailableNowContainer = styled.div`
 		padding: 5rem 15rem 5rem 15rem;
 	}
 
-	@media screen and (min-width: 2550px) {
+	@media screen and (min-width: 1800px) {
+		padding: 5rem 20rem 5rem 20rem;
+	}
+
+	@media screen and (min-width: 2100px) {
+		padding: 5rem 24rem 5rem 24rem;
+	}
+
+	@media screen and (min-width: 2560px) {
 		margin-top: 15rem;
-		padding: 0rem 28rem 0rem 28rem;
+		padding: 5rem 30rem 5rem 30rem;
 	}
 
 	.sectionHeaderTitle {

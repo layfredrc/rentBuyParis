@@ -9,7 +9,7 @@ import { RiUserAddLine, RiHotelBedLine } from "react-icons/ri";
 import { GiResize } from "react-icons/gi";
 import { MdOutlineShower } from "react-icons/md";
 
-export default function AccomodationDetails({}) {
+export default function AccomodationDetails({ }) {
 	return (
 		<AccomodationDetailsContainer>
 			<SectionTitleContainer>
@@ -90,7 +90,7 @@ const DetailsCard = styled.div`
 	@media screen and (min-width: 375px) {
 		width: 100px;
 	}
-	@media screen and (min-width: 375px) {
+	@media screen and (min-width: 425px) {
 		width: 120px;
 	}
 	@media screen and (min-width: 1024px) {

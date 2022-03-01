@@ -6,24 +6,29 @@ import AccomodationCalendar from "../accomodationCalendar";
 import Map from "../map";
 export default function AccomodationDetail() {
 	return (
-		<AccomodationDetailContainer>
-			<RowWrapper>
-				<ColWrapper>
-					<AccomodationDetails />
-					<AccomodationServices />
-				</ColWrapper>
-				<DesktopCalendarWrapper>
-					<AccomodationCalendar />
-				</DesktopCalendarWrapper>
-			</RowWrapper>
-			<RoomAmenities />
-			<RowWrapperTablet>
-				<Map />
-				<MobileCalendarWrapper>
-					<AccomodationCalendar />
-				</MobileCalendarWrapper>
-			</RowWrapperTablet>
-		</AccomodationDetailContainer>
+		<>
+			<AccomodationDetailContainer>
+				<RowWrapper>
+					<ColWrapper>
+						<AccomodationDetails />
+						<AccomodationServices />
+					</ColWrapper>
+					<DesktopCalendarWrapper>
+						<AccomodationCalendar />
+					</DesktopCalendarWrapper>
+				</RowWrapper>
+				<RoomAmenities />
+				<RowWrapperTablet>
+					<Map />
+					<MobileCalendarWrapper>
+						<AccomodationCalendar />
+					</MobileCalendarWrapper>
+				</RowWrapperTablet>
+
+			</AccomodationDetailContainer>
+			<BackgroundColor />
+
+		</>
 	);
 }
 
@@ -52,17 +57,33 @@ const MobileCalendarWrapper = styled.div`
 	}
 `;
 const DesktopCalendarWrapper = styled.div`
-	margin-right: 200px;
 	@media screen and (max-width: 1023px) {
 		display: none;
 	}
 `;
 
 const AccomodationDetailContainer = styled.div`
+	
+	@media screen and (min-width: 768px) {
+		padding: 2rem;
+	}
 	@media screen and (min-width: 1440px) {
 		padding: 0rem 12rem 0rem 12rem;
 	}
-	@media screen and (min-width: 2550px) {
-		padding: 0rem 25rem 0rem 25rem;
+	@media screen and (min-width: 1800px) {
+		padding: 0rem 24rem 0rem 24rem;
 	}
+	@media screen and (min-width: 2100px) {
+		padding: 0rem 35rem 0rem 35rem;
+	}
+	@media screen and (min-width: 2560px) {
+		padding: 0rem 45rem 0rem 45rem;
+	}
+`;
+
+const BackgroundColor = styled.div`
+	background-color: #2f2f2f;
+	height: 200px;
+	margin-top: -12rem;
+	z-index: 1;
 `;

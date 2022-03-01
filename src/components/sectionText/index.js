@@ -247,9 +247,21 @@ const SectionTextContainer = styled.div`
 		padding: 15rem 15rem 5rem 15rem;
 	}
 
+	@media screen and (min-width: 1800px) {
+		padding: 15rem 20rem 5rem 20rem;
+	}
+
+	@media screen and (min-width: 2100px) {
+		padding: 15rem 24rem 5rem 24rem;
+	}
+
+	@media screen and (min-width: 2560px) {
+		padding: 15rem 30rem 5rem 30rem;
+	}
+
 	@media screen and (min-width: 2550px) {
 		margin-top: -14.3rem;
-		padding: 15rem 28rem 0rem 28rem;
+		padding: 15rem 30rem 0rem 30rem;
 	}
 `;
 

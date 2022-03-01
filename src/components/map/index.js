@@ -13,24 +13,30 @@ const MapContainer = styled.div`
     display: flex;
     justify-content: center;
     padding: 2rem;
+    @media screen and (min-width:728px) and (max-width:1024px){
+        width: 100%;
+    }
+   
 `
 
 const MapWrapper = styled.iframe`
     border-radius: 15px;
-    width: 260px;
+    width: 100%;
     height: 400px;
 
+    @media screen and (min-width:375px){
+    }
+    @media screen and (min-width:425px){
+    }
+
     @media screen and (min-width:728px){
-        width: 350px;
         height: 600px;
     }
 
     @media screen and (min-width:1024px){
-        width: 960px;
-        height: 400px;
+        width: 100%;
+        height: 450px;
     }
     @media screen and (min-width:1440px){
-        width: 1000px;
-        height: 400px;
     }
 `
