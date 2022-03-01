@@ -41,11 +41,11 @@ export default function AccomodationCalendar({ }) {
 					</div>
 					<hr />
 					<Group position='center'>
-						<Modal opened={opened} size='70%' onClose={() => setOpened(false)}>
-							<div className=''>
+						<Modal opened={opened} size='90%' onClose={() => setOpened(false)} hideCloseButton padding={0} radius={0}>
+							<Popup>
 								<Image src={popupImage}></Image>
 
-								<div className={styles.contact}>
+								<div className={styles.contact} style={{ padding: "2rem" }}>
 									<p className={styles.brand}>RentBuyParis</p>
 									<h2 style={{ fontSize: "20px", fontWeight: "700" }}>
 										Stephan Jaquet
@@ -72,7 +72,7 @@ export default function AccomodationCalendar({ }) {
 										(CET), Sat – Sun: available for a call
 									</p>
 								</div>
-							</div>
+							</Popup>
 						</Modal>
 						<Button
 							color='dark'
@@ -152,3 +152,10 @@ const Recap = styled.div`
 		font-weight: 500;
 	}
 `;
+
+const Popup = styled.div`
+	@media screen and (min-width: 1024px) {
+		display: flex;
+		justify-content: space-between;
+	}
+`
