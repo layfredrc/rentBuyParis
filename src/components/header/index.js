@@ -31,7 +31,7 @@ export default function Header({ setIsBurgerMenuOpened }) {
 					</RectangleBackgroundContainer>
 				</div>
 				<div className={styles["right"]}>
-					<Selector
+					{/* <Selector
 						values={languages}
 						defaultValue={languages[0]}
 						icon={<MdLanguage size={20} />}
@@ -40,7 +40,7 @@ export default function Header({ setIsBurgerMenuOpened }) {
 						values={currencies}
 						defaultValue={currencies[0]}
 						icon={<MdAttachMoney size={20} />}
-					/>
+					/> */}
 				</div>
 			</header>
 			<header className={styles["container"] + " " + styles["mobile"]}>
