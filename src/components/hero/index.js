@@ -8,7 +8,7 @@ import { GiHouseKeys } from "react-icons/gi";
 import { MdMapsHomeWork } from "react-icons/md";
 import Link from "next/link";
 
-export default function Hero({ }) {
+export default function Hero({ nbRents, nbGoods }) {
 	return (
 		<>
 			<HeroContainer>
@@ -32,7 +32,8 @@ export default function Hero({ }) {
 									color='dark'
 									radius={0}
 									className='hero-button-desktop'
-									leftIcon={<MdMapsHomeWork size={15} />}>
+									leftIcon={<MdMapsHomeWork size={15} />}
+								>
 									Location <br /> d'appartements
 								</Button>
 							</Link>
@@ -42,7 +43,8 @@ export default function Hero({ }) {
 									color='dark'
 									radius={0}
 									className='hero-button-desktop'
-									leftIcon={<GiHouseKeys size={15} />}>
+									leftIcon={<GiHouseKeys size={15} />}
+								>
 									Biens à vendre <br /> / chasser
 								</Button>
 							</Link>
@@ -50,14 +52,16 @@ export default function Hero({ }) {
 
 						<div className='digits'>
 							<h3>
-								15<span>+</span>
+								{nbRents}
+								<span>+</span>
 								<br />
 								<p>
 									Appartements en location<span>.</span>
 								</p>
 							</h3>
 							<h3>
-								0<span>+</span>
+								{nbGoods}
+								<span>+</span>
 								<br />
 								<p>
 									Appartements à vendre? <br /> On s'occupe du vôtre !
@@ -81,7 +85,8 @@ export default function Hero({ }) {
 								color='dark'
 								radius={0}
 								leftIcon={<MdMapsHomeWork size={15} />}
-								className='hero-button-mobile'>
+								className='hero-button-mobile'
+							>
 								Location <br /> d'appartements
 							</Button>
 						</Link>
@@ -91,7 +96,8 @@ export default function Hero({ }) {
 								color='dark'
 								radius={0}
 								leftIcon={<GiHouseKeys size={15} />}
-								className='hero-button-mobile'>
+								className='hero-button-mobile'
+							>
 								Biens à vendre <br /> / chasser
 							</Button>
 						</Link>

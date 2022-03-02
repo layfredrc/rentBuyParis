@@ -19,7 +19,10 @@ const Home = ({ rents, error }) => {
 				<link rel='icon' href='/favicon.ico' />
 			</Head>
 			<HeroWrapper>
-				<Hero />
+				<Hero
+					nbRents={rents.data.filter((d) => d.attributes.isRent).length}
+					nbGoods={rents.data.filter((d) => !d.attributes.isRent).length}
+				/>
 			</HeroWrapper>
 			<SectionAvailableNow rents={rents} />
 
@@ -57,7 +60,6 @@ const HeroWrapper = styled.div`
 	}
 
 	@media screen and (min-width: 1024px) {
-
 	}
 	@media screen and (min-width: 1440px) {
 		padding: 0rem 12rem 0rem 12rem;
