@@ -5,9 +5,13 @@
 	color: white;
 }
 
-.container > div {
+.container > div:first-child {
 	display: flex;
-	justify-content: space-around;
+	justify-content: space-evenly;
+}
+
+.container > div:last-child {
+	text-align: center;
 }
 
 .container > div > div > div {
