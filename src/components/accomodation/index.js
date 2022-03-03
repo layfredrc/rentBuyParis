@@ -4,10 +4,12 @@ import AccomodationDetails from "../accomodationDetails";
 import RoomAmenities from "../roomAmenities";
 import AccomodationCalendar from "../accomodationCalendar";
 import Map from "../map";
+import AccomodationGallery from "../accomodationGallery";
 export default function AccomodationDetail() {
 	return (
 		<>
 			<AccomodationDetailContainer>
+				<AccomodationGallery />
 				<RowWrapper>
 					<ColWrapper>
 						<AccomodationDetails />

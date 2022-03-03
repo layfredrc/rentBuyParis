@@ -45,6 +45,7 @@
 	}
 	.container > div {
 		display: block;
+		flex-flow: column;
 	}
 	.container > div:first-child > div {
 		margin-bottom: 50px;
