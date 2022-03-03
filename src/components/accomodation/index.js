@@ -5,7 +5,7 @@ import RoomAmenities from "../roomAmenities";
 import AccomodationCalendar from "../accomodationCalendar";
 import Map from "../map";
 import AccomodationGallery from "../accomodationGallery";
-export default function AccomodationDetail() {
+export default function AccomodationDetail({ accomodation }) {
 	return (
 		<>
 			<AccomodationDetailContainer>
@@ -16,14 +16,14 @@ export default function AccomodationDetail() {
 						<AccomodationServices />
 					</ColWrapper>
 					<DesktopCalendarWrapper>
-						<AccomodationCalendar />
+						<AccomodationCalendar accomodation={accomodation} />
 					</DesktopCalendarWrapper>
 				</RowWrapper>
 				<RoomAmenities />
 				<RowWrapperTablet>
 					<Map />
 					<MobileCalendarWrapper>
-						<AccomodationCalendar />
+						<AccomodationCalendar accomodation={accomodation} />
 					</MobileCalendarWrapper>
 				</RowWrapperTablet>
 

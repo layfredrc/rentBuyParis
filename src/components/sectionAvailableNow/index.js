@@ -23,7 +23,7 @@ export default function SectionAvailableNow({ rents }) {
 
 			<div className='scrolling-wrapper-flexbox'>
 				{rents.data.map((d) => (
-					<Card data={d.attributes} key={d.id} vertical />
+					<Card data={d.attributes} id={d.id} vertical />
 				))}
 			</div>
 			<ButtonMobileContainer>

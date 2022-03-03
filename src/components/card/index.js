@@ -13,9 +13,9 @@ import { Button } from "@mantine/core";
 
 import styled from "styled-components";
 
-export default function Card({ data, key, vertical }) {
+export default function Card({ data, id, vertical }) {
 	return !vertical ? (
-		<Link href={`/accomodation/${key}`}>
+		<Link href={`/accomodation/${id}`}>
 			<CardHorizontal>
 				<div className='container'>
 					<div style={{ flex: 1, position: "relative" }}>
@@ -88,7 +88,7 @@ export default function Card({ data, key, vertical }) {
 			</CardHorizontal>
 		</Link>
 	) : (
-		<Link href={`/accomodation/${key}`}>
+		<Link href={`/accomodation/${id}`}>
 			<CardVertical>
 				<div className='container'>
 					<div style={{ flex: 1, position: "relative" }}>

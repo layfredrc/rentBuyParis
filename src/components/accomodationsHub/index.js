@@ -74,7 +74,7 @@ export default function AccomodationsHub({ rents }) {
 									: d.attributes.isRent == true
 							)
 							.map((d) => (
-								<Card data={d.attributes} key={d.id} />
+								<Card data={d.attributes} id={d.id} />
 							))}
 					</div>
 				</div>

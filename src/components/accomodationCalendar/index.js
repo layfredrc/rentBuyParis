@@ -14,17 +14,32 @@ import telegram from "../../../public/assets/images/Telegram.png";
 import signal from "../../../public/assets/images/Signal.png";
 import youtube from "../../../public/assets/images/Youtube.png";
 
-export default function AccomodationCalendar({ }) {
+export default function AccomodationCalendar({ accomodation }) {
 	const [value, setValue] = useState([
 		new Date(2021, 11, 1),
 		new Date(2021, 11, 5),
 	]);
 	const [opened, setOpened] = useState(false);
+
+	const monthDiff = (d1, d2) => {
+		var months;
+		months = (d2.getFullYear() - d1.getFullYear()) * 12;
+		months -= d1.getMonth();
+		months += d2.getMonth();
+		return months <= 0 ? 0 : months;
+	};
+
+	const dayDiff = (d1, d2) => {
+		var time_difference = d2.getTime() - d1.getTime();
+		return time_difference / (1000 * 60 * 60 * 24);
+	};
+
 	return (
 		<Wrapper>
 			<AccomodationCalendarContainer>
 				<div className='header'>
-					<h4 className='price'>55€</h4> <p>per night</p>
+					<h4 className='price'>{accomodation.attributes.price.value}€</h4>{" "}
+					<p>per {accomodation.attributes.price.regularity}</p>
 				</div>
 				<hr />
 				<div className='title'>
@@ -37,7 +52,16 @@ export default function AccomodationCalendar({ }) {
 				<Recap>
 					<h6 className='total-header'>Total</h6>
 					<div className='total'>
-						<h6 className='nights'>2 nights</h6> <p className='total'>110€</p>
+						<h6 className='nights'>
+							{value[0] && value[1] ? dayDiff(value[0], value[1]) : 0} nights
+						</h6>{" "}
+						<p className='total'>
+							{value[0] && value[1]
+								? (monthDiff(value[0], value[1]) + 1) *
+								  accomodation.attributes.price.value
+								: 0}
+							€
+						</p>
 					</div>
 					<hr />
 					<Group position='center'>
