@@ -1,14 +1,16 @@
 import { Button } from "@mantine/core";
-import { DateRangePicker, DatePicker } from "@mantine/dates";
+import { DatePicker } from "@mantine/dates";
 import { useState } from "react";
 import { GiExitDoor, GiEntryDoor } from "react-icons/gi";
 import styles from "./index.module.scss";
-import styled from "styled-components";
+import { useRouter } from "next/router";
 
-export default function CalendarDates({ title }) {
+export default function CalendarDates({ title, redirection }) {
+	const router = useRouter();
+
 	const [value, setValue] = useState([
-		new Date(2021, 11, 1),
-		new Date(2021, 11, 5),
+		router.query.enter ?? null,
+		router.query.out ?? null,
 	]);
 	return (
 		<div className={styles.container}>
@@ -21,16 +23,30 @@ export default function CalendarDates({ title }) {
 						radius="0px"
 						size="md"
 						required
+						defaultValue={value[0] ? new Date(value[0]) : null}
+						onChange={(date) => setValue([date, value[1]])}
 					/>
-					<DateRangePicker
+					<DatePicker
 						placeholder="Date de sortie"
 						rightSection={<GiExitDoor size={20} />}
 						size="md"
 						radius="0px"
-						onChange={setValue}
+						defaultValue={value[1] ? new Date(value[1]) : null}
+						onChange={(date) => setValue([value[0], date])}
 					/>
 				</div>
-				<Button color="dark" radius={0} size="md" className={styles.calendarButton} >
+				<Button
+					color="dark"
+					radius={0}
+					size="md"
+					className={styles.calendarButton}
+					onClick={() => {
+						redirection &&
+							router.push(
+								`/accomodations?property=rent&enter=${value[0]}&out=${value[1]}`
+							);
+					}}
+				>
 					Chercher
 				</Button>
 			</div>

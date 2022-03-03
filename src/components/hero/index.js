@@ -103,7 +103,7 @@ export default function Hero({ nbRents, nbGoods }) {
 						</Link>
 					</ButtonContainerMobile>
 					<CalendarWrapper>
-						<CalendarDates title={"Quand voulez-vous venir ?"} />
+						<CalendarDates title={"Quand voulez-vous venir ?"} redirection />
 					</CalendarWrapper>
 				</HeroContentWrapper>
 			</HeroContainer>
