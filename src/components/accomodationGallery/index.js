@@ -1,11 +1,27 @@
+import { useState, useEffect } from "react";
 import styled from "styled-components";
 import Image from "next/image";
-
+import Lightbox from "react-image-lightbox";
+import "react-image-lightbox/style.css";
 import image1 from "../../../public/assets/images/image 2.png";
 import image2 from "../../../public/assets/images/image 4.png";
 import image3 from "../../../public/assets/images/image 3.png";
 
-export default function AccomodationGallery({}) {
+export default function AccomodationGallery({ accomodation }) {
+	const { attributes } = accomodation;
+	const { photos } = attributes;
+	const { data } = photos;
+	console.log(data);
+	const galleryImages = [];
+	data.map((image) => {
+		galleryImages.push(image.attributes.url);
+	})
+	galleryImages.reverse()
+	console.log("galleryImages:", galleryImages);
+	const [isOpen, setIsOpen] = useState(false);
+	const [photoIndex, setPhotoIndex] = useState(0);
+	const [images, setImages] = useState(galleryImages);
+
 	return (
 		<AccomodationGalleryContainer>
 			<h1 className='accomodation-title'>
@@ -14,17 +30,60 @@ export default function AccomodationGallery({}) {
 
 			<GalleryContainer>
 				<BigPicture>
-					<Image src={image1} className='big-picture' layout='fill' />
+					<Image
+						src={`${images[0]}`}
+						className='big-picture'
+						layout='fill'
+						onClick={() => {
+							setPhotoIndex(0);
+							setIsOpen(true);
+						}}
+						alt="accomodationGallery"
+					/>
 				</BigPicture>
 				<SmallPicturesContainer>
-					<Image src={image2} objectFit='cover' className='small-picture' />
-					<Image src={image3} objectFit='cover' className='small-picture' />
-					<Image src={image1} objectFit='cover' className='small-picture' />
-					<ShowMore>
+					<Image src={`${images[1]}`} objectFit='cover' width={200} height={200} className='small-picture'
+						onClick={() => {
+							setPhotoIndex(1);
+							setIsOpen(true);
+						}}
+						t="accomodationGallery" />
+					<Image src={`${images[2]}`} objectFit='cover' width={200} height={200} className='small-picture'
+						onClick={() => {
+							setPhotoIndex(2);
+							setIsOpen(true);
+						}}
+						t="accomodationGallery" />
+					<Image src={`${images[3]}`} objectFit='cover' width={200} height={200} className='small-picture'
+						onClick={() => {
+							setPhotoIndex(3);
+							setIsOpen(true);
+						}}
+						t="accomodationGallery" />
+					<ShowMore onClick={() => {
+						setPhotoIndex(4);
+						setIsOpen(true);
+					}} >
+
 						<h2>+15 Photos</h2>
 					</ShowMore>
 				</SmallPicturesContainer>
 			</GalleryContainer>
+
+			{isOpen && (
+				<Lightbox
+					mainSrc={images[photoIndex]}
+					nextSrc={images[(photoIndex + 1) % images.length]}
+					prevSrc={images[(photoIndex + images.length - 1) % images.length]}
+					onCloseRequest={() => setIsOpen(false)}
+					onMovePrevRequest={() =>
+						setPhotoIndex((photoIndex + images.length - 1) % images.length)
+					}
+					onMoveNextRequest={() =>
+						setPhotoIndex((photoIndex + 1) % images.length)
+					}
+				/>
+			)}
 		</AccomodationGalleryContainer>
 	);
 }
@@ -83,7 +142,7 @@ const ShowMore = styled.div`
 	background: rgba(0, 0, 0, 0.5);
 	border-radius: 10px;
 	font-size: 12px;
-	font-weight: 600;
+	font-weight: 500;
 	color: white;
 	display: flex;
 	justify-content: center;

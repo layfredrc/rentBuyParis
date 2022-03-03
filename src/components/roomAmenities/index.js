@@ -9,7 +9,7 @@ import { FiCheck } from "react-icons/fi";
 import { MdOutlineClose, MdDoNotDisturbAlt } from "react-icons/md";
 import { AiOutlineExclamationCircle } from "react-icons/ai";
 
-export default function RoomAmenities({}) {
+export default function RoomAmenities({ accomodation }) {
 	return (
 		<Wrapper>
 			<SectionTitleContainer>

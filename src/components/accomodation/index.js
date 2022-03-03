@@ -9,7 +9,7 @@ export default function AccomodationDetail({ accomodation }) {
 	return (
 		<>
 			<AccomodationDetailContainer>
-				<AccomodationGallery />
+				<AccomodationGallery accomodation={accomodation} />
 				<RowWrapper>
 					<ColWrapper>
 						<AccomodationDetails />
@@ -19,7 +19,7 @@ export default function AccomodationDetail({ accomodation }) {
 						<AccomodationCalendar accomodation={accomodation} />
 					</DesktopCalendarWrapper>
 				</RowWrapper>
-				<RoomAmenities />
+				<RoomAmenities accomodation={accomodation} />
 				<RowWrapperTablet>
 					<Map />
 					<MobileCalendarWrapper>

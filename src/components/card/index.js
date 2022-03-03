@@ -41,7 +41,7 @@ export default function Card({ data, id, vertical }) {
 								{data.street}
 							</div>
 							<div className='details'>
-								{data.isDisponible ? (
+								{data.disponible ? (
 									<div style={{ color: "#15895F" }}>
 										<RiCheckboxCircleLine
 											color='#15895F'
@@ -115,7 +115,7 @@ export default function Card({ data, id, vertical }) {
 								{data.street}
 							</div>
 							<div className='details'>
-								{data.isDisponible ? (
+								{data.disponible ? (
 									<div style={{ color: "#15895F" }}>
 										<RiCheckboxCircleLine
 											color='#15895F'
