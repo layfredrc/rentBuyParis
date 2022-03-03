@@ -15,7 +15,7 @@ import styled from "styled-components";
 
 export default function Card({ data, id, vertical }) {
 	return !vertical ? (
-		<Link href={`/accomodation/${id}`}>
+		<Link href={`/accomodation/${id}`} key={id}>
 			<CardHorizontal>
 				<div className='container'>
 					<div style={{ flex: 1, position: "relative" }}>
@@ -25,6 +25,7 @@ export default function Card({ data, id, vertical }) {
 								layout='fill'
 								objectFit='cover'
 								alt='card-image'
+								key={id}
 							/>
 						))}
 					</div>
@@ -88,7 +89,7 @@ export default function Card({ data, id, vertical }) {
 			</CardHorizontal>
 		</Link>
 	) : (
-		<Link href={`/accomodation/${id}`}>
+		<Link href={`/accomodation/${id}`} key={id}>
 			<CardVertical>
 				<div className='container'>
 					<div style={{ flex: 1, position: "relative" }}>
@@ -98,6 +99,7 @@ export default function Card({ data, id, vertical }) {
 								layout='fill'
 								objectFit='cover'
 								alt='card-image'
+								key={id}
 							/>
 						))}
 					</div>

@@ -10,7 +10,7 @@ import CalendarDates from "../calendar";
 // Style
 import styles from "./index.module.css";
 
-export default function AccomodationsHub({ rents }) {
+export default function AccomodationsHub({ accomodations }) {
 	const router = useRouter();
 	const property = router.query.property;
 
@@ -67,14 +67,14 @@ export default function AccomodationsHub({ rents }) {
 					</div>
 					<div className={styles.accomodations}>
 						<div className={styles.decoration} />
-						{rents.data
+						{accomodations.data
 							.filter((d) =>
 								property == "buy"
 									? d.attributes.isRent == false
 									: d.attributes.isRent == true
 							)
 							.map((d) => (
-								<Card data={d.attributes} id={d.id} />
+								<Card data={d.attributes} id={d.id} key={d.id} />
 							))}
 					</div>
 				</div>

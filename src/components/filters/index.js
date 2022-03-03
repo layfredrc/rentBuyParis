@@ -53,21 +53,25 @@ export default function Filters() {
 				</Filter>
 				<Filter title="Capacité">
 					<Checkbox
+						onChange={() => {}}
 						checked={false}
 						label="1 personne"
 						style={{ marginBottom: "10px" }}
 					/>
 					<Checkbox
+						onChange={() => {}}
 						checked={false}
 						label="2 personnes"
 						style={{ marginBottom: "10px" }}
 					/>
 					<Checkbox
+						onChange={() => {}}
 						checked={false}
 						label="3 personnes"
 						style={{ marginBottom: "10px" }}
 					/>
 					<Checkbox
+						onChange={() => {}}
 						checked={false}
 						label="4 personnes"
 						style={{ marginBottom: "10px" }}
@@ -75,21 +79,25 @@ export default function Filters() {
 				</Filter>
 				<Filter title="Général">
 					<Checkbox
+						onChange={() => {}}
 						checked={false}
 						label="Parking"
 						style={{ marginBottom: "10px" }}
 					/>
 					<Checkbox
+						onChange={() => {}}
 						checked={false}
 						label="Ascenseur"
 						style={{ marginBottom: "10px" }}
 					/>
 					<Checkbox
+						onChange={() => {}}
 						checked={false}
 						label="Animaux autorisés"
 						style={{ marginBottom: "10px" }}
 					/>
 					<Checkbox
+						onChange={() => {}}
 						checked={false}
 						label="Terrasses / Balcons"
 						style={{ marginBottom: "10px" }}

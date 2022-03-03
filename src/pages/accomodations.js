@@ -1,12 +1,9 @@
 import Head from "next/head";
 import AccomodationsHub from "../components/accomodationsHub";
-import axios from "axios";
 
-const Accomodations = ({ rents, error }) => {
-	if (error) {
-		return <div>An error occured: {error.message}</div>;
-	}
+import { loadAccomodations } from "../lib/loadAccomodations";
 
+const Accomodations = ({ accomodations }) => {
 	return (
 		<div>
 			<Head>
@@ -15,32 +12,15 @@ const Accomodations = ({ rents, error }) => {
 				<link rel="icon" href="/favicon.ico" />
 			</Head>
 			<main>
-				<AccomodationsHub rents={rents} />
+				<AccomodationsHub accomodations={accomodations} />
 			</main>
 		</div>
 	);
 };
 
-Accomodations.getInitialProps = async (ctx) => {
-	try {
-		const qs = require("qs");
-		const query = qs.stringify(
-			{
-				populate: "*",
-			},
-			{
-				encodeValuesOnly: true,
-			}
-		);
-
-		const res = await axios.get(
-			`${process.env.NEXT_PUBLIC_STRAPI_URL}/api/rents?${query}`
-		);
-		const rents = res.data;
-		return { rents };
-	} catch (error) {
-		return { error };
-	}
-};
+export async function getStaticProps({ params }) {
+	const accomodations = await loadAccomodations();
+	return { props: { accomodations } };
+}
 
 export default Accomodations;
