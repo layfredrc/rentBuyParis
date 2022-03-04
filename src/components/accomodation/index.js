@@ -6,7 +6,7 @@ import AccomodationCalendar from "../accomodationCalendar";
 import Map from "../map";
 import AccomodationGallery from "../accomodationGallery";
 export default function AccomodationDetail({ accomodation }) {
-	const { data } = accomodation;
+	const { data } = accomodation || {};
 	return (
 		<>
 			<AccomodationDetailContainer>
