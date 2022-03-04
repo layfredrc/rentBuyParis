@@ -10,7 +10,7 @@ import { MdOutlineClose, MdDoNotDisturbAlt } from "react-icons/md";
 import { AiOutlineExclamationCircle } from "react-icons/ai";
 
 export default function RoomAmenities({ accomodation }) {
-	const { attributes } = accomodation;
+	const { attributes } = accomodation || {};
 	console.log(attributes)
 	const { amenities } = attributes;
 	const {

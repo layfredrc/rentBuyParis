@@ -5,9 +5,9 @@ import Lightbox from "react-image-lightbox";
 import "react-image-lightbox/style.css";
 
 export default function AccomodationGallery({ accomodation }) {
-	const { attributes } = accomodation;
-	const { photos, street } = attributes;
-	const { data } = photos;
+	const { attributes } = accomodation || {};
+	const { photos, street } = attributes || {};
+	const { data } = photos || {};
 	const galleryImages = [];
 	data.map((image) => {
 		galleryImages.push(image.attributes.url);

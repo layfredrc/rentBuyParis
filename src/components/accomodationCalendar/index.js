@@ -38,8 +38,8 @@ export default function AccomodationCalendar({ accomodation }) {
 		<Wrapper>
 			<AccomodationCalendarContainer>
 				<div className='header'>
-					<h4 className='price'>{accomodation.attributes.price.value}€</h4>{" "}
-					<p>per {accomodation.attributes.price.regularity}</p>
+					<h4 className='price'>{accomodation?.attributes?.price?.value}€</h4>{" "}
+					<p>per {accomodation?.attributes?.price?.regularity}</p>
 				</div>
 				<hr />
 				<div className='title'>
@@ -58,7 +58,7 @@ export default function AccomodationCalendar({ accomodation }) {
 						<p className='total'>
 							{value[0] && value[1]
 								? (monthDiff(value[0], value[1]) + 1) *
-								accomodation.attributes.price.value
+								accomodation?.attributes?.price?.value
 								: 0}
 							€
 						</p>

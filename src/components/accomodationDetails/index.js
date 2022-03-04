@@ -10,7 +10,7 @@ import { GiResize } from "react-icons/gi";
 import { MdOutlineShower } from "react-icons/md";
 
 export default function AccomodationDetails({ accomodation }) {
-	const { attributes } = accomodation;
+	const { attributes } = accomodation || {};
 	const { bedroom, guests, bathroom, space, description } = attributes;
 	return (
 		<AccomodationDetailsContainer>
