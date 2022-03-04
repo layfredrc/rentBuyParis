@@ -22,6 +22,11 @@ export default function RoomAmenities({ accomodation }) {
 		drying_machine,
 		elevator,
 		internet,
+		terrace,
+		garden,
+		parking,
+		hairDryer,
+		vacuumCleaner,
 		iron_ironing_board,
 		kettle,
 		microwave,
@@ -58,7 +63,7 @@ export default function RoomAmenities({ accomodation }) {
 							rooms
 						</li>
 						<li>
-							<FiCheck size={15} style={{ marginRight: "5px" }} /> Elevator
+							{elevator ? (<FiCheck size={15} style={{ marginRight: "5px" }} />) : (<MdOutlineClose size={15} style={{ marginRight: "5px" }} />)} Elevator
 						</li>
 						<li>
 							<FiCheck size={15} style={{ marginRight: "5px" }} /> Toilets
@@ -69,14 +74,14 @@ export default function RoomAmenities({ accomodation }) {
 					<h3>Outdoors</h3>
 					<ul>
 						<li>
-							<FiCheck size={15} style={{ marginRight: "5px" }} /> Terrace /
+							{terrace ? (<FiCheck size={15} style={{ marginRight: "5px" }} />) : (<MdOutlineClose size={15} style={{ marginRight: "5px" }} />)} Terrace /
 							Balcony
 						</li>
 						<li>
-							<FiCheck size={15} style={{ marginRight: "5px" }} /> Garden
+							{garden ? (<FiCheck size={15} style={{ marginRight: "5px" }} />) : (<MdOutlineClose size={15} style={{ marginRight: "5px" }} />)} Garden
 						</li>
 						<li>
-							<FiCheck size={15} style={{ marginRight: "5px" }} /> Parking
+							{parking ? (<FiCheck size={15} style={{ marginRight: "5px" }} />) : (<MdOutlineClose size={15} style={{ marginRight: "5px" }} />)} Parking
 						</li>
 					</ul>
 				</div>
@@ -116,11 +121,11 @@ export default function RoomAmenities({ accomodation }) {
 							Ironing board
 						</li>
 						<li>
-							{iron_ironing_board ? (<FiCheck size={15} style={{ marginRight: "5px" }} />) : (<MdOutlineClose size={15} style={{ marginRight: "5px" }} />)} Vacuum
+							{vacuumCleaner ? (<FiCheck size={15} style={{ marginRight: "5px" }} />) : (<MdOutlineClose size={15} style={{ marginRight: "5px" }} />)} Vacuum
 							cleaner
 						</li>
 						<li>
-							{iron_ironing_board ? (<FiCheck size={15} style={{ marginRight: "5px" }} />) : (<MdOutlineClose size={15} style={{ marginRight: "5px" }} />)} Hair dryer
+							{hairDryer ? (<FiCheck size={15} style={{ marginRight: "5px" }} />) : (<MdOutlineClose size={15} style={{ marginRight: "5px" }} />)} Hair dryer
 						</li>
 					</ul>
 				</div>

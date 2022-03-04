@@ -22,7 +22,7 @@ export default function AccomodationDetail({ accomodation }) {
 				</RowWrapper>
 				<RoomAmenities accomodation={data} />
 				<RowWrapperTablet>
-					<Map />
+					<Map accomodation={data} />
 					<MobileCalendarWrapper>
 						<AccomodationCalendar accomodation={data} />
 					</MobileCalendarWrapper>
