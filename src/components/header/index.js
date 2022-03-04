@@ -19,14 +19,14 @@ export default function Header({ setIsBurgerMenuOpened }) {
 					<RectangleBackgroundContainer>
 						<RectangleBackground />
 						<Link href='/accomodations?property=rent'>
-							<a>Appartements à louer</a>
+							<a>Apartments for rent</a>
 						</Link>
 					</RectangleBackgroundContainer>
 
 					<RectangleBackgroundContainer>
 						<RectangleBackground />
 						<Link href='/accomodations?property=buy'>
-							<a>Biens à vendre</a>
+							<a>Properties for sale</a>
 						</Link>
 					</RectangleBackgroundContainer>
 				</div>

@@ -14,15 +14,15 @@ export default function Hero({ nbRents, nbGoods }) {
 			<HeroContainer>
 				<Slogan>
 					<h1 className='slogan-title'>
-						Locations et ventes d'appartements à <br /> <span>Paris</span>
+						Rentals ans sales of apartments in <br /> <span>Paris</span>
 					</h1>
 				</Slogan>
 
 				<HeroContentWrapper>
 					<div className='text-content'>
 						<h2>
-							Appartements à louer et à vendre en plein centre de Paris, dans
-							des conditions idéales et des prix convenables<span>.</span>
+							Apartments for rent and for sale in the very center of Paris, in
+							ideal conditions and at reasonable prices.
 						</h2>
 
 						<ButtonContainerDesktop>
@@ -32,9 +32,8 @@ export default function Hero({ nbRents, nbGoods }) {
 									color='dark'
 									radius={0}
 									className='hero-button-desktop'
-									leftIcon={<MdMapsHomeWork size={15} />}
-								>
-									Location <br /> d'appartements
+									leftIcon={<MdMapsHomeWork size={15} />}>
+									Apartment <br /> rental
 								</Button>
 							</Link>
 							<Link href={"/accomodations?property=buy"}>
@@ -43,9 +42,8 @@ export default function Hero({ nbRents, nbGoods }) {
 									color='dark'
 									radius={0}
 									className='hero-button-desktop'
-									leftIcon={<GiHouseKeys size={15} />}
-								>
-									Biens à vendre <br /> / chasser
+									leftIcon={<GiHouseKeys size={15} />}>
+									Properties for sale
 								</Button>
 							</Link>
 						</ButtonContainerDesktop>
@@ -56,7 +54,8 @@ export default function Hero({ nbRents, nbGoods }) {
 								<span>+</span>
 								<br />
 								<p>
-									Appartements en location<span>.</span>
+									Apartments for rent<span>.</span> <br />
+									(One month minimum rentals)
 								</p>
 							</h3>
 							<h3>
@@ -64,7 +63,12 @@ export default function Hero({ nbRents, nbGoods }) {
 								<span>+</span>
 								<br />
 								<p>
-									Appartements à vendre? <br /> On s'occupe du vôtre !
+									Properties for sale ? <br />
+									<Link href='/accomodations?property=buy'>
+										<a style={{ textDecoration: "underline" }}>
+											We take care of yours !
+										</a>
+									</Link>
 								</p>
 							</h3>
 						</div>
@@ -85,9 +89,8 @@ export default function Hero({ nbRents, nbGoods }) {
 								color='dark'
 								radius={0}
 								leftIcon={<MdMapsHomeWork size={15} />}
-								className='hero-button-mobile'
-							>
-								Location <br /> d'appartements
+								className='hero-button-mobile'>
+								Apartment <br /> rental
 							</Button>
 						</Link>
 						<Link href={"/accomodations?property=buy"}>
@@ -96,14 +99,16 @@ export default function Hero({ nbRents, nbGoods }) {
 								color='dark'
 								radius={0}
 								leftIcon={<GiHouseKeys size={15} />}
-								className='hero-button-mobile'
-							>
-								Biens à vendre <br /> / chasser
+								className='hero-button-mobile'>
+								Properties for sale
 							</Button>
 						</Link>
 					</ButtonContainerMobile>
 					<CalendarWrapper>
-						<CalendarDates title={"Quand voulez-vous venir ?"} redirection />
+						<CalendarDates
+							title={"When would you like to stay in Paris ?"}
+							redirection
+						/>
 					</CalendarWrapper>
 				</HeroContentWrapper>
 			</HeroContainer>
@@ -338,7 +343,7 @@ const ButtonContainerDesktop = styled.div`
 	@media screen and (min-width: 768px) {
 		.hero-button-desktop {
 			width: 150px;
-			font-size: 10px;
+			font-size: 9px;
 			font-family: "Montserrat", sans-serif;
 		}
 	}

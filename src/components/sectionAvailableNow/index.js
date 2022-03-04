@@ -7,15 +7,15 @@ export default function SectionAvailableNow({ rents }) {
 	return (
 		<SectionAvailableNowContainer>
 			<h3 className='sectionHeaderTitle'>
-				<span>🔑</span> Disponible maintenant
+				<span>🔑</span> Available Now
 			</h3>
 
 			<div className='sectionHeader'>
-				<h1 className='sectionTitle'>Les appartements disponibles</h1>
+				<h1 className='sectionTitle'>Available apartments</h1>
 
 				<Link href={"/accomodations?property=rent"}>
 					<div className='exploreAll'>
-						Tout explorer{" "}
+						Explore All{" "}
 						<BsArrowRight size={20} style={{ transform: "translateY(5px)" }} />
 					</div>
 				</Link>
@@ -33,7 +33,7 @@ export default function SectionAvailableNow({ rents }) {
 						variant="default"
 						radius={0}
 						className='hero-button-mobile'>
-						Tout explorer
+						Explore All
 					</Button>
 				</Link>
 			</ButtonMobileContainer>

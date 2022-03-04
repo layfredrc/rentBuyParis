@@ -16,33 +16,33 @@ export default function Footer() {
 					</div>
 					<div>
 						<BsTelephone size={20} style={{ marginRight: "5px" }} />
-						<p>+33672644444</p>
+						<a href="tel:06-72-64-44-44">+33 6 72 64 44 44</a>
 					</div>
 				</div>
 				<div>
-					<h2>Horaires</h2>
+					<h2>Opening Time</h2>
 					<div>
-						<p>Lundi - Vendredi</p>
+						<p>Monday - Friday</p>
 					</div>
 					<div>
 						<p>11h - 23h</p>
 					</div>
 				</div>
 				<div>
-					<h2>Plan du site</h2>
+					<h2>Sitemap</h2>
 					<div>
 						<Link href="/">
-							<a>Louer un appartement</a>
+							<a>Apartment rental</a>
 						</Link>
 					</div>
 					<div>
 						<Link href="/">
-							<a>Bien à vendre</a>
+							<a>Properties for sale</a>
 						</Link>
 					</div>
 					<div>
 						<Link href="/">
-							<a>Termes et conditions</a>
+							<a>Terms and conditions</a>
 						</Link>
 					</div>
 				</div>

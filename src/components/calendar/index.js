@@ -1,7 +1,7 @@
 import { Button } from "@mantine/core";
-import { DatePicker, DateRangePicker } from "@mantine/dates";
+import { DateRangePicker } from "@mantine/dates";
 import { useState } from "react";
-import { AiFillCar } from "react-icons/ai";
+import { BsCalendarWeek } from "react-icons/bs";
 import styles from "./index.module.scss";
 import { useRouter } from "next/router";
 
@@ -18,8 +18,8 @@ export default function CalendarDates({ title, redirection }) {
 			<div>
 				<div style={{ flex: 4 }}>
 					<DateRangePicker
-						placeholder='Date de voyage'
-						rightSection={<AiFillCar size={20} />}
+						placeholder='Check-in - Check-out'
+						rightSection={<BsCalendarWeek size={20} />}
 						size='md'
 						radius='0px'
 						value={value}
@@ -42,7 +42,7 @@ export default function CalendarDates({ title, redirection }) {
 					fullWidth
 					style={{ flex: 1 }}
 				>
-					Chercher
+					Search
 				</Button>
 			</div>
 		</div>

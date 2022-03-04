@@ -5,6 +5,7 @@ import { loadAccomodation } from "../../lib/loadAccomodation";
 import { loadAccomodations } from "../../lib/loadAccomodations";
 
 const Accomodation = ({ accomodation }) => {
+	console.log(accomodation);
 	return (
 		<div>
 			<Head>
@@ -26,7 +27,6 @@ export async function getStaticProps({ params }) {
 
 export async function getStaticPaths() {
 	const accomodations = await loadAccomodations();
-
 	const paths = accomodations.data.map((item) => {
 		return { params: { id: `${item.id}` } };
 	});

@@ -10,6 +10,28 @@ import { MdOutlineClose, MdDoNotDisturbAlt } from "react-icons/md";
 import { AiOutlineExclamationCircle } from "react-icons/ai";
 
 export default function RoomAmenities({ accomodation }) {
+	const { attributes } = accomodation;
+	console.log(attributes)
+	const { amenities } = attributes;
+	const {
+		bed_linen,
+		children_friendly,
+		coffee_maker,
+		dishwasher,
+		draft_hood,
+		drying_machine,
+		elevator,
+		internet,
+		iron_ironing_board,
+		kettle,
+		microwave,
+		oven,
+		refrigerator,
+		toaster,
+		tv_set,
+		washing_machine,
+	} = amenities;
+	console.log(amenities);
 	return (
 		<Wrapper>
 			<SectionTitleContainer>
@@ -62,43 +84,43 @@ export default function RoomAmenities({ accomodation }) {
 					<h3>Devices & Equipment</h3>
 					<ul>
 						<li>
-							<FiCheck size={15} style={{ marginRight: "5px" }} /> TV set
+							{tv_set ? (<FiCheck size={15} style={{ marginRight: "5px" }} />) : (<MdOutlineClose size={15} style={{ marginRight: "5px" }} />)} TV set
 						</li>
 						<li>
-							<FiCheck size={15} style={{ marginRight: "5px" }} /> Refrigerator
+							{refrigerator ? (<FiCheck size={15} style={{ marginRight: "5px" }} />) : (<MdOutlineClose size={15} style={{ marginRight: "5px" }} />)} Refrigerator
 						</li>
 						<li>
-							<FiCheck size={15} style={{ marginRight: "5px" }} /> Toaster
+							{toaster ? (<FiCheck size={15} style={{ marginRight: "5px" }} />) : (<MdOutlineClose size={15} style={{ marginRight: "5px" }} />)} Toaster
 						</li>
 						<li>
-							<FiCheck size={15} style={{ marginRight: "5px" }} /> Oven
+							{oven ? (<FiCheck size={15} style={{ marginRight: "5px" }} />) : (<MdOutlineClose size={15} style={{ marginRight: "5px" }} />)} Oven
 						</li>
 						<li>
-							<FiCheck size={15} style={{ marginRight: "5px" }} /> Kettle
+							{kettle ? (<FiCheck size={15} style={{ marginRight: "5px" }} />) : (<MdOutlineClose size={15} style={{ marginRight: "5px" }} />)} Kettle
 						</li>
 						<li>
-							<FiCheck size={15} style={{ marginRight: "5px" }} /> Microwave
+							{microwave ? (<FiCheck size={15} style={{ marginRight: "5px" }} />) : (<MdOutlineClose size={15} style={{ marginRight: "5px" }} />)} Microwave
 						</li>
 						<li>
-							<FiCheck size={15} style={{ marginRight: "5px" }} /> Coffee maker
+							{coffee_maker ? (<FiCheck size={15} style={{ marginRight: "5px" }} />) : (<MdOutlineClose size={15} style={{ marginRight: "5px" }} />)} Coffee maker
 						</li>
 						<li>
-							<FiCheck size={15} style={{ marginRight: "5px" }} /> Dish washer
+							{dishwasher ? (<FiCheck size={15} style={{ marginRight: "5px" }} />) : (<MdOutlineClose size={15} style={{ marginRight: "5px" }} />)} Dish washer
 						</li>
 						<li>
-							<FiCheck size={15} style={{ marginRight: "5px" }} /> Washing
+							{washing_machine ? (<FiCheck size={15} style={{ marginRight: "5px" }} />) : (<MdOutlineClose size={15} style={{ marginRight: "5px" }} />)} Washing
 							machine
 						</li>
 						<li>
-							<FiCheck size={15} style={{ marginRight: "5px" }} /> Iron /
+							{iron_ironing_board ? (<FiCheck size={15} style={{ marginRight: "5px" }} />) : (<MdOutlineClose size={15} style={{ marginRight: "5px" }} />)} Iron /
 							Ironing board
 						</li>
 						<li>
-							<FiCheck size={15} style={{ marginRight: "5px" }} /> Vacuum
+							{iron_ironing_board ? (<FiCheck size={15} style={{ marginRight: "5px" }} />) : (<MdOutlineClose size={15} style={{ marginRight: "5px" }} />)} Vacuum
 							cleaner
 						</li>
 						<li>
-							<FiCheck size={15} style={{ marginRight: "5px" }} /> Hair dryer
+							{iron_ironing_board ? (<FiCheck size={15} style={{ marginRight: "5px" }} />) : (<MdOutlineClose size={15} style={{ marginRight: "5px" }} />)} Hair dryer
 						</li>
 					</ul>
 				</div>

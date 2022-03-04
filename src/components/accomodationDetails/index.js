@@ -9,7 +9,9 @@ import { RiUserAddLine, RiHotelBedLine } from "react-icons/ri";
 import { GiResize } from "react-icons/gi";
 import { MdOutlineShower } from "react-icons/md";
 
-export default function AccomodationDetails({ }) {
+export default function AccomodationDetails({ accomodation }) {
+	const { attributes } = accomodation;
+	const { bedroom, guests, bathroom, space, description } = attributes;
 	return (
 		<AccomodationDetailsContainer>
 			<SectionTitleContainer>
@@ -19,32 +21,25 @@ export default function AccomodationDetails({ }) {
 			<DetailsCardContainer>
 				<DetailsCard>
 					<RiUserAddLine size={30} style={{ color: "#2385be" }} />
-					<h3>2 Guests</h3>
+					<h3>{`${guests}`} Guests</h3>
 				</DetailsCard>
 				<DetailsCard>
 					<GiResize size={30} style={{ color: "#2385be" }} />
-					<h3>60 m²</h3>
+					<h3>{`${space}`} m²</h3>
 				</DetailsCard>
 				<DetailsCard>
 					<RiHotelBedLine size={30} style={{ color: "#2385be" }} />
-					<h3>2 Bedrooms</h3>
+					<h3>{`${bedroom}`} Bedrooms</h3>
 				</DetailsCard>
 				<DetailsCard>
 					<MdOutlineShower size={30} style={{ color: "#2385be" }} />
-					<h3>2 Bathrooms</h3>
+					<h3>{`${bathroom}`} Bathrooms</h3>
 				</DetailsCard>
 			</DetailsCardContainer>
 
 			<TextContent>
 				<p>
-					The beautiful apartment situated in the prestigious 8th district of
-					Paris. It is located on the 3rd french floor in the haussmanian
-					building equipped with entrance code and elevator. In 2 steps away
-					from the Faubourg Saint-Honoré street with its fashion shops, famous
-					Chanel, Gucci, Dior, Valentino boutiques creates an unforgettable
-					atmosphere of glamour and luxury… Apartment is located near the famous
-					Bristol hotel and very close to the Champs Elysées and the Arc de
-					Triomphe. Very good location! !!
+					{`${description}`}
 				</p>
 			</TextContent>
 		</AccomodationDetailsContainer>

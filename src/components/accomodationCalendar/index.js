@@ -58,7 +58,7 @@ export default function AccomodationCalendar({ accomodation }) {
 						<p className='total'>
 							{value[0] && value[1]
 								? (monthDiff(value[0], value[1]) + 1) *
-								  accomodation.attributes.price.value
+								accomodation.attributes.price.value
 								: 0}
 							€
 						</p>
@@ -76,7 +76,9 @@ export default function AccomodationCalendar({ accomodation }) {
 									</h2>
 									<div className={styles.information}>
 										<BsTelephone size={20} />
-										<span>+33 6 72 64 44 44</span>
+										<span>
+											<a href='tel:06-72-64-44-44'>+33 6 72 64 44 44</a>
+										</span>
 									</div>
 									<div className={styles.information}>
 										<AiOutlineMail size={20} />
@@ -105,7 +107,7 @@ export default function AccomodationCalendar({ accomodation }) {
 								marginTop: "1rem",
 							}}
 							onClick={() => setOpened(true)}>
-							Contacter le propriétaire
+							Book Now
 						</Button>
 					</Group>
 				</Recap>

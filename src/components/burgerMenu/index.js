@@ -45,21 +45,21 @@ export default function BurgerMenu({ setIsBurgerMenuOpened }) {
 						<a
 							className={styles.link}
 							onClick={() => setIsBurgerMenuOpened(false)}>
-							Accueil
+							Home
 						</a>
 					</Link>
 					<Link href='/accomodations?property=rent'>
 						<a
 							className={styles.link}
 							onClick={() => setIsBurgerMenuOpened(false)}>
-							Location d’appartement
+							Apartment rental
 						</a>
 					</Link>
 					<Link href='/accomodations?property=buy'>
 						<a
 							className={styles.link}
 							onClick={() => setIsBurgerMenuOpened(false)}>
-							Biens à vendre / chasser
+							Properties for sale
 						</a>
 					</Link>
 					<Link href='/'>
@@ -78,7 +78,9 @@ export default function BurgerMenu({ setIsBurgerMenuOpened }) {
 					</h2>
 					<div className={styles.information}>
 						<BsTelephone size={20} />
-						<span>+33 6 72 64 44 44</span>
+						<span>
+							<a href='tel:06-72-64-44-44'>+33 6 72 64 44 44</a>
+						</span>
 					</div>
 					<div className={styles.information}>
 						<AiOutlineMail size={20} />

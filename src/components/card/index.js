@@ -19,7 +19,7 @@ export default function Card({ data, id, vertical }) {
 			<CardHorizontal>
 				<div className='container'>
 					<div style={{ flex: 1, position: "relative" }}>
-						{data.photos.data.map((photo) => (
+						{data.photos.data.reverse().map((photo) => (
 							<Image
 								src={photo.attributes.url}
 								layout='fill'
@@ -47,7 +47,7 @@ export default function Card({ data, id, vertical }) {
 											color='#15895F'
 											style={{ marginRight: "5px" }}
 										/>
-										<span>Disponible</span>
+										<span>Available</span>
 									</div>
 								) : (
 									<div style={{ color: "#C52323" }}>
@@ -55,7 +55,7 @@ export default function Card({ data, id, vertical }) {
 											color='#C52323'
 											style={{ marginRight: "5px" }}
 										/>
-										<span>Indisponible</span>
+										<span>Unavailable</span>
 									</div>
 								)}
 
@@ -74,14 +74,14 @@ export default function Card({ data, id, vertical }) {
 								<span style={{ fontSize: "20px", fontWeight: "600" }}>
 									{data.price.value}€
 								</span>{" "}
-								par mois
+								per month
 							</div>
 							<Button
 								color='dark'
 								radius={0}
 								size='md'
 								style={{ fontFamily: "'Montserrat',sans-serif" }}>
-								Réserver
+								Book Now
 							</Button>
 						</div>
 					</div>
@@ -93,7 +93,7 @@ export default function Card({ data, id, vertical }) {
 			<CardVertical>
 				<div className='container'>
 					<div style={{ flex: 1, position: "relative" }}>
-						{data.photos.data.map((photo) => (
+						{data.photos.data.reverse().map((photo) => (
 							<Image
 								src={photo.attributes.url}
 								layout='fill'
@@ -121,7 +121,7 @@ export default function Card({ data, id, vertical }) {
 											color='#15895F'
 											style={{ marginRight: "5px" }}
 										/>
-										<span>Disponible</span>
+										<span>Available</span>
 									</div>
 								) : (
 									<div style={{ color: "#C52323" }}>
@@ -129,7 +129,7 @@ export default function Card({ data, id, vertical }) {
 											color='#C52323'
 											style={{ marginRight: "5px" }}
 										/>
-										<span>Indisponible</span>
+										<span>Unavailable</span>
 									</div>
 								)}
 								<div>
@@ -147,14 +147,14 @@ export default function Card({ data, id, vertical }) {
 								<span style={{ fontSize: "20px", fontWeight: "600" }}>
 									{data.price.value}€
 								</span>{" "}
-								par mois
+								per month
 							</div>
 							<Button
 								color='dark'
 								radius={0}
 								size='sm'
 								style={{ fontFamily: "'Montserrat',sans-serif" }}>
-								Réserver
+								Book Now
 							</Button>
 						</div>
 					</div>
@@ -280,6 +280,7 @@ const CardVertical = styled.div`
 	}
 	.order {
 		margin-bottom: 10px;
+		font-size: 12px;
 	}
 	.container > div:first-child {
 		height: 16em;

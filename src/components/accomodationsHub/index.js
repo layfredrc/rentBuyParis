@@ -20,17 +20,17 @@ export default function AccomodationsHub({ accomodations }) {
 				{property == "buy" ? (
 					<>
 						<h1>
-							Vous cherchez un bien à vendre où acheter ? RentBuyParis s’occupe
-							de tout.
+							Are you looking for a property to sell or buy? <br /> RentBuyParis
+							takes care of everything.
 						</h1>
 						<p>
-							Si vous pensez vendre votre bien contactez-moi pour une
-							estimation. Pour le service chasseur d’appartement, une avance
-							forfaitaire de 1500 € est demandée pour commencer ma recherche.
+							If you are looking to sell your property contact me for an
+							estimation. For the apartment hunter service, a lump sum advance
+							of €1500 is requested to start my search.
 						</p>
 					</>
 				) : (
-					<h1>Trouver votre bonheur avec RentBuyParis.</h1>
+					<h1>Find the perfect place to stay with RentBuyParis.</h1>
 				)}
 			</div>
 			<div className={styles.main}>
@@ -40,26 +40,27 @@ export default function AccomodationsHub({ accomodations }) {
 						<Notification
 							icon={<MdInfo size={30} />}
 							disallowClose
-							color="#359DD9"
-							title="RentBuyParis est là pour vous accompagner !"
-							style={{ flex: 2, padding: "20px 30px" }}
-						>
+							color='#359DD9'
+							title='RentBuyParis is here to support you!'
+							style={{ flex: 2, padding: "20px 30px" }}>
 							<p style={{ margin: "5px 0 20px 0" }}>
-								De prochaines offres seront publiés. Vous cherchez activement à
-								acheter où vendre un bien?
+								New offers will be published. Are you actively looking to buy or
+								sell a property?
 							</p>
 							<Button
-								color="dark"
+								color='dark'
 								radius={0}
-								size="md"
-								style={{ padding: "10px 30px" }}
-							>
-								Prendre contact
+								size='md'
+								style={{
+									padding: "10px 30px",
+									fontFamily: "'Montserrat',sans-serif",
+								}}>
+								Contact Me
 							</Button>
 						</Notification>
 					</div>
 				) : (
-					<CalendarDates title="Quand voulez-vous venir ?" />
+					<CalendarDates title='Quand voulez-vous venir ?' />
 				)}
 				<div className={styles.content}>
 					<div className={styles.filters}>

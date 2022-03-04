@@ -12,7 +12,7 @@ export default function AccomodationDetail({ accomodation }) {
 				<AccomodationGallery accomodation={accomodation} />
 				<RowWrapper>
 					<ColWrapper>
-						<AccomodationDetails />
+						<AccomodationDetails accomodation={accomodation} />
 						<AccomodationServices />
 					</ColWrapper>
 					<DesktopCalendarWrapper>
