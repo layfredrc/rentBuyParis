@@ -14,20 +14,20 @@ import { Button } from "@mantine/core";
 import styled from "styled-components";
 
 export default function Card({ data, id, vertical }) {
+	const photosOrdered = data.photos.data;
+	const cardThumbnail = photosOrdered[0];
 	return !vertical ? (
-		<Link href={`/accomodation/${id}`} key={id}>
+		<Link href={`/accomodation/${id}`} >
 			<CardHorizontal>
 				<div className='container'>
 					<div style={{ flex: 1, position: "relative" }}>
-						{data.photos.data.reverse().map((photo) => (
-							<Image
-								src={photo.attributes.url}
-								layout='fill'
-								objectFit='cover'
-								alt='card-image'
-								key={id}
-							/>
-						))}
+						<Image
+							src={cardThumbnail.attributes.url}
+							layout='fill'
+							objectFit='cover'
+							alt='card-image'
+
+						/>
 					</div>
 					<div style={{ flex: 2 }}>
 						<div className='informations'>
@@ -89,19 +89,16 @@ export default function Card({ data, id, vertical }) {
 			</CardHorizontal>
 		</Link>
 	) : (
-		<Link href={`/accomodation/${id}`} key={id}>
+		<Link href={`/accomodation/${id}`} >
 			<CardVertical>
 				<div className='container'>
 					<div style={{ flex: 1, position: "relative" }}>
-						{data.photos.data.reverse().map((photo) => (
-							<Image
-								src={photo.attributes.url}
-								layout='fill'
-								objectFit='cover'
-								alt='card-image'
-								key={id}
-							/>
-						))}
+						<Image
+							src={cardThumbnail.attributes.url}
+							layout='fill'
+							objectFit='cover'
+							alt='card-image'
+						/>
 					</div>
 					<div style={{ flex: 2 }}>
 						<div className='informations'>
