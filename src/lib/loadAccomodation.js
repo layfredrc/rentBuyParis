@@ -14,5 +14,5 @@ export async function loadAccomodation(id) {
 	);
 	const data = await res.json();
 
-	return data;
+	return data ?? null;
 }

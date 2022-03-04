@@ -14,5 +14,5 @@ export async function loadAccomodations() {
 	);
 	const data = await res.json();
 
-	return data;
+	return data ?? null;
 }
