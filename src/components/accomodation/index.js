@@ -6,24 +6,25 @@ import AccomodationCalendar from "../accomodationCalendar";
 import Map from "../map";
 import AccomodationGallery from "../accomodationGallery";
 export default function AccomodationDetail({ accomodation }) {
+	const { data } = accomodation;
 	return (
 		<>
 			<AccomodationDetailContainer>
-				<AccomodationGallery accomodation={accomodation} />
+				<AccomodationGallery accomodation={data} />
 				<RowWrapper>
 					<ColWrapper>
-						<AccomodationDetails accomodation={accomodation} />
+						<AccomodationDetails accomodation={data} />
 						<AccomodationServices />
 					</ColWrapper>
 					<DesktopCalendarWrapper>
-						<AccomodationCalendar accomodation={accomodation} />
+						<AccomodationCalendar accomodation={data} />
 					</DesktopCalendarWrapper>
 				</RowWrapper>
-				<RoomAmenities accomodation={accomodation} />
+				<RoomAmenities accomodation={data} />
 				<RowWrapperTablet>
 					<Map />
 					<MobileCalendarWrapper>
-						<AccomodationCalendar accomodation={accomodation} />
+						<AccomodationCalendar accomodation={data} />
 					</MobileCalendarWrapper>
 				</RowWrapperTablet>
 

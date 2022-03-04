@@ -5,7 +5,6 @@ import { loadAccomodation } from "../../lib/loadAccomodation";
 import { loadAccomodations } from "../../lib/loadAccomodations";
 
 const Accomodation = ({ accomodation }) => {
-	console.log(accomodation);
 	return (
 		<div>
 			<Head>
@@ -14,7 +13,7 @@ const Accomodation = ({ accomodation }) => {
 				<link rel="icon" href="/favicon.ico" />
 			</Head>
 			<main>
-				<AccomodationDetail accomodation={accomodation.data} />
+				<AccomodationDetail accomodation={accomodation} />
 			</main>
 		</div>
 	);
