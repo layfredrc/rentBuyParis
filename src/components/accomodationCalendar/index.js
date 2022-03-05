@@ -21,6 +21,20 @@ export default function AccomodationCalendar({ accomodation }) {
 	]);
 	const [opened, setOpened] = useState(false);
 
+	const reservedDates = [];
+	accomodation.attributes.reservations.forEach((reservation) => {
+		const startDate = reservation.startDate;
+		const endDate = reservation.endDate;
+		const dateMove = new Date(startDate);
+		let strDate = startDate;
+
+		while (strDate < endDate) {
+			strDate = dateMove.toISOString().slice(0, 10);
+			reservedDates.push(strDate);
+			dateMove.setDate(dateMove.getDate() + 1);
+		}
+	});
+
 	const monthDiff = (d1, d2) => {
 		var months;
 		months = (d2.getFullYear() - d1.getFullYear()) * 12;
@@ -47,18 +61,26 @@ export default function AccomodationCalendar({ accomodation }) {
 				</div>
 
 				<CalendarWrapper>
-					<RangeCalendar value={value} onChange={setValue} />
+					<RangeCalendar
+						value={value}
+						onChange={setValue}
+						excludeDate={(date) =>
+							reservedDates.includes(date.toISOString().slice(0, 10))
+						}
+						allowLevelChange={false}
+					/>
 				</CalendarWrapper>
 				<Recap>
 					<h6 className='total-header'>Total</h6>
 					<div className='total'>
 						<h6 className='nights'>
-							{value[0] && value[1] ? dayDiff(value[0], value[1]) : 0} nights
+							{value[0] && value[1] ? monthDiff(value[0], value[1]) + 1 : 0}{" "}
+							month{value[0] && value[1] ? "s" : ""}
 						</h6>{" "}
 						<p className='total'>
 							{value[0] && value[1]
 								? (monthDiff(value[0], value[1]) + 1) *
-								accomodation?.attributes?.price?.value
+								  accomodation?.attributes?.price?.value
 								: 0}
 							€
 						</p>
