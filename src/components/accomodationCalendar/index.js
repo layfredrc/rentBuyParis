@@ -87,11 +87,19 @@ export default function AccomodationCalendar({ accomodation }) {
 					</div>
 					<hr />
 					<Group position='center'>
-						<Modal opened={opened} size='90%' onClose={() => setOpened(false)} hideCloseButton padding={0} radius={0}>
+						<Modal
+							opened={opened}
+							size='90%'
+							onClose={() => setOpened(false)}
+							hideCloseButton
+							padding={0}
+							radius={0}>
 							<Popup>
 								<Image src={popupImage}></Image>
 
-								<div className={styles.contact} style={{ padding: "2rem" }}>
+								<div
+									className={styles.contact}
+									style={{ padding: "2rem", animation: "none" }}>
 									<p className={styles.brand}>RentBuyParis</p>
 									<h2 style={{ fontSize: "20px", fontWeight: "700" }}>
 										Stephan Jaquet
@@ -206,4 +214,4 @@ const Popup = styled.div`
 		display: flex;
 		justify-content: space-between;
 	}
-`
+`;
