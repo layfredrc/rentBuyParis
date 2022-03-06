@@ -14,7 +14,7 @@ export default function Hero({ nbRents, nbGoods }) {
 			<HeroContainer>
 				<Slogan>
 					<h1 className='slogan-title'>
-						Rentals ans sales of apartments in <br /> <span>Paris</span>
+						Rentals and sales of apartments in <br /> <span>Paris</span>
 					</h1>
 				</Slogan>
 
@@ -79,7 +79,7 @@ export default function Hero({ nbRents, nbGoods }) {
 							alt='RentBuyParis'
 							layout='fill'
 							className='hero-image'
-							alt='rentbuyparis'
+							priority
 						/>
 					</ImageWrapper>
 					<ButtonContainerMobile>

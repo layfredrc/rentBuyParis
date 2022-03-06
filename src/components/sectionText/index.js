@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import useSizeScreen from "../../lib/use/useSizeScreen";
 import { bgColorPrimary, bgCircle } from "../../styles/colors.module.scss";
 import paris1 from "../../../public/assets/images/paris-1.jpg";
 import paris2 from "../../../public/assets/images/popup-image.jpg";
@@ -9,12 +8,11 @@ import paris5 from "../../../public/assets/images/paris-5.png";
 import paris6 from "../../../public/assets/images/paris-6.png";
 import Image from "next/image";
 export default function SectionText({ }) {
-	const isMobile = useSizeScreen();
 
 	return (
 		<>
-			<SectionTextContainer>
-				<StayInParis>
+			<SectionTextContainer >
+				<StayInParis id="terms-and-conditions">
 					<div className='left'>
 						<h1>
 							Stay in Paris with <br />

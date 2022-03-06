@@ -92,6 +92,7 @@ video {
 	vertical-align: baseline;
 	text-decoration: none;
 	color: inherit;
+	scroll-behavior: smooth;
 }
 /* HTML5 display-role reset for older browsers */
 article,
@@ -132,4 +133,23 @@ table {
 }
 a {
 	cursor: pointer;
+}
+
+* {
+	scrollbar-width: thin;
+	scrollbar-color: #98c5e5;
+}
+
+*::-webkit-scrollbar {
+	width: 6px;
+}
+
+*::-webkit-scrollbar-track {
+	background: transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+	background-color: #98c5e5;
+	border-radius: 50px;
+	border: transparent;
 }

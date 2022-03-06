@@ -2,7 +2,7 @@ import Head from "next/head";
 import Hero from "../components/hero";
 import SectionText from "../components/sectionText";
 import styled from "styled-components";
-import { bgColorPrimary, bgColorSecondary } from "../styles/colors.module.scss";
+import { bgColorPrimary } from "../styles/colors.module.scss";
 import SectionAvailableNow from "../components/sectionAvailableNow";
 import axios from "axios";
 

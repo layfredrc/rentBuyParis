@@ -3,7 +3,11 @@ import styled from "styled-components";
 import { BsArrowRight } from "react-icons/bs";
 import { Button } from "@mantine/core";
 import Link from "next/link";
+
 export default function SectionAvailableNow({ rents }) {
+	const availableRents = rents.data.filter(
+		(rent) => rent.attributes.disponible && rent.attributes.isRent
+	);
 	return (
 		<SectionAvailableNowContainer>
 			<h3 className='sectionHeaderTitle'>
@@ -20,17 +24,17 @@ export default function SectionAvailableNow({ rents }) {
 					</div>
 				</Link>
 			</div>
-
 			<div className='scrolling-wrapper-flexbox'>
-				{rents.data.map((d) => (
+				{availableRents.map((d) => (
 					<Card data={d.attributes} id={d.id} vertical key={d.id} />
 				))}
 			</div>
+
 			<ButtonMobileContainer>
-				<Link href={'/accomodations?property=rent'}>
+				<Link href={"/accomodations?property=rent"}>
 					<Button
 						size='md'
-						variant="default"
+						variant='default'
 						radius={0}
 						className='hero-button-mobile'>
 						Explore All
@@ -83,16 +87,14 @@ const SectionAvailableNowContainer = styled.div`
 		letter-spacing: 2px;
 		text-transform: uppercase;
 
-		@media screen and (min-width: 375px){
+		@media screen and (min-width: 375px) {
 			font-size: 14px;
 			letter-spacing: 4px;
-			
 		}
 
-		@media screen and (min-width: 768px){
+		@media screen and (min-width: 768px) {
 			font-size: 18px;
 			letter-spacing: 4px;
-			
 		}
 	}
 
@@ -119,7 +121,6 @@ const SectionAvailableNowContainer = styled.div`
 		@media screen and (max-width: 768px) {
 			display: none;
 		}
-
 	}
 
 	.scrolling-wrapper-flexbox {
@@ -128,23 +129,21 @@ const SectionAvailableNowContainer = styled.div`
 	}
 
 	.scrolling-wrapper-flexbox::-webkit-scrollbar {
-		display: none;
+		height: 8px;
 	}
 
-	
-		.scrolling-wrapper-flexbox {
-			white-space: nowrap;
-			display: flex;
-			overflow-x: scroll;
-		}
+	.scrolling-wrapper-flexbox {
+		white-space: nowrap;
+		display: flex;
+		overflow-x: scroll;
+	}
 
-		.scrolling-wrapper-flexbox > div {
-			margin-right: 2.5rem;
-		}
-	
+	.scrolling-wrapper-flexbox > div {
+		margin-right: 2.5rem;
+	}
 `;
 
-const ButtonMobileContainer = styled.div` 
+const ButtonMobileContainer = styled.div`
 	margin-top: 2rem;
 	display: flex;
 	justify-content: center;
@@ -159,4 +158,4 @@ const ButtonMobileContainer = styled.div`
 			display: none;
 		}
 	}
-`
+`;

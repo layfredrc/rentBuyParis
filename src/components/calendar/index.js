@@ -1,8 +1,11 @@
 import { Button } from "@mantine/core";
-import { DateRangePicker } from "@mantine/dates";
+import { DateRangePicker, DatePicker } from "@mantine/dates";
+import { GiExitDoor, GiEntryDoor } from "react-icons/gi";
 import { useState } from "react";
 import { BsCalendarWeek } from "react-icons/bs";
 import styles from "./index.module.scss";
+import styled from "styled-components";
+
 import { useRouter } from "next/router";
 
 export default function CalendarDates({ title, redirection }) {
@@ -17,21 +20,42 @@ export default function CalendarDates({ title, redirection }) {
 			<h2 style={title ? { marginBottom: "15px" } : {}}>{title}</h2>
 			<div>
 				<div style={{ flex: 4 }}>
-					<DateRangePicker
-						placeholder='Check-in - Check-out'
-						rightSection={<BsCalendarWeek size={20} />}
-						size='md'
-						radius='0px'
-						value={value}
-						onChange={setValue}
-						amountOfMonths={2}
-						fullWidth
-					/>
+					<DatePickerDesktopContainer>
+						<DateRangePicker
+							placeholder='Check-in - Check-out'
+							rightSection={<BsCalendarWeek size={20} />}
+							size='md'
+							radius='0px'
+							value={value}
+							onChange={setValue}
+							amountOfMonths={2}
+							fullWidth
+						/>
+					</DatePickerDesktopContainer>
+					<DatePickerMobileContainer>
+						<DatePicker
+							placeholder='Check-in'
+							rightSection={<GiEntryDoor size={20} />}
+							radius='0px'
+							size='md'
+							required
+							defaultValue={value[0] ? new Date(value[0]) : null}
+							onChange={(date) => setValue([date, value[1]])}
+						/>
+						<DatePicker
+							placeholder='Check-out'
+							rightSection={<GiExitDoor size={20} />}
+							size='md'
+							radius='0px'
+							defaultValue={value[1] ? new Date(value[1]) : null}
+							onChange={(date) => setValue([value[0], date])}
+						/>
+					</DatePickerMobileContainer>
 				</div>
 				<Button
-					color="dark"
+					color='dark'
 					radius={0}
-					size="md"
+					size='md'
 					className={styles.calendarButton}
 					onClick={() => {
 						redirection &&
@@ -40,11 +64,24 @@ export default function CalendarDates({ title, redirection }) {
 							);
 					}}
 					fullWidth
-					style={{ flex: 1 }}
-				>
+					style={{ flex: 1 }}>
 					Search
 				</Button>
 			</div>
 		</div>
 	);
 }
+
+const DatePickerMobileContainer = styled.div`
+	display: none;
+	flex-direction: column;
+	@media (max-width: 600px) {
+		display: block;
+	}
+`;
+
+const DatePickerDesktopContainer = styled.div`
+	@media (max-width: 600px) {
+		display: none;
+	}
+`;

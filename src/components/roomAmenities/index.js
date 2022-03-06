@@ -89,6 +89,9 @@ export default function RoomAmenities({ accomodation }) {
 					<h3>Devices & Equipment</h3>
 					<ul>
 						<li>
+							{internet ? (<FiCheck size={15} style={{ marginRight: "5px" }} />) : (<MdOutlineClose size={15} style={{ marginRight: "5px" }} />)} Internet
+						</li>
+						<li>
 							{tv_set ? (<FiCheck size={15} style={{ marginRight: "5px" }} />) : (<MdOutlineClose size={15} style={{ marginRight: "5px" }} />)} TV set
 						</li>
 						<li>
@@ -117,6 +120,12 @@ export default function RoomAmenities({ accomodation }) {
 							machine
 						</li>
 						<li>
+							{drying_machine ? (<FiCheck size={15} style={{ marginRight: "5px" }} />) : (<MdOutlineClose size={15} style={{ marginRight: "5px" }} />)} Drying machine
+						</li>
+						<li>
+							{draft_hood ? (<FiCheck size={15} style={{ marginRight: "5px" }} />) : (<MdOutlineClose size={15} style={{ marginRight: "5px" }} />)} Draft hood
+						</li>
+						<li>
 							{iron_ironing_board ? (<FiCheck size={15} style={{ marginRight: "5px" }} />) : (<MdOutlineClose size={15} style={{ marginRight: "5px" }} />)} Iron /
 							Ironing board
 						</li>
@@ -126,6 +135,9 @@ export default function RoomAmenities({ accomodation }) {
 						</li>
 						<li>
 							{hairDryer ? (<FiCheck size={15} style={{ marginRight: "5px" }} />) : (<MdOutlineClose size={15} style={{ marginRight: "5px" }} />)} Hair dryer
+						</li>
+						<li>
+							{bed_linen ? (<FiCheck size={15} style={{ marginRight: "5px" }} />) : (<MdOutlineClose size={15} style={{ marginRight: "5px" }} />)} Bed linen
 						</li>
 					</ul>
 				</div>
@@ -209,7 +221,7 @@ const RoomAmenitiesContainer = styled.div`
 		display: grid;
 		grid-template-columns: repeat(3, 1fr);
 		grid-gap: 20px;
-		height: 400px;
+		height: 520px;
 		.rules {
 			transform: translateY(-10rem);
 		}

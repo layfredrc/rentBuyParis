@@ -6,13 +6,12 @@ import "react-image-lightbox/style.css";
 
 export default function AccomodationGallery({ accomodation }) {
 	const { attributes } = accomodation || {};
-	const { photos, street } = attributes || {};
+	const { photos, street, name } = attributes || {};
 	const { data } = photos || {};
 	const galleryImages = [];
 	data.map((image) => {
 		galleryImages.push(image.attributes.url);
 	});
-	galleryImages.reverse();
 	const [isOpen, setIsOpen] = useState(false);
 	const [photoIndex, setPhotoIndex] = useState(0);
 	const [images, setImages] = useState(galleryImages);
@@ -20,7 +19,7 @@ export default function AccomodationGallery({ accomodation }) {
 	return (
 		<AccomodationGalleryContainer>
 			<h1 className='accomodation-title'>
-				Joséphine,{" "}
+				{name},{" "}
 				<span>
 					{street} <br /> 15ème arrondissement
 				</span>

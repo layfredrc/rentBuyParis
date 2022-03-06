@@ -62,7 +62,7 @@ export default function BurgerMenu({ setIsBurgerMenuOpened }) {
 							Properties for sale
 						</a>
 					</Link>
-					<Link href='/'>
+					<Link href='/#terms-and-conditions'>
 						<a
 							className={styles.link}
 							style={{ marginTop: "50px" }}

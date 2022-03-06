@@ -12,7 +12,10 @@ export default function Footer() {
 					<h2 className={styles["logo"]}>RentBuyParis</h2>
 					<div>
 						<HiOutlineLocationMarker size={20} style={{ marginRight: "5px" }} />
-						<p>47 rue de Laborde 75008 Paris</p>
+						<a href="https://www.google.fr/maps/place/47+Rue+de+Laborde,+75008+Paris/@48.8754553,2.3156249,17z/data=!3m1!4b1!4m5!3m4!1s0x47e66fc98a30ee49:0xd1c80e7e1cc2e9d5!8m2!3d48.8754518!4d2.3178136"
+							target="_blank" rel="noreferrer">
+							47 rue de Laborde 75008 Paris
+						</a>
 					</div>
 					<div>
 						<BsTelephone size={20} style={{ marginRight: "5px" }} />
@@ -31,17 +34,17 @@ export default function Footer() {
 				<div>
 					<h2>Sitemap</h2>
 					<div>
-						<Link href="/">
+						<Link href="/accomodations?property=rent">
 							<a>Apartment rental</a>
 						</Link>
 					</div>
 					<div>
-						<Link href="/">
+						<Link href="/accomodations?property=buy">
 							<a>Properties for sale</a>
 						</Link>
 					</div>
 					<div>
-						<Link href="/">
+						<Link href="/#terms-and-conditions">
 							<a>Terms and conditions</a>
 						</Link>
 					</div>
