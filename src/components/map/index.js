@@ -2,7 +2,6 @@ import styled from "styled-components"
 export default function Map({ accomodation }) {
     const { attributes } = accomodation;
     const { googleMapsUrl } = attributes;
-    console.log(googleMapsUrl)
     return (
         <MapContainer>
             <MapWrapper src={googleMapsUrl}

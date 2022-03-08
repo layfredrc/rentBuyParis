@@ -1,7 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
 import {
-	RiMapPin2Line,
 	RiCheckboxCircleLine,
 	RiHotelBedFill,
 	RiCloseCircleLine,

@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import { Button, Checkbox, NumberInput, RangeSlider, Menu } from "@mantine/core";
 import { MdFilterAlt } from "react-icons/md";
 
@@ -14,14 +13,6 @@ const marks = [
 ];
 
 export default function Filters() {
-	useEffect(() => {
-		const rangeSliderMobile = document.getElementById("rangeSliderMobile");
-		console.log(rangeSliderMobile);
-		document.addEventListener('change', rangeSliderMobile, (e) => {
-			e.preventDefault();
-		}, { passive: false });
-	}, [])
-
 	return (
 		<div>
 			<div className={styles.mobile}>
