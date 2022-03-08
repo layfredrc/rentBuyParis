@@ -257,7 +257,7 @@ const CardVertical = styled.div`
 	.container {
 		display: block;
 		box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25), 0 4px 4px rgba(0, 0, 0, 0.25);
-		margin: 10px 0;
+		margin: 15px 0;
 		background-color: #fff;
 		width: 100%;
 	}

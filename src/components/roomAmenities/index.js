@@ -35,7 +35,6 @@ export default function RoomAmenities({ accomodation }) {
 		tv_set,
 		washing_machine,
 	} = amenities;
-	console.log(amenities);
 	return (
 		<Wrapper>
 			<SectionTitleContainer>

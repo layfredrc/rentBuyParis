@@ -136,6 +136,8 @@ const SectionAvailableNowContainer = styled.div`
 		white-space: nowrap;
 		display: flex;
 		overflow-x: scroll;
+		position: relative;
+		z-index: 2;
 	}
 
 	.scrolling-wrapper-flexbox > div {

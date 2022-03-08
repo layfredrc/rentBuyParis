@@ -100,7 +100,7 @@ export default function Hero({ nbRents, nbGoods }) {
 								radius={0}
 								leftIcon={<GiHouseKeys size={15} />}
 								className='hero-button-mobile'>
-								Properties for sale
+								Properties <br /> for sale
 							</Button>
 						</Link>
 					</ButtonContainerMobile>

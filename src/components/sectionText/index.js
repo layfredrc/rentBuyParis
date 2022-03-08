@@ -7,12 +7,11 @@ import paris4 from "../../../public/assets/images/paris-4.png";
 import paris5 from "../../../public/assets/images/paris-5.png";
 import paris6 from "../../../public/assets/images/paris-6.png";
 import Image from "next/image";
-export default function SectionText({ }) {
-
+export default function SectionText({}) {
 	return (
 		<>
-			<SectionTextContainer >
-				<StayInParis id="terms-and-conditions">
+			<SectionTextContainer>
+				<StayInParis id='terms-and-conditions'>
 					<div className='left'>
 						<h1>
 							Stay in Paris with <br />
@@ -44,19 +43,25 @@ export default function SectionText({ }) {
 
 					<div className='right'>
 						<Paris1>
-							<Image src={paris1} width={250} height={150} alt="paris-image" />
+							<Image src={paris1} width={250} height={150} alt='paris-image' />
 						</Paris1>
 						<Paris2>
-							<Image src={paris2} width={300} height={150} alt="paris-image" />
+							<Image src={paris2} width={300} height={150} alt='paris-image' />
 						</Paris2>
 						<Paris3>
-							<Image src={paris3} width={250} height={150} alt="paris-image" />
+							<Image src={paris3} width={250} height={150} alt='paris-image' />
 						</Paris3>
 					</div>
 				</StayInParis>
 				<ListYourProperty>
 					<div className='left'>
-						<Image src={paris4} height={400} width={300} className='paris4' alt="paris-image" />
+						<Image
+							src={paris4}
+							height={400}
+							width={300}
+							className='paris4'
+							alt='paris-image'
+						/>
 					</div>
 					<div className='right'>
 						<h1>List your property</h1>
@@ -96,7 +101,7 @@ export default function SectionText({ }) {
 						</p>
 					</div>
 					<div className='right'>
-						<Image src={paris5} height={400} width={300} alt="paris-image" />
+						<Image src={paris5} height={400} width={300} alt='paris-image' />
 					</div>
 				</RealEstatePriceInParis>
 				<ServicesForOwnersAndTenants>
@@ -239,7 +244,7 @@ const SectionTextContainer = styled.div`
 	}
 	@media screen and (min-width: 1024px) {
 		padding: 15rem 5rem 5rem 5rem;
-		margin-top: -19.3rem;
+		margin-top: -20.1rem;
 	}
 	@media screen and (min-width: 1440px) {
 		padding: 15rem 15rem 5rem 15rem;
