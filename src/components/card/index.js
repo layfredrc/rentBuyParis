@@ -170,7 +170,7 @@ const CardHorizontal = styled.div`
 		display: flex;
 		border-radius: 5px;
 		box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25), 0 4px 4px rgba(0, 0, 0, 0.25);
-		margin: 10px 0;
+		margin: 2rem 0;
 		background-color: #fff;
 	}
 	.container > div {

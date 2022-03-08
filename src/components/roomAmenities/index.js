@@ -11,7 +11,6 @@ import { AiOutlineExclamationCircle } from "react-icons/ai";
 
 export default function RoomAmenities({ accomodation }) {
 	const { attributes } = accomodation || {};
-	console.log(attributes)
 	const { amenities } = attributes;
 	const {
 		bed_linen,
