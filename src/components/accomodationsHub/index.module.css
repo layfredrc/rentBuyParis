@@ -1,5 +1,5 @@
 .header {
-	background-image: url(../../../public/assets/images/popup-image.jpg);
+	background-image: url("../../../public/assets/images/popup-image.jpg");
 	background-position: center;
 	padding: 10em 5em 15em 40em;
 }
