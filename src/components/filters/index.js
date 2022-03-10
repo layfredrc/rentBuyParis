@@ -1,4 +1,12 @@
-import { Button, Checkbox, NumberInput, RangeSlider, Menu } from "@mantine/core";
+import {
+	Button,
+	Checkbox,
+	NumberInput,
+	RangeSlider,
+	Menu,
+	RadioGroup,
+	Radio,
+} from "@mantine/core";
 import { MdFilterAlt } from "react-icons/md";
 
 // Components
@@ -12,7 +20,42 @@ const marks = [
 	{ value: 100, label: "100k€" },
 ];
 
-export default function Filters() {
+const districts = [
+	"Louvre",
+	"Opéra",
+	"Marais",
+	"Notre-Dame de Paris",
+	"Saint-Michel",
+	"Saint-Germain",
+	"Invalides",
+	"Champs-Elysées",
+	"Galeries Lafayette",
+	"Place de la République",
+	"Bastille",
+	"Gare de Lyon",
+	"Gare d'Austerlitz",
+	"Tour Eiffel",
+	"Trocadéro",
+	"Place des Ternes",
+	"Montmartre",
+	"Parc des Buttes-Chaumont",
+	"Père Lachaise",
+];
+
+export default function Filters({
+	district,
+	setDistrict,
+	priceInterval,
+	setPriceInterval,
+	parking,
+	setParking,
+	elevator,
+	setElevator,
+	garden,
+	setGarden,
+	terrace,
+	setTerrace,
+}) {
 	return (
 		<div>
 			<div className={styles.mobile}>
@@ -38,10 +81,19 @@ export default function Filters() {
 						<Filter title="Quartier">
 							<div style={{ display: "flex" }}>
 								<div style={{ width: "4.5em", marginRight: "10px" }}>
-									<NumberInput defaultValue={1} required min={1} max={20} />
+									<NumberInput
+										defaultValue={0}
+										required
+										min={1}
+										max={19}
+										value={district}
+										onChange={setDistrict}
+									/>
 								</div>
 								<span style={{ minWidth: "max-content", alignSelf: "center" }}>
-									ème arr (Trocadéro)
+									{district
+										? `ème arr (${districts[district - 1]})`
+										: "Aucune préférence"}
 								</span>
 							</div>
 						</Filter>
@@ -49,13 +101,13 @@ export default function Filters() {
 					<Menu.Item>
 						<Filter title="Prix">
 							<Checkbox
-								onChange={() => { }}
+								onChange={() => {}}
 								checked={false}
 								label="High - Low"
 								style={{ marginBottom: "10px" }}
 							/>
 							<Checkbox
-								onChange={() => { }}
+								onChange={() => {}}
 								checked={false}
 								label="Low - High"
 								style={{ marginBottom: "10px" }}
@@ -63,56 +115,28 @@ export default function Filters() {
 						</Filter>
 					</Menu.Item>
 					<Menu.Item>
-						<Filter title="Capacité">
-							<Checkbox
-								onChange={() => { }}
-								checked={false}
-								label="1 Guest"
-								style={{ marginBottom: "10px" }}
-							/>
-							<Checkbox
-								onChange={() => { }}
-								checked={false}
-								label="2 Guests"
-								style={{ marginBottom: "10px" }}
-							/>
-							<Checkbox
-								onChange={() => { }}
-								checked={false}
-								label="3 Guests"
-								style={{ marginBottom: "10px" }}
-							/>
-							<Checkbox
-								onChange={() => { }}
-								checked={false}
-								label="4 Guests"
-								style={{ marginBottom: "10px" }}
-							/>
-						</Filter>
-					</Menu.Item>
-					<Menu.Item>
 						<Filter title="Général">
 							<Checkbox
-								onChange={() => { }}
-								checked={false}
+								onChange={(event) => setParking(event.target.checked)}
+								checked={parking}
 								label="Parking"
 								style={{ marginBottom: "10px" }}
 							/>
 							<Checkbox
-								onChange={() => { }}
-								checked={false}
+								onChange={(event) => setElevator(event.target.checked)}
+								checked={elevator}
 								label="Elevator"
 								style={{ marginBottom: "10px" }}
 							/>
 							<Checkbox
-								onChange={() => { }}
-								checked={false}
+								onChange={(event) => setGarden(event.target.checked)}
+								checked={garden}
 								label="Garden"
 								style={{ marginBottom: "10px" }}
 							/>
 							<Checkbox
-								onChange={() => { }}
-								checked={false}
+								onChange={(event) => setTerrace(event.target.checked)}
+								checked={terrace}
 								label="Terrace / Balcony"
 								style={{ marginBottom: "10px" }}
 							/>
@@ -121,21 +145,29 @@ export default function Filters() {
 				</Menu>
 			</div>
 
-
 			<div className={styles.desktop}>
 				<Filter title="Quartier">
 					<div style={{ display: "flex" }}>
 						<div style={{ width: "4.5em", marginRight: "10px" }}>
-							<NumberInput defaultValue={1} required min={1} max={20} />
+							<NumberInput
+								defaultValue={0}
+								required
+								min={1}
+								max={19}
+								value={district}
+								onChange={setDistrict}
+							/>
 						</div>
 						<span style={{ minWidth: "max-content", alignSelf: "center" }}>
-							ème arr (Trocadéro)
+							{district
+								? `ème arr (${districts[district - 1]})`
+								: "Aucune préférence"}
 						</span>
 					</div>
 				</Filter>
 				<Filter title="Prix">
 					<RangeSlider
-						defaultValue={[20, 80]}
+						defaultValue={[priceInterval[0], priceInterval[1]]}
 						marks={marks}
 						color="#3EA6C7"
 						label={(value) => `${value}k €`}
@@ -145,56 +177,31 @@ export default function Filters() {
 								color: theme.black,
 							},
 						})}
-					/>
-				</Filter>
-				<Filter title="Capacité">
-					<Checkbox
-						onChange={() => { }}
-						checked={false}
-						label="1 Guest"
-						style={{ marginBottom: "10px" }}
-					/>
-					<Checkbox
-						onChange={() => { }}
-						checked={false}
-						label="2 Guests"
-						style={{ marginBottom: "10px" }}
-					/>
-					<Checkbox
-						onChange={() => { }}
-						checked={false}
-						label="3 Guests"
-						style={{ marginBottom: "10px" }}
-					/>
-					<Checkbox
-						onChange={() => { }}
-						checked={false}
-						label="4 Guests"
-						style={{ marginBottom: "10px" }}
+						onChange={(value) => setPriceInterval(value)}
 					/>
 				</Filter>
 				<Filter title="Général">
 					<Checkbox
-						onChange={() => { }}
-						checked={false}
+						onChange={(event) => setParking(event.target.checked)}
+						checked={parking}
 						label="Parking"
 						style={{ marginBottom: "10px" }}
 					/>
 					<Checkbox
-						onChange={() => { }}
-						checked={false}
+						onChange={(event) => setElevator(event.target.checked)}
+						checked={elevator}
 						label="Elevator"
 						style={{ marginBottom: "10px" }}
 					/>
 					<Checkbox
-						onChange={() => { }}
-						checked={false}
+						onChange={(event) => setGarden(event.target.checked)}
+						checked={garden}
 						label="Garden"
 						style={{ marginBottom: "10px" }}
 					/>
 					<Checkbox
-						onChange={() => { }}
-						checked={false}
+						onChange={(event) => setTerrace(event.target.checked)}
+						checked={terrace}
 						label="Terrace / Balcony"
 						style={{ marginBottom: "10px" }}
 					/>

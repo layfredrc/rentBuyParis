@@ -1,9 +1,19 @@
 import Head from "next/head";
 import AccomodationsHub from "../components/accomodationsHub";
+import { useRouter } from "next/router";
 
 import { loadAccomodations } from "../lib/loadAccomodations";
 
 const Accomodations = ({ accomodations }) => {
+	const router = useRouter();
+	const property = router.query.property;
+
+	const filteredAccomodations = accomodations.data.filter((d) =>
+		property == "buy"
+			? d.attributes.isRent == false
+			: d.attributes.isRent == true
+	);
+
 	return (
 		<div>
 			<Head>
@@ -12,7 +22,7 @@ const Accomodations = ({ accomodations }) => {
 				<link rel="icon" href="/favicon.ico" />
 			</Head>
 			<main>
-				<AccomodationsHub accomodations={accomodations} />
+				<AccomodationsHub accomodations={filteredAccomodations} />
 			</main>
 		</div>
 	);
