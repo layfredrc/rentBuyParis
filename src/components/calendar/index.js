@@ -1,20 +1,14 @@
 import { Button } from "@mantine/core";
 import { DateRangePicker, DatePicker } from "@mantine/dates";
 import { GiExitDoor, GiEntryDoor } from "react-icons/gi";
-import { useState } from "react";
 import { BsCalendarWeek } from "react-icons/bs";
+
+// Styles
 import styles from "./index.module.scss";
 import styled from "styled-components";
 
-import { useRouter } from "next/router";
 
-export default function CalendarDates({ title, redirection }) {
-	const router = useRouter();
-
-	const [value, setValue] = useState([
-		router.query.enter ? new Date(router.query.enter) : null,
-		router.query.out ? new Date(router.query.out) : null,
-	]);
+export default function CalendarDates({ dates, setDates, title, onValidate }) {
 	return (
 		<div className={styles.container}>
 			<h2 style={title ? { marginBottom: "15px" } : {}}>{title}</h2>
@@ -26,29 +20,21 @@ export default function CalendarDates({ title, redirection }) {
 							rightSection={<BsCalendarWeek size={20} />}
 							size='md'
 							radius='0px'
-							value={value}
-							onChange={setValue}
+							value={dates}
+							onChange={setDates}
 							amountOfMonths={2}
 							fullWidth
 						/>
 					</DatePickerDesktopContainer>
 					<DatePickerMobileContainer>
-						<DatePicker
-							placeholder='Check-in'
-							rightSection={<GiEntryDoor size={20} />}
-							radius='0px'
-							size='md'
-							required
-							defaultValue={value[0] ? new Date(value[0]) : null}
-							onChange={(date) => setValue([date, value[1]])}
-						/>
-						<DatePicker
-							placeholder='Check-out'
-							rightSection={<GiExitDoor size={20} />}
+						<DateRangePicker
+							placeholder='Check-in - Check-out'
+							rightSection={<BsCalendarWeek size={20} />}
 							size='md'
 							radius='0px'
-							defaultValue={value[1] ? new Date(value[1]) : null}
-							onChange={(date) => setValue([value[0], date])}
+							value={dates}
+							onChange={setDates}
+							amountOfMonths={1}
 						/>
 					</DatePickerMobileContainer>
 				</div>
@@ -57,12 +43,7 @@ export default function CalendarDates({ title, redirection }) {
 					radius={0}
 					size='md'
 					className={styles.calendarButton}
-					onClick={() => {
-						redirection &&
-							router.push(
-								`/accomodations?property=rent&enter=${value[0]}&out=${value[1]}`
-							);
-					}}
+					onClick={() => onValidate()}
 					fullWidth
 					style={{ flex: 1 }}>
 					Search

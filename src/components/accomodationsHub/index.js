@@ -1,33 +1,41 @@
+import { useState, useEffect } from "react";
 import { useRouter } from "next/router";
 import { Button, Notification, Modal, Group } from "@mantine/core";
+import { AiOutlineMail } from "react-icons/ai";
 import { MdInfo } from "react-icons/md";
-import { useState, useEffect } from "react";
+import { BsTelephone } from "react-icons/bs";
 
 // Components
 import Card from "../card";
 import Filters from "../filters";
 import CalendarDates from "../calendar";
-import Image from "next/image"
-// Style
-import styled from "styled-components";
-import styles from "./index.module.css";
-import stylesPopup from "../burgerMenu/index.module.scss"
+import Image from "next/image";
+
+// Assets
 import popupImage from "../../../public/assets/images/popup-image.jpg";
-import { AiOutlineMail } from "react-icons/ai";
-import { BsTelephone } from "react-icons/bs";
 import whatsapp from "../../../public/assets/images/WhatsApp.png";
 import viber from "../../../public/assets/images/Viber.png";
 import telegram from "../../../public/assets/images/Telegram.png";
 import signal from "../../../public/assets/images/Signal.png";
 import youtube from "../../../public/assets/images/Youtube.png";
 
+// Style
+import styled from "styled-components";
+import styles from "./index.module.css";
+import stylesPopup from "../burgerMenu/index.module.scss";
+
 export default function AccomodationsHub({ accomodations }) {
 	const router = useRouter();
 	const property = router.query.property;
 	const [opened, setOpened] = useState(false);
 
+	const [dates, setDates] = useState([
+		router.query.enter ? new Date(router.query.enter) : null,
+		router.query.out ? new Date(router.query.out) : null,
+	]);
 
-	const [filteredAccomodations, setFilteredAccomodations] = useState([]);
+	const [filteredAccomodations, setFilteredAccomodations] =
+		useState(accomodations);
 	const [district, setDistrict] = useState(null);
 	const [priceInterval, setPriceInterval] = useState([0, 100]);
 	const [parking, setParking] = useState(false);
@@ -36,7 +44,7 @@ export default function AccomodationsHub({ accomodations }) {
 	const [terrace, setTerrace] = useState(false);
 
 	useEffect(() => {
-		var temp_filteredAccomodations = accomodations;
+		var temp_filteredAccomodations = filteredAccomodations;
 
 		temp_filteredAccomodations = temp_filteredAccomodations.filter(
 			(a) =>
@@ -66,6 +74,27 @@ export default function AccomodationsHub({ accomodations }) {
 
 		setFilteredAccomodations(temp_filteredAccomodations);
 	}, [district, priceInterval, parking, elevator, garden, terrace]);
+
+	const applyDatesFilter = () => {
+		var temp_filteredAccomodations = accomodations;
+
+		if (dates[0] && dates[1])
+			temp_filteredAccomodations = temp_filteredAccomodations.filter((a) =>
+				a.attributes.reservations.every(
+					(reservation) =>
+						(new Date(reservation.startDate) < new Date(dates[0]) &&
+							new Date(reservation.endDate) < new Date(dates[0])) ||
+						(new Date(reservation.startDate) > new Date(dates[1]) &&
+							new Date(reservation.endDate) > new Date(dates[1]))
+				)
+			);
+
+		setFilteredAccomodations(temp_filteredAccomodations);
+	};
+
+	useEffect(() => {
+		applyDatesFilter();
+	}, []);
 
 	return (
 		<div className={styles.container}>
@@ -158,7 +187,12 @@ export default function AccomodationsHub({ accomodations }) {
 						</Notification>
 					</div>
 				) : (
-					<CalendarDates title="Quand voulez-vous venir ?" />
+					<CalendarDates
+						dates={dates}
+						setDates={setDates}
+						title="Quand voulez-vous venir ?"
+						onValidate={() => applyDatesFilter()}
+					/>
 				)}
 				<div className={styles.content}>
 					<div className={styles.filters}>

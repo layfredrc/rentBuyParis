@@ -1,14 +1,26 @@
-import styled from "styled-components";
-import { bgColorPrimary } from "../../styles/colors.module.scss";
-import heroImg from "../../../public/assets/images/hero.jpg";
-import CalendarDates from "../calendar";
+import { useState } from "react";
+import { useRouter } from "next/router";
 import Image from "next/image";
 import { Button } from "@mantine/core";
 import { GiHouseKeys } from "react-icons/gi";
 import { MdMapsHomeWork } from "react-icons/md";
 import Link from "next/link";
 
+// Components
+import CalendarDates from "../calendar";
+
+// Assets
+import heroImg from "../../../public/assets/images/hero.jpg";
+
+// Styles
+import styled from "styled-components";
+import { bgColorPrimary } from "../../styles/colors.module.scss";
+
 export default function Hero({ nbRents, nbGoods }) {
+	const router = useRouter();
+
+	const [dates, setDates] = useState([null, null]);
+
 	return (
 		<>
 			<HeroContainer>
@@ -106,8 +118,15 @@ export default function Hero({ nbRents, nbGoods }) {
 					</ButtonContainerMobile>
 					<CalendarWrapper>
 						<CalendarDates
+							dates={dates}
+							setDates={setDates}
 							title={"When would you like to stay in Paris ?"}
-							redirection
+							onValidate={() => {
+								dates[0] && dates[1] ?
+									router.push(
+										`/accomodations?property=rent&enter=${dates[0]}&out=${dates[1]}`
+									) : null
+							}}
 						/>
 					</CalendarWrapper>
 				</HeroContentWrapper>
