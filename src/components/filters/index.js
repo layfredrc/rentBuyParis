@@ -78,7 +78,7 @@ export default function Filters({
 				>
 					<Menu.Label>Filters</Menu.Label>
 					<Menu.Item>
-						<Filter title="Quartier">
+						<Filter title="District">
 							<div style={{ display: "flex" }}>
 								<div style={{ width: "4.5em", marginRight: "10px" }}>
 									<NumberInput
@@ -93,21 +93,21 @@ export default function Filters({
 								<span style={{ minWidth: "max-content", alignSelf: "center" }}>
 									{district
 										? `ème arr (${districts[district - 1]})`
-										: "Aucune préférence"}
+										: "No preference"}
 								</span>
 							</div>
 						</Filter>
 					</Menu.Item>
 					<Menu.Item>
-						<Filter title="Prix">
+						<Filter title="Price">
 							<Checkbox
-								onChange={() => {}}
+								onChange={() => { }}
 								checked={false}
 								label="High - Low"
 								style={{ marginBottom: "10px" }}
 							/>
 							<Checkbox
-								onChange={() => {}}
+								onChange={() => { }}
 								checked={false}
 								label="Low - High"
 								style={{ marginBottom: "10px" }}
@@ -115,7 +115,7 @@ export default function Filters({
 						</Filter>
 					</Menu.Item>
 					<Menu.Item>
-						<Filter title="Général">
+						<Filter title="General">
 							<Checkbox
 								onChange={(event) => setParking(event.target.checked)}
 								checked={parking}
@@ -146,7 +146,7 @@ export default function Filters({
 			</div>
 
 			<div className={styles.desktop}>
-				<Filter title="Quartier">
+				<Filter title="District">
 					<div style={{ display: "flex" }}>
 						<div style={{ width: "4.5em", marginRight: "10px" }}>
 							<NumberInput
@@ -161,11 +161,11 @@ export default function Filters({
 						<span style={{ minWidth: "max-content", alignSelf: "center" }}>
 							{district
 								? `ème arr (${districts[district - 1]})`
-								: "Aucune préférence"}
+								: "No preference"}
 						</span>
 					</div>
 				</Filter>
-				<Filter title="Prix">
+				<Filter title="Price">
 					<RangeSlider
 						defaultValue={[priceInterval[0], priceInterval[1]]}
 						marks={marks}
@@ -180,7 +180,7 @@ export default function Filters({
 						onChange={(value) => setPriceInterval(value)}
 					/>
 				</Filter>
-				<Filter title="Général">
+				<Filter title="General">
 					<Checkbox
 						onChange={(event) => setParking(event.target.checked)}
 						checked={parking}
