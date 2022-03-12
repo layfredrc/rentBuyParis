@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { useRouter } from "next/router";
 import { Button, Notification, Modal, Group } from "@mantine/core";
 import { AiOutlineMail } from "react-icons/ai";
-import { MdInfo } from "react-icons/md";
+import { FcInfo } from "react-icons/fc";
 import { BsTelephone } from "react-icons/bs";
 
 // Components
@@ -120,77 +120,95 @@ export default function AccomodationsHub({ accomodations }) {
 					<div className={styles.notification}>
 						<div style={{ flex: 1 }}></div>
 						<Notification
-							icon={<MdInfo size={30} />}
 							disallowClose
-							color="#359DD9"
-							title="RentBuyParis is here to support you!"
-							style={{ flex: 2, padding: "20px 30px" }}
-						>
-							<p style={{ margin: "5px 0 20px 0" }}>
-								New offers will be published. Are you actively looking to buy or
-								sell a property?
-							</p>
-							<Group position='center'>
-								<Modal
-									opened={opened}
-									size='90%'
-									onClose={() => setOpened(false)}
-									hideCloseButton
-									padding={0}
-									radius={0}>
-									<Popup>
-										<Image src={popupImage}></Image>
-
-										<div
-											className={stylesPopup.contact}
-											style={{ padding: "2rem", animation: "none" }}>
-											<p className={styles.brand}>RentBuyParis</p>
-											<h2 style={{ fontSize: "20px", fontWeight: "700" }}>
-												Stephan Jaquet
-											</h2>
-											<div className={stylesPopup.information}>
-												<BsTelephone size={20} />
-												<span>
-													<a href='tel:06-72-64-44-44'>+33 6 72 64 44 44</a>
-												</span>
-											</div>
-											<div className={stylesPopup.information}>
-												<AiOutlineMail size={20} />
-												<span> info@rentbuyparis.com</span>
-											</div>
-											<div className={stylesPopup.social}>
-												<Image src={telegram} alt='telegram' />
-												<Image src={youtube} alt='youtube' />
-												<Image src={whatsapp} alt='whatsapp' />
-												<Image src={viber} alt='viber' />
-												<Image src={signal} alt='signal' />
-											</div>
-											<div></div>
-											<p>Please send a SMS if I am not answering</p>
-											<p>
-												47 rue de Laborde, 75008 Paris Mon – Fri: 11:00 — 18:00
-												(CET), Sat – Sun: available for a call
-											</p>
-										</div>
-									</Popup>
-								</Modal>
-								<Button
-									color='dark'
+							style={{
+								flex: 2,
+								padding: "1rem 2rem",
+							}}>
+							<div className=''>
+								<h1
 									style={{
 										fontFamily: "'Montserrat',sans-serif",
-										marginTop: "1rem",
-									}}
-									onClick={() => setOpened(true)}>
-									Contact Me
-								</Button>
-							</Group>
+										fontSize: "20px",
+										fontWeight: "600",
+									}}>
+									RentBuyParis is here to support you !
+								</h1>
+								<p
+									style={{
+										fontFamily: "'Montserrat',sans-serif",
+										fontSize: "14px",
+										fontWeight: "500",
+										color: "#899599",
+										marginTop: "10px",
+									}}>
+									New offers will be published. <br />
+									Are you actively looking to buy or sell a property?
+									<br />
+									We can hunt property depending on your preferences.
+								</p>
+								<Group position='start'>
+									<Modal
+										opened={opened}
+										size='90%'
+										onClose={() => setOpened(false)}
+										hideCloseButton
+										padding={0}
+										radius={0}>
+										<Popup>
+											<Image src={popupImage}></Image>
+
+											<div
+												className={stylesPopup.contact}
+												style={{ padding: "2rem", animation: "none" }}>
+												<p className={styles.brand}>RentBuyParis</p>
+												<h2 style={{ fontSize: "20px", fontWeight: "700" }}>
+													Stephan Jaquet
+												</h2>
+												<div className={stylesPopup.information}>
+													<BsTelephone size={20} />
+													<span>
+														<a href='tel:06-72-64-44-44'>+33 6 72 64 44 44</a>
+													</span>
+												</div>
+												<div className={stylesPopup.information}>
+													<AiOutlineMail size={20} />
+													<span> info@rentbuyparis.com</span>
+												</div>
+												<div className={stylesPopup.social}>
+													<Image src={telegram} alt='telegram' />
+													<Image src={youtube} alt='youtube' />
+													<Image src={whatsapp} alt='whatsapp' />
+													<Image src={viber} alt='viber' />
+													<Image src={signal} alt='signal' />
+												</div>
+												<div></div>
+												<p>Please send a SMS if I am not answering</p>
+												<p>
+													47 rue de Laborde, 75008 Paris Mon – Fri: 11:00 —
+													18:00 (CET), Sat – Sun: available for a call
+												</p>
+											</div>
+										</Popup>
+									</Modal>
+									<Button
+										color='dark'
+										style={{
+											fontFamily: "'Montserrat',sans-serif",
+											marginTop: "1rem",
+										}}
+										onClick={() => setOpened(true)}>
+										Contact Me
+									</Button>
+								</Group>
+							</div>
 						</Notification>
 					</div>
 				) : (
 					<CalendarDates
 						dates={dates}
 						setDates={setDates}
-						title="Quand voulez-vous venir ?"
+						title='Quand voulez-vous venir ?'
 						onValidate={() => applyDatesFilter()}
 					/>
 				)}
@@ -222,7 +240,6 @@ export default function AccomodationsHub({ accomodations }) {
 		</div>
 	);
 }
-
 
 const Popup = styled.div`
 	@media screen and (min-width: 1024px) {

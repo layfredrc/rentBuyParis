@@ -136,11 +136,11 @@ export default function Hero({ nbRents, nbGoods }) {
 }
 
 const HeroContainer = styled.div`
-	background-color: ${bgColorPrimary};
+	background-color: #e5f9ff;
 	max-width: 100vw;
 
 	@media screen and (max-width: 768px) {
-		background-color: ${bgColorPrimary};
+		background-color: #e5f9ff;
 		padding: 2rem 2rem 0rem 2rem;
 	}
 

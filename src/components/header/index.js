@@ -50,7 +50,7 @@ export default function Header({ setIsBurgerMenuOpened }) {
 					onClick={() => setIsBurgerMenuOpened(true)}
 				/>
 				<Link href={"/"}>
-					<p className={styles["logo"]}>RentBuyParis</p>
+					<a className={styles["logo"]}>RentBuyParis</a>
 				</Link>
 			</header>
 		</>

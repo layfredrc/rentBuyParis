@@ -4,8 +4,6 @@ import {
 	NumberInput,
 	RangeSlider,
 	Menu,
-	RadioGroup,
-	Radio,
 } from "@mantine/core";
 import { MdFilterAlt } from "react-icons/md";
 

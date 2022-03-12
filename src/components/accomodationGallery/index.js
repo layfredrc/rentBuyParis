@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import styled from "styled-components";
 import Image from "next/image";
 import Lightbox from "react-image-lightbox";

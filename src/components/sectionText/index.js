@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { bgColorPrimary, bgCircle } from "../../styles/colors.module.scss";
 import paris1 from "../../../public/assets/images/paris-1.jpg";
 import paris2 from "../../../public/assets/images/popup-image.jpg";
 import paris3 from "../../../public/assets/images/paris-3.jpg";
@@ -7,7 +6,7 @@ import paris4 from "../../../public/assets/images/paris-4.png";
 import paris5 from "../../../public/assets/images/paris-5.png";
 import paris6 from "../../../public/assets/images/paris-6.png";
 import Image from "next/image";
-export default function SectionText({}) {
+export default function SectionText({ }) {
 	return (
 		<>
 			<SectionTextContainer>
@@ -340,13 +339,13 @@ const Paris1 = styled.div`
 	top: 130px;
 	right: -50px;
 	z-index: 1;
-	box-shadow: 0 0.5rem 4rem rgba(${bgCircle}, 0.4);
+	box-shadow: 0 0.5rem 4rem rgba(#a2d9e0, 0.4);
 	outline-offset: 1rem;
 	transition: all 0.2s;
 	:hover {
-		outline: 1rem solid ${bgCircle};
+		outline: 1rem solid #a2d9e0;
 		transform: scale(1.05) translateY(-0.5rem);
-		box-shadow: 0 2.5rem 4rem rgba(${bgCircle}, 0.5);
+		box-shadow: 0 2.5rem 4rem rgba(#a2d9e0, 0.5);
 		z-index: 20;
 	}
 
@@ -480,7 +479,7 @@ const RectangleBackground = styled.div`
 	width: 200px;
 	height: 70px;
 	z-index: -1;
-	background-color: ${bgColorPrimary};
+	background-color: #e5f9ff;
 
 	@media screen and (min-width: 768px) {
 		right: 100px;

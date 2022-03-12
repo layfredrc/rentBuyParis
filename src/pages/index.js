@@ -55,7 +55,7 @@ Home.getInitialProps = async (ctx) => {
 
 const HeroWrapper = styled.div`
 	@media screen and (min-width: 768px) {
-		background-color: ${bgColorPrimary};
+		background-color: #e5f9ff;
 		padding: 0rem 2rem 0rem 2rem;
 	}
 
