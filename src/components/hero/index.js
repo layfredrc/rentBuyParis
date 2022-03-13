@@ -14,7 +14,6 @@ import heroImg from "../../../public/assets/images/hero.jpg";
 
 // Style
 import styled from "styled-components";
-import { bgColorPrimary } from "../../styles/colors.module.scss";
 
 export default function Hero({ nbRents, nbGoods }) {
 	const router = useRouter();
@@ -301,7 +300,7 @@ const HeroContentWrapper = styled.div`
 
 const CalendarWrapper = styled.div`
 	position: absolute;
-	bottom: -18rem;
+	bottom: -16.5rem;
 	width: 100%;
 
 	@media screen and (min-width: 600px) {
@@ -309,7 +308,7 @@ const CalendarWrapper = styled.div`
 	}
 
 	@media screen and (min-width: 768px) {
-		bottom: -8rem;
+		bottom: -8.5rem;
 	}
 
 	@media screen and (min-width: 1024px) {

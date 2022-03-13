@@ -129,11 +129,11 @@ export default function Card({ data, id, vertical }) {
 									</div>
 								)}
 								<div>
-									<RiHotelBedFill />
+									<RiHotelBedFill style={{ marginRight: "5px" }} />
 									<span>{data.space}</span>
 								</div>
 								<div>
-									<GiResize />
+									<GiResize style={{ marginRight: "5px" }} />
 									<span> {data.size} m²</span>
 								</div>
 							</div>
@@ -168,7 +168,8 @@ const CardHorizontal = styled.div`
 	.container {
 		display: flex;
 		border-radius: 5px;
-		box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25), 0 4px 4px rgba(0, 0, 0, 0.25);
+		box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
+		rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
 		margin: 2rem 0;
 		background-color: #fff;
 	}
@@ -256,7 +257,8 @@ const CardVertical = styled.div`
 	cursor: pointer;
 	.container {
 		display: block;
-		box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25), 0 4px 4px rgba(0, 0, 0, 0.25);
+		box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
+		rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
 		margin: 15px 0;
 		background-color: #fff;
 		width: 100%;

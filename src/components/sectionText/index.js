@@ -110,7 +110,7 @@ export default function SectionText({ }) {
 				</RealEstatePriceInParis>
 				<ServicesForOwnersAndTenants>
 					<div className='left'>
-						<Image src={paris6} />
+						<Image src={paris6} height={500} alt='paris-image' />
 					</div>
 					<div className='right'>
 						<h1>Services for owners and tenants</h1>

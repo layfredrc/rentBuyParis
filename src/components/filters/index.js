@@ -5,7 +5,7 @@ import {
 	RangeSlider,
 	Menu,
 } from "@mantine/core";
-import { MdFilterAlt } from "react-icons/md";
+import { BiSlider } from "react-icons/bi";
 
 // Components
 import Filter from "../filter";
@@ -68,7 +68,7 @@ export default function Filters({
 							radius={0}
 							size="md"
 							className={styles.button}
-							leftIcon={<MdFilterAlt color="white" size={18} />}
+							leftIcon={<BiSlider color="white" size={18} />}
 						>
 							Apply Filter
 						</Button>

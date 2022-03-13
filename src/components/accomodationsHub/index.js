@@ -207,7 +207,7 @@ export default function AccomodationsHub({ accomodations }) {
 					<CalendarDates
 						dates={dates}
 						setDates={setDates}
-						title='Quand voulez-vous venir ?'
+						title='When would you like to stay in Paris ?'
 						onValidate={() => applyDatesFilter()}
 					/>
 				)}

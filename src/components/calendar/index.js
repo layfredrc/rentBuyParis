@@ -1,6 +1,5 @@
 import { Button } from "@mantine/core";
-import { DateRangePicker, DatePicker } from "@mantine/dates";
-import { GiExitDoor, GiEntryDoor } from "react-icons/gi";
+import { DateRangePicker } from "@mantine/dates";
 import { BsCalendarWeek } from "react-icons/bs";
 
 // Styles

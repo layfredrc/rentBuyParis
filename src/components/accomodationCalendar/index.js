@@ -83,7 +83,7 @@ export default function AccomodationCalendar({ accomodation }) {
 						<p className='total'>
 							{value[0] && value[1]
 								? (monthDiff(value[0], value[1]) + 1) *
-								  accomodation?.attributes?.price?.value
+								accomodation?.attributes?.price?.value
 								: 0}
 							€
 						</p>

@@ -77,7 +77,7 @@ const DetailsCard = styled.div`
 	flex-direction: column;
 	border: 1px solid #d5d5d5;
 	border-radius: 10px;
-	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
 
 	h3 {
 		margin-top: 1rem;

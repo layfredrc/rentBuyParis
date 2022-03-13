@@ -124,7 +124,7 @@ const GalleryContainer = styled.div`
 	margin-top: 2rem;
 	display: flex;
 	justify-content: space-around;
-
+	cursor: pointer;
 	.big-picture {
 		border-radius: 10px;
 	}
