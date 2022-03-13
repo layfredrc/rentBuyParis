@@ -1,5 +1,7 @@
-import styles from "./index.module.scss";
 import { useState } from "react";
+
+// Style
+import styles from "./index.module.scss";
 
 export default function Selector({ values, defaultValue, icon }) {
 	const [isOpened, setIsOpened] = useState(false);

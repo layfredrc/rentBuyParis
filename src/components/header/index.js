@@ -1,10 +1,13 @@
 import Link from "next/link";
 import { MdLanguage, MdAttachMoney, MdMenu } from "react-icons/md";
 
+// Components
 import Selector from "../selector";
 
+// Style
 import styles from "./index.module.scss";
 import styled from "styled-components";
+
 const languages = ["Français", "English", "Russian"];
 const currencies = ["EUR", "USD", "RS"];
 

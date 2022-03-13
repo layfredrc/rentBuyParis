@@ -1,7 +1,8 @@
 import Link from "next/link";
-
 import { BsTelephone } from "react-icons/bs";
 import { HiOutlineLocationMarker } from "react-icons/hi"
+
+// Style
 import styles from "./index.module.scss";
 
 export default function Footer() {

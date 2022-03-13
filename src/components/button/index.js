@@ -1,3 +1,4 @@
+// Style
 import styles from "./index.module.scss";
 
 export default function Button({ title, icon, padding }) {

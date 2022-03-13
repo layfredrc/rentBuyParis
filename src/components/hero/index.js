@@ -12,7 +12,7 @@ import CalendarDates from "../calendar";
 // Assets
 import heroImg from "../../../public/assets/images/hero.jpg";
 
-// Styles
+// Style
 import styled from "styled-components";
 import { bgColorPrimary } from "../../styles/colors.module.scss";
 

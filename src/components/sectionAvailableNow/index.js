@@ -1,8 +1,12 @@
-import Card from "../card";
-import styled from "styled-components";
+import Link from "next/link";
 import { BsArrowRight } from "react-icons/bs";
 import { Button } from "@mantine/core";
-import Link from "next/link";
+
+// Components 
+import Card from "../card";
+
+// Style
+import styled from "styled-components";
 
 export default function SectionAvailableNow({ rents }) {
 	const availableRents = rents.data.filter(

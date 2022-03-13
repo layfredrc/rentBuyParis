@@ -1,13 +1,16 @@
-import styled from "styled-components";
+import { RiUserAddLine, RiHotelBedLine } from "react-icons/ri";
+import { GiResize } from "react-icons/gi";
+import { MdOutlineShower } from "react-icons/md";
+
+// Components
 import {
 	SectionTitle,
 	CircleBackground,
 	SectionTitleContainer,
 } from "../accomodationServices";
 
-import { RiUserAddLine, RiHotelBedLine } from "react-icons/ri";
-import { GiResize } from "react-icons/gi";
-import { MdOutlineShower } from "react-icons/md";
+// Style
+import styled from "styled-components";
 
 export default function AccomodationDetails({ accomodation }) {
 	const { attributes } = accomodation || {};

@@ -1,13 +1,16 @@
-import styled from "styled-components";
-import styles from "../burgerMenu/index.module.scss";
 import { useState } from "react";
-import { RangeCalendar } from "@mantine/dates";
-import { Modal, Button, Group } from "@mantine/core";
 import Image from "next/image";
-
-import popupImage from "../../../public/assets/images/popup-image.jpg";
 import { AiOutlineMail } from "react-icons/ai";
 import { BsTelephone } from "react-icons/bs";
+import { RangeCalendar } from "@mantine/dates";
+import { Modal, Button, Group } from "@mantine/core";
+
+// Style
+import styled from "styled-components";
+import styles from "../burgerMenu/index.module.scss";
+
+// Assets
+import popupImage from "../../../public/assets/images/popup-image.jpg";
 import whatsapp from "../../../public/assets/images/WhatsApp.png";
 import viber from "../../../public/assets/images/Viber.png";
 import telegram from "../../../public/assets/images/Telegram.png";

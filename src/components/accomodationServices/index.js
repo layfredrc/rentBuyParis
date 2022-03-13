@@ -1,5 +1,9 @@
-import styled from "styled-components";
 import Image from "next/image";
+
+// Style
+import styled from "styled-components";
+
+// Assets
 import internet from "../../../public/assets/images/internet.svg";
 import cuisine from "../../../public/assets/images/cuisine.svg";
 import support from "../../../public/assets/images/support.svg";

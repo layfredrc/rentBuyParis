@@ -1,10 +1,14 @@
-import styled from "styled-components";
+// Components 
 import AccomodationServices from "../accomodationServices";
 import AccomodationDetails from "../accomodationDetails";
 import RoomAmenities from "../roomAmenities";
 import AccomodationCalendar from "../accomodationCalendar";
-import Map from "../map";
 import AccomodationGallery from "../accomodationGallery";
+import Map from "../map";
+
+// Style
+import styled from "styled-components";
+
 export default function AccomodationDetail({ accomodation }) {
 	const { data } = accomodation || {};
 	return (

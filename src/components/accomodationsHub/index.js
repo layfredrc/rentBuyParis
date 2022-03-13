@@ -2,7 +2,6 @@ import { useState, useEffect } from "react";
 import { useRouter } from "next/router";
 import { Button, Notification, Modal, Group } from "@mantine/core";
 import { AiOutlineMail } from "react-icons/ai";
-import { FcInfo } from "react-icons/fc";
 import { BsTelephone } from "react-icons/bs";
 
 // Components

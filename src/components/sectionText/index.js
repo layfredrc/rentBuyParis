@@ -1,11 +1,16 @@
-import styled from "styled-components";
+import Image from "next/image";
+
+// Assets
 import paris1 from "../../../public/assets/images/paris-1.jpg";
 import paris2 from "../../../public/assets/images/popup-image.jpg";
 import paris3 from "../../../public/assets/images/paris-3.jpg";
 import paris4 from "../../../public/assets/images/paris-4.png";
 import paris5 from "../../../public/assets/images/paris-5.png";
 import paris6 from "../../../public/assets/images/paris-6.png";
-import Image from "next/image";
+
+// Style
+import styled from "styled-components";
+
 export default function SectionText({ }) {
 	return (
 		<>

@@ -1,13 +1,16 @@
+import { FiCheck } from "react-icons/fi";
+import { MdOutlineClose, MdDoNotDisturbAlt } from "react-icons/md";
+import { AiOutlineExclamationCircle } from "react-icons/ai";
+
+// Style
 import styled from "styled-components";
+
+// Components
 import {
 	SectionTitle,
 	CircleBackground,
 	SectionTitleContainer,
 } from "../accomodationServices";
-
-import { FiCheck } from "react-icons/fi";
-import { MdOutlineClose, MdDoNotDisturbAlt } from "react-icons/md";
-import { AiOutlineExclamationCircle } from "react-icons/ai";
 
 export default function RoomAmenities({ accomodation }) {
 	const { attributes } = accomodation || {};

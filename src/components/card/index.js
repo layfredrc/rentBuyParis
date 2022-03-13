@@ -1,15 +1,15 @@
 import Image from "next/image";
 import Link from "next/link";
+import { Button } from "@mantine/core";
 import {
 	RiCheckboxCircleLine,
 	RiHotelBedFill,
 	RiCloseCircleLine,
 } from "react-icons/ri";
 import { IoLocationSharp } from "react-icons/io5";
-
 import { GiResize } from "react-icons/gi";
-import { Button } from "@mantine/core";
 
+// Style
 import styled from "styled-components";
 
 export default function Card({ data, id, vertical }) {

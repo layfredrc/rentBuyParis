@@ -1,8 +1,11 @@
 import { useState } from "react";
-import styled from "styled-components";
 import Image from "next/image";
 import Lightbox from "react-image-lightbox";
+
+// Style
+import styled from "styled-components";
 import "react-image-lightbox/style.css";
+
 
 export default function AccomodationGallery({ accomodation }) {
 	const { attributes } = accomodation || {};

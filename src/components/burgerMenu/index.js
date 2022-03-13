@@ -1,11 +1,16 @@
-import styles from "./index.module.scss";
+import Image from "next/image";
+import Link from "next/link";
 import { MdClose, MdLanguage, MdAttachMoney } from "react-icons/md";
 import { AiOutlineMail } from "react-icons/ai";
 import { BsTelephone } from "react-icons/bs";
-import Image from "next/image";
-import Link from "next/link";
+
+// Components
 import Selector from "../selector";
 
+// Style
+import styles from "./index.module.scss";
+
+// Assets
 import whatsapp from "../../../public/assets/images/WhatsApp.png";
 import viber from "../../../public/assets/images/Viber.png";
 import telegram from "../../../public/assets/images/Telegram.png";
