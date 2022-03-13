@@ -1,8 +1,11 @@
 import Head from "next/head";
-import AccomodationsHub from "../components/accomodationsHub";
 import { useRouter } from "next/router";
 
+// Lib
 import { loadAccomodations } from "../lib/loadAccomodations";
+
+// Components
+import AccomodationsHub from "../components/accomodationsHub";
 
 const Accomodations = ({ accomodations }) => {
 	const router = useRouter();
@@ -28,7 +31,7 @@ const Accomodations = ({ accomodations }) => {
 	);
 };
 
-export async function getStaticProps({ params }) {
+export async function getStaticProps() {
 	const accomodations = await loadAccomodations();
 	return { props: { accomodations } };
 }

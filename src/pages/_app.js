@@ -1,9 +1,13 @@
 import { useEffect, useState } from "react";
+import { useScrollLock } from "@mantine/hooks";
+
+// Components
 import BurgerMenu from "../components/burgerMenu";
 import Footer from "../components/footer";
 import Header from "../components/header";
+
+// Style
 import "../styles/globals.scss";
-import { useScrollLock } from "@mantine/hooks";
 
 function MyApp({ Component, pageProps }) {
 	const [isBurgerMenuOpened, setIsBurgerMenuOpened] = useState(false);

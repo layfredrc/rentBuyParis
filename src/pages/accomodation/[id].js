@@ -1,8 +1,11 @@
 import Head from "next/head";
-import AccomodationDetail from "../../components/accomodation";
 
+// Lib
 import { loadAccomodation } from "../../lib/loadAccomodation";
 import { loadAccomodations } from "../../lib/loadAccomodations";
+
+// Components
+import AccomodationDetail from "../../components/accomodation";
 
 const Accomodation = ({ accomodation }) => {
 	return (
