@@ -59,6 +59,17 @@ const DetailsCardContainer = styled.div`
 	grid-gap: 20px;
 	grid-column-gap: 5px;
 
+	@media screen and (min-width: 375px) {
+		grid-column-gap: 0px;
+
+	}
+
+	@media screen and (min-width: 400px) {
+		grid-template-columns: repeat(2, 50%);
+		grid-gap: 0px;
+		grid-row-gap: 30px;
+	}
+
 	@media screen and (min-width: 768px) {
 		grid-template-columns: repeat(4, 1fr);
 	}
@@ -77,7 +88,7 @@ const DetailsCard = styled.div`
 	flex-direction: column;
 	border: 1px solid #d5d5d5;
 	border-radius: 10px;
-
+	box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
 
 	h3 {
 		margin-top: 1rem;

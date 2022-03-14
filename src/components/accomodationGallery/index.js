@@ -6,6 +6,12 @@ import Lightbox from "react-image-lightbox";
 import styled from "styled-components";
 import "react-image-lightbox/style.css";
 
+// Components
+import {
+	SectionTitle,
+	CircleBackground,
+	SectionTitleContainer,
+} from "../accomodationServices";
 
 export default function AccomodationGallery({ accomodation }) {
 	const { attributes } = accomodation || {};
@@ -28,6 +34,11 @@ export default function AccomodationGallery({ accomodation }) {
 				</span>
 			</h1>
 
+			<SectionTitleContainer>
+				<CircleBackground />
+				<SectionTitle>Gallery</SectionTitle>
+			</SectionTitleContainer>
+
 			<GalleryContainer>
 				<BigPicture>
 					<Image
@@ -47,44 +58,59 @@ export default function AccomodationGallery({ accomodation }) {
 						objectFit='cover'
 						width={200}
 						height={200}
-						className='small-picture'
+						className='small-picture-1'
 						onClick={() => {
 							setPhotoIndex(1);
 							setIsOpen(true);
 						}}
-						t='accomodationGallery'
+						alt='accomodationGallery'
 					/>
 					<Image
 						src={`${images[2]}`}
 						objectFit='cover'
 						width={200}
 						height={200}
-						className='small-picture'
+						className='small-picture-2'
 						onClick={() => {
 							setPhotoIndex(2);
 							setIsOpen(true);
 						}}
-						t='accomodationGallery'
+						alt='accomodationGallery'
 					/>
 					<Image
 						src={`${images[3]}`}
 						objectFit='cover'
 						width={200}
 						height={200}
-						className='small-picture'
+						className='small-picture-3'
 						onClick={() => {
 							setPhotoIndex(3);
 							setIsOpen(true);
 						}}
-						t='accomodationGallery'
+						alt='accomodationGallery'
 					/>
-					<ShowMore
-						onClick={() => {
-							setPhotoIndex(4);
-							setIsOpen(true);
-						}}>
-						<h2>+15 Photos</h2>
-					</ShowMore>
+					{images.length > 5 ? (
+						<ShowMore
+							onClick={() => {
+								setPhotoIndex(4);
+								setIsOpen(true);
+							}}>
+							<h2>+{images.length} Photos</h2>
+						</ShowMore>
+					) : (
+						<Image
+							src={`${images[4]}`}
+							objectFit='cover'
+							width={200}
+							height={200}
+							className='small-picture-4'
+							onClick={() => {
+								setPhotoIndex(4);
+								setIsOpen(true);
+							}}
+							alt='accomodationGallery'
+						/>
+					)}
 				</SmallPicturesContainer>
 			</GalleryContainer>
 
@@ -112,7 +138,7 @@ const AccomodationGalleryContainer = styled.div`
 	.accomodation-title {
 		font-size: 24px;
 		font-weight: 600;
-
+		margin-bottom: 3rem;
 		span {
 			font-family: "Croissant One", cursive;
 			font-weight: 400;
@@ -123,10 +149,9 @@ const AccomodationGalleryContainer = styled.div`
 const GalleryContainer = styled.div`
 	margin-top: 2rem;
 	display: flex;
-	justify-content: space-around;
 	cursor: pointer;
 	.big-picture {
-		border-radius: 10px;
+		border-radius: 10px 0px 0px 10px;
 	}
 `;
 
@@ -134,31 +159,37 @@ const BigPicture = styled.div`
 	width: 48%;
 	position: relative;
 	border-radius: 10px;
-
+	margin-right: 10px;
 	@media screen and (min-width: 1024px) {
 		width: 80%;
 	}
 `;
 
 const SmallPicturesContainer = styled.div`
-	width: 45%;
+	width: 50%;
 	display: grid;
 	grid-template-columns: repeat(2, 1fr);
 	grid-gap: 10px;
 
-	.small-picture {
-		border-radius: 10px;
+	.small-picture-1 {
+	}
+	.small-picture-2 {
+		border-radius: 0px 10px 0px 0px;
+	}
+	.small-picture-3 {
+	}
+	.small-picture-4 {
+		border-radius: 0px 0px 10px 0px;
 	}
 	@media screen and (min-width: 1024px) {
-		width: 60%;
-		margin-left: 1.5rem;
-		grid-gap: 20px;
+		width: 80%;
+		grid-gap: 10px;
 	}
 `;
 
 const ShowMore = styled.div`
 	background: rgba(0, 0, 0, 0.5);
-	border-radius: 10px;
+	border-radius: 0px 0px 10px 0px;
 	font-size: 12px;
 	font-weight: 500;
 	color: white;
