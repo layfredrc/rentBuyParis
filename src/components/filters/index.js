@@ -4,8 +4,11 @@ import {
 	NumberInput,
 	RangeSlider,
 	Menu,
+	Radio,
+	RadioGroup,
 } from "@mantine/core";
 import { BiSlider } from "react-icons/bi";
+import { MdRefresh } from "react-icons/md";
 
 // Components
 import Filter from "../filter";
@@ -15,7 +18,7 @@ import styles from "./index.module.css";
 
 const marks = [
 	{ value: 0, label: "0€" },
-	{ value: 100, label: "100k€" },
+	{ value: 100, label: "10000€" },
 ];
 
 const districts = [
@@ -53,6 +56,9 @@ export default function Filters({
 	setGarden,
 	terrace,
 	setTerrace,
+	resetFilters,
+	orderBy,
+	setOrderBy,
 }) {
 	return (
 		<div>
@@ -74,7 +80,12 @@ export default function Filters({
 						</Button>
 					}
 				>
-					<Menu.Label>Filters</Menu.Label>
+					<Menu.Label>
+						<div style={{ display: "flex", justifyContent: "space-between" }}>
+							<span>Filters</span>
+							<MdRefresh size={18} onClick={() => resetFilters} />
+						</div>
+					</Menu.Label>
 					<Menu.Item>
 						<Filter title="District">
 							<div style={{ display: "flex" }}>
@@ -82,7 +93,7 @@ export default function Filters({
 									<NumberInput
 										defaultValue={0}
 										required
-										min={1}
+										min={0}
 										max={19}
 										value={district}
 										onChange={setDistrict}
@@ -98,18 +109,14 @@ export default function Filters({
 					</Menu.Item>
 					<Menu.Item>
 						<Filter title="Price">
-							<Checkbox
-								onChange={() => { }}
-								checked={false}
-								label="High - Low"
-								style={{ marginBottom: "10px" }}
-							/>
-							<Checkbox
-								onChange={() => { }}
-								checked={false}
-								label="Low - High"
-								style={{ marginBottom: "10px" }}
-							/>
+							<RadioGroup value={orderBy} onChange={setOrderBy}>
+								<Radio value="ascending">
+									<span style={{ fontSize: "14px" }}>Low - High</span>
+								</Radio>
+								<Radio value="descending">
+									<span style={{ fontSize: "14px" }}>High - Low</span>
+								</Radio>
+							</RadioGroup>
 						</Filter>
 					</Menu.Item>
 					<Menu.Item>
@@ -150,7 +157,7 @@ export default function Filters({
 							<NumberInput
 								defaultValue={0}
 								required
-								min={1}
+								min={0}
 								max={19}
 								value={district}
 								onChange={setDistrict}
@@ -166,9 +173,9 @@ export default function Filters({
 				<Filter title="Price">
 					<RangeSlider
 						defaultValue={[priceInterval[0], priceInterval[1]]}
-						marks={marks}
 						color="#3EA6C7"
-						label={(value) => `${value}k €`}
+						marks={marks}
+						label={(value) => `${value * 100} €`}
 						styles={(theme) => ({
 							label: {
 								backgroundColor: theme.white,
@@ -204,6 +211,17 @@ export default function Filters({
 						style={{ marginBottom: "10px" }}
 					/>
 				</Filter>
+				<div style={{ textAlign: "center" }}>
+					<Button
+						color="dark"
+						radius={0}
+						size="md"
+						leftIcon={<BiSlider color="white" size={18} />}
+						onClick={resetFilters}
+					>
+						Reset filters
+					</Button>
+				</div>
 			</div>
 		</div>
 	);

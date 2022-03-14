@@ -41,14 +41,15 @@ export default function AccomodationsHub({ accomodations }) {
 	const [elevator, setElevator] = useState(false);
 	const [garden, setGarden] = useState(false);
 	const [terrace, setTerrace] = useState(false);
+	const [orderBy, setOrderBy] = useState("ascending");
 
 	useEffect(() => {
-		var temp_filteredAccomodations = filteredAccomodations;
+		var temp_filteredAccomodations = accomodations;
 
 		temp_filteredAccomodations = temp_filteredAccomodations.filter(
 			(a) =>
-				a.attributes.price.value > priceInterval[0] * 1000 &&
-				a.attributes.price.value < priceInterval[1] * 1000
+				a.attributes.price.value > priceInterval[0] * 100 &&
+				a.attributes.price.value < priceInterval[1] * 100
 		);
 		if (district)
 			temp_filteredAccomodations = temp_filteredAccomodations.filter(
@@ -70,12 +71,20 @@ export default function AccomodationsHub({ accomodations }) {
 			temp_filteredAccomodations = temp_filteredAccomodations.filter(
 				(a) => a.attributes.amenities.terrace
 			);
+		if (orderBy == "ascending")
+			temp_filteredAccomodations = temp_filteredAccomodations.sort(
+				(a1, a2) => a1.attributes.price.value - a2.attributes.price.value
+			);
+		else
+			temp_filteredAccomodations = temp_filteredAccomodations.sort(
+				(a1, a2) => a2.attributes.price.value - a1.attributes.price.value
+			);
 
 		setFilteredAccomodations(temp_filteredAccomodations);
-	}, [district, priceInterval, parking, elevator, garden, terrace]);
+	}, [district, priceInterval, parking, elevator, garden, terrace, orderBy]);
 
 	const applyDatesFilter = () => {
-		var temp_filteredAccomodations = accomodations;
+		var temp_filteredAccomodations = filteredAccomodations;
 
 		if (dates[0] && dates[1])
 			temp_filteredAccomodations = temp_filteredAccomodations.filter((a) =>
@@ -88,12 +97,27 @@ export default function AccomodationsHub({ accomodations }) {
 				)
 			);
 
+		temp_filteredAccomodations = temp_filteredAccomodations.sort(
+			(a1, a2) => a1.attributes.price.value - a2.attributes.price.value
+		);
+
 		setFilteredAccomodations(temp_filteredAccomodations);
 	};
 
 	useEffect(() => {
 		applyDatesFilter();
 	}, []);
+
+	const resetFilters = () => {
+		setFilteredAccomodations(accomodations);
+		setDates([null, null]);
+		setDistrict(0);
+		setPriceInterval([0, 100]);
+		setParking(false);
+		setElevator(false);
+		setGarden(false);
+		setTerrace(false);
+	};
 
 	return (
 		<div className={styles.container}>
@@ -226,6 +250,9 @@ export default function AccomodationsHub({ accomodations }) {
 							setGarden={setGarden}
 							terrace={terrace}
 							setTerrace={setTerrace}
+							resetFilters={resetFilters}
+							orderBy={orderBy}
+							setOrderBy={setOrderBy}
 						/>
 					</div>
 					<div className={styles.accomodations}>
