@@ -60,7 +60,7 @@ export default function Card({ data, id, vertical }) {
 
 								<div>
 									<RiHotelBedFill />
-									<span>{data.space}</span>
+									<span>{data.guests}</span>
 								</div>
 								<div>
 									<GiResize />
@@ -130,7 +130,7 @@ export default function Card({ data, id, vertical }) {
 								)}
 								<div>
 									<RiHotelBedFill style={{ marginRight: "5px" }} />
-									<span>{data.space}</span>
+									<span>{data.guests}</span>
 								</div>
 								<div>
 									<GiResize style={{ marginRight: "5px" }} />

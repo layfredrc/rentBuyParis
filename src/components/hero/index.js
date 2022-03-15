@@ -25,7 +25,10 @@ export default function Hero({ nbRents, nbGoods }) {
 			<HeroContainer>
 				<Slogan>
 					<h1 className='slogan-title'>
-						Rentals and sales of apartments in <br /> <span>Paris</span>
+						<span className='title'>
+							Rentals and sales of apartments in <br />
+						</span>
+						<span className='paris'>Paris</span>
 					</h1>
 				</Slogan>
 
@@ -121,10 +124,11 @@ export default function Hero({ nbRents, nbGoods }) {
 							setDates={setDates}
 							title={"When would you like to stay in Paris ?"}
 							onValidate={() => {
-								dates[0] && dates[1] ?
-									router.push(
-										`/accomodations?property=rent&enter=${dates[0]}&out=${dates[1]}`
-									) : null
+								dates[0] && dates[1]
+									? router.push(
+											`/accomodations?property=rent&enter=${dates[0]}&out=${dates[1]}`
+									  )
+									: null;
 							}}
 						/>
 					</CalendarWrapper>
@@ -167,10 +171,14 @@ const Slogan = styled.div`
 		text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 		line-height: 1.2;
 
-		span {
+		.paris {
 			font-family: "Croissant One", cursive;
 			font-weight: 400;
 			line-height: 1.5;
+			overflow: hidden;
+			display: block;
+			animation: fadeIn 800ms ease forwards;
+			animation-delay: 400ms;
 		}
 
 		@media screen and (max-width: 465px) {
@@ -186,6 +194,18 @@ const Slogan = styled.div`
 		}
 		@media screen and (min-width: 1440px) {
 			font-size: 52px;
+		}
+	}
+
+	@keyframes fadeIn {
+		0% {
+			transform: translateY(100%);
+			visibility: hidden;
+		}
+
+		100% {
+			transform: translateY(0%);
+			visibility: visible;
 		}
 	}
 `;
