@@ -19,7 +19,7 @@
 .main {
 	margin: 0 80px;
 	position: relative;
-	top: -50px;
+	top: -60px;
 }
 .notification {
 	display: flex;
@@ -78,7 +78,7 @@
 @media (max-width: 768px) {
 	.main {
 		position: relative;
-		top: -50px;
+		top: -75px;
 	}
 	.accomodations {
 		margin-top: 0px;

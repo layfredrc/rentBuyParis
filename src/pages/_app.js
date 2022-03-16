@@ -9,6 +9,9 @@ import Header from "../components/header";
 // Style
 import "../styles/globals.scss";
 
+// Animation
+import { AnimatePresence } from "framer-motion";
+
 function MyApp({ Component, pageProps }) {
 	const [isBurgerMenuOpened, setIsBurgerMenuOpened] = useState(false);
 	const [scrollLocked, setScrollLocked] = useScrollLock();
@@ -23,7 +26,9 @@ function MyApp({ Component, pageProps }) {
 				<BurgerMenu setIsBurgerMenuOpened={setIsBurgerMenuOpened} />
 			) : null}
 			<Header setIsBurgerMenuOpened={setIsBurgerMenuOpened} />
-			<Component {...pageProps} />
+			<AnimatePresence exitBeforeEnter>
+				<Component {...pageProps} />
+			</AnimatePresence>
 			<Footer />
 		</>
 	);

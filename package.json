@@ -1,29 +1,31 @@
 {
-  "name": "rentbuyparis",
-  "private": true,
-  "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint"
-  },
-  "dependencies": {
-    "@mantine/core": "^3.6.8",
-    "@mantine/dates": "^3.6.8",
-    "@mantine/hooks": "^3.6.8",
-    "axios": "^0.26.0",
-    "dayjs": "^1.10.7",
-    "next": "12.0.9",
-    "node-sass": "^6.0.1",
-    "qs": "^6.10.3",
-    "react": "17.0.2",
-    "react-dom": "17.0.2",
-    "react-icons": "^4.3.1",
-    "react-image-lightbox": "^5.1.4",
-    "styled-components": "^5.3.3"
-  },
-  "devDependencies": {
-    "eslint": "8.7.0",
-    "eslint-config-next": "12.0.9"
-  }
+	"name": "rentbuyparis",
+	"private": true,
+	"scripts": {
+		"dev": "next dev",
+		"build": "next build",
+		"start": "next start",
+		"lint": "next lint"
+	},
+	"dependencies": {
+		"@mantine/core": "^3.6.8",
+		"@mantine/dates": "^3.6.8",
+		"@mantine/hooks": "^3.6.8",
+		"axios": "^0.26.0",
+		"dayjs": "^1.10.7",
+		"framer-motion": "^6.2.8",
+		"next": "12.0.9",
+		"node-sass": "^6.0.1",
+		"qs": "^6.10.3",
+		"react": "17.0.2",
+		"react-dom": "17.0.2",
+		"react-icons": "^4.3.1",
+		"react-image-lightbox": "^5.1.4",
+		"react-intersection-observer": "^8.33.1",
+		"styled-components": "^5.3.3"
+	},
+	"devDependencies": {
+		"eslint": "8.7.0",
+		"eslint-config-next": "12.0.9"
+	}
 }

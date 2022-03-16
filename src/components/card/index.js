@@ -16,7 +16,7 @@ export default function Card({ data, id, vertical }) {
 	const photosOrdered = data.photos.data;
 	const cardThumbnail = photosOrdered[0];
 	return !vertical ? (
-		<Link href={`/accomodation/${id}`} >
+		<Link href={`/accomodation/${id}`}>
 			<CardHorizontal>
 				<div className='container'>
 					<div style={{ flex: 1, position: "relative" }}>
@@ -25,7 +25,6 @@ export default function Card({ data, id, vertical }) {
 							layout='fill'
 							objectFit='cover'
 							alt='card-image'
-
 						/>
 					</div>
 					<div style={{ flex: 2 }}>
@@ -88,7 +87,7 @@ export default function Card({ data, id, vertical }) {
 			</CardHorizontal>
 		</Link>
 	) : (
-		<Link href={`/accomodation/${id}`} >
+		<Link href={`/accomodation/${id}`}>
 			<CardVertical>
 				<div className='container'>
 					<div style={{ flex: 1, position: "relative" }}>
@@ -169,9 +168,10 @@ const CardHorizontal = styled.div`
 		display: flex;
 		border-radius: 5px;
 		box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
-		rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+			rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
 		margin: 2rem 0;
 		background-color: #fff;
+		cursor: pointer;
 	}
 	.container > div {
 		justify-content: space-between;
@@ -258,7 +258,7 @@ const CardVertical = styled.div`
 	.container {
 		display: block;
 		box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
-		rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+			rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
 		margin: 15px 0;
 		background-color: #fff;
 		width: 100%;

@@ -11,16 +11,22 @@ import paris6 from "../../../public/assets/images/paris-6.png";
 // Style
 import styled from "styled-components";
 
-export default function SectionText({ }) {
+// Animation
+import { motion } from "framer-motion";
+import { fade } from "../../lib/animation";
+import { useScroll } from "../../lib/useScroll";
+
+export default function SectionText({}) {
+	const [element, controls] = useScroll();
 	return (
 		<>
 			<SectionTextContainer>
 				<StayInParis id='terms-and-conditions'>
 					<div className='left'>
-						<h1>
+						<motion.h1 variants={fade} ref={element} animate={controls}>
 							Stay in Paris with <br />
 							<span>RentBuyParis</span>
-						</h1>
+						</motion.h1>
 						<p>
 							Hi, I’m Stephan Jaquet, offering rentals starting from one month
 							and sometimes property for sale in Paris and in France. If you
@@ -57,7 +63,7 @@ export default function SectionText({ }) {
 						</Paris3>
 					</div>
 				</StayInParis>
-				<ListYourProperty>
+				<ListYourProperty variants={fade}>
 					<div className='left'>
 						<Image
 							src={paris4}
@@ -83,7 +89,7 @@ export default function SectionText({ }) {
 						</p>
 					</div>
 				</ListYourProperty>
-				<RealEstatePriceInParis>
+				<RealEstatePriceInParis variants={fade}>
 					<div className='left'>
 						<h1>Real estate price in Paris</h1>
 						<p>
@@ -108,7 +114,7 @@ export default function SectionText({ }) {
 						<Image src={paris5} height={400} width={300} alt='paris-image' />
 					</div>
 				</RealEstatePriceInParis>
-				<ServicesForOwnersAndTenants>
+				<ServicesForOwnersAndTenants variants={fade}>
 					<div className='left'>
 						<Image src={paris6} height={500} alt='paris-image' />
 					</div>
@@ -296,7 +302,7 @@ const SectionTextContainerMobile = styled.div`
 	}
 `;
 
-const StayInParis = styled.div`
+const StayInParis = styled(motion.div)`
 	display: flex;
 	justify-content: space-between;
 
@@ -394,7 +400,7 @@ const Paris3 = styled(Paris1)`
 	}
 `;
 
-const ListYourProperty = styled.div`
+const ListYourProperty = styled(motion.div)`
 	margin-top: 4rem;
 	display: flex;
 	justify-content: space-between;

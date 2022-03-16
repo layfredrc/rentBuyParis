@@ -153,6 +153,11 @@ const GalleryContainer = styled.div`
 	.big-picture {
 		border-radius: 10px 0px 0px 10px;
 	}
+
+	.big-picture:hover {
+		transform: scale(0.98);
+		transition: transform 0.8s ease-out;
+	}
 `;
 
 const BigPicture = styled.div`
@@ -171,16 +176,33 @@ const SmallPicturesContainer = styled.div`
 	grid-template-columns: repeat(2, 1fr);
 	grid-gap: 10px;
 
-	.small-picture-1 {
+	.small-picture-1 :hover {
+		transform: scale(0.98);
+		transition: transform 0.5s ease;
 	}
+
 	.small-picture-2 {
 		border-radius: 0px 10px 0px 0px;
 	}
-	.small-picture-3 {
+
+	.small-picture-2:hover {
+		transform: scale(0.98);
+		transition: transform 0.5s ease;
+	}
+
+	.small-picture-3 :hover {
+		transform: scale(0.98);
+		transition: transform 0.5s ease;
 	}
 	.small-picture-4 {
 		border-radius: 0px 0px 10px 0px;
 	}
+
+	.small-picture-4:hover {
+		transform: scale(0.98);
+		transition: transform 0.5s ease;
+	}
+
 	@media screen and (min-width: 1024px) {
 		width: 80%;
 		grid-gap: 10px;

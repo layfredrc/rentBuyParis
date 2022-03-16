@@ -15,6 +15,10 @@ import heroImg from "../../../public/assets/images/hero.jpg";
 // Style
 import styled from "styled-components";
 
+// Animation
+import { motion } from "framer-motion";
+import { titleAnim, fade } from "../../lib/animation";
+
 export default function Hero({ nbRents, nbGoods }) {
 	const router = useRouter();
 
@@ -24,22 +28,26 @@ export default function Hero({ nbRents, nbGoods }) {
 		<>
 			<HeroContainer>
 				<Slogan>
-					<h1 className='slogan-title'>
+					<motion.h1
+						variants={titleAnim}
+						initial='hidden'
+						animate='show'
+						className='slogan-title'>
 						<span className='title'>
 							Rentals and sales of apartments in <br />
 						</span>
 						<span className='paris'>Paris</span>
-					</h1>
+					</motion.h1>
 				</Slogan>
 
 				<HeroContentWrapper>
 					<div className='text-content'>
-						<h2>
+						<motion.h2 variants={fade}>
 							Apartments for rent and for sale in the very center of Paris, in
 							ideal conditions and at reasonable prices.
-						</h2>
+						</motion.h2>
 
-						<ButtonContainerDesktop>
+						<ButtonContainerDesktop variants={fade}>
 							<Link href={"/accomodations?property=rent"}>
 								<Button
 									size='sm'
@@ -62,7 +70,7 @@ export default function Hero({ nbRents, nbGoods }) {
 							</Link>
 						</ButtonContainerDesktop>
 
-						<div className='digits'>
+						<motion.div variants={titleAnim} className='digits'>
 							<h3>
 								{nbRents}
 								<span>+</span>
@@ -85,9 +93,9 @@ export default function Hero({ nbRents, nbGoods }) {
 									</Link>
 								</p>
 							</h3>
-						</div>
+						</motion.div>
 					</div>
-					<ImageWrapper>
+					<ImageWrapper variants={fade}>
 						<Image
 							src={heroImg}
 							alt='RentBuyParis'
@@ -170,15 +178,13 @@ const Slogan = styled.div`
 		font-weight: 600;
 		text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 		line-height: 1.2;
+		overflow: hidden;
 
 		.paris {
 			font-family: "Croissant One", cursive;
 			font-weight: 400;
 			line-height: 1.5;
 			overflow: hidden;
-			display: block;
-			animation: fadeIn 800ms ease forwards;
-			animation-delay: 400ms;
 		}
 
 		@media screen and (max-width: 465px) {
@@ -194,18 +200,6 @@ const Slogan = styled.div`
 		}
 		@media screen and (min-width: 1440px) {
 			font-size: 52px;
-		}
-	}
-
-	@keyframes fadeIn {
-		0% {
-			transform: translateY(100%);
-			visibility: hidden;
-		}
-
-		100% {
-			transform: translateY(0%);
-			visibility: visible;
 		}
 	}
 `;
@@ -343,7 +337,7 @@ const CalendarWrapper = styled.div`
 	}
 `;
 
-const ImageWrapper = styled.div`
+const ImageWrapper = styled(motion.div)`
 	width: 2000px;
 	height: auto;
 	transform: translateX(20px);
@@ -368,7 +362,7 @@ const ImageWrapper = styled.div`
 	}
 `;
 
-const ButtonContainerDesktop = styled.div`
+const ButtonContainerDesktop = styled(motion.div)`
 	display: flex;
 	justify-content: space-between;
 	font-size: 12px;
