@@ -275,10 +275,12 @@ const CardVertical = styled.div`
 	}
 	.informations > div {
 		margin-bottom: 15px;
+		width: 80%;
 	}
 	.order {
 		margin-bottom: 10px;
 		font-size: 12px;
+		width: 280px;
 	}
 	.container > div:first-child {
 		height: 16em;

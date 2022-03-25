@@ -37,7 +37,7 @@ const Accomodations = ({ accomodations }) => {
 
 export async function getStaticProps() {
 	const accomodations = await loadAccomodations();
-	return { props: { accomodations } };
+	return { props: { accomodations }, revalidate: 120, };
 }
 
 export default Accomodations;

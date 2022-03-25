@@ -44,7 +44,8 @@ const Home = ({ rents, error }) => {
 
 export async function getStaticProps() {
 	const accomodations = await loadAccomodations();
-	return { props: { rents: accomodations } };
+	return { props: { rents: accomodations }, revalidate: 120, };
+
 }
 
 const HeroWrapper = styled.div`
