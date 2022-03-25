@@ -32,7 +32,7 @@ export async function getStaticProps({ params }) {
 export async function getStaticPaths() {
 	const accomodations = await loadAccomodations();
 	const paths = accomodations?.data.map((item) => {
-		return { params: { id: `${item.id}` }, revalidate: 10, };
+		return { params: { id: `${item.id}` } };
 	});
 
 	return {
