@@ -13,8 +13,7 @@ import {
 import styled from "styled-components";
 
 export default function AccomodationDetails({ accomodation }) {
-	const { attributes } = accomodation || {};
-	const { bedroom, guests, bathroom, space, description } = attributes;
+
 	return (
 		<AccomodationDetailsContainer>
 			<SectionTitleContainer>
@@ -24,25 +23,25 @@ export default function AccomodationDetails({ accomodation }) {
 			<DetailsCardContainer>
 				<DetailsCard>
 					<RiUserAddLine size={30} style={{ color: "#2385be" }} />
-					<h3>{`${guests}`} Guests</h3>
+					<h3>{`${accomodation?.attributes?.guests}`} Guests</h3>
 				</DetailsCard>
 				<DetailsCard>
 					<GiResize size={30} style={{ color: "#2385be" }} />
-					<h3>{`${space}`} m²</h3>
+					<h3>{`${accomodation?.attributes?.space}`} m²</h3>
 				</DetailsCard>
 				<DetailsCard>
 					<RiHotelBedLine size={30} style={{ color: "#2385be" }} />
-					<h3>{`${bedroom}`} Bedrooms</h3>
+					<h3>{`${accomodation?.attributes?.bedroom}`} Bedrooms</h3>
 				</DetailsCard>
 				<DetailsCard>
 					<MdOutlineShower size={30} style={{ color: "#2385be" }} />
-					<h3>{`${bathroom}`} Bathrooms</h3>
+					<h3>{`${accomodation?.attributes?.bathroom}`} Bathrooms</h3>
 				</DetailsCard>
 			</DetailsCardContainer>
 
 			<TextContent>
 				<p>
-					{`${description}`}
+					{`${accomodation?.attributes?.description}`}
 				</p>
 			</TextContent>
 		</AccomodationDetailsContainer>

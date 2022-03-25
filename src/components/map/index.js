@@ -2,11 +2,9 @@
 import styled from "styled-components"
 
 export default function Map({ accomodation }) {
-    const { attributes } = accomodation;
-    const { googleMapsUrl } = attributes;
     return (
         <MapContainer>
-            <MapWrapper src={googleMapsUrl}
+            <MapWrapper src={accomodation?.attributes?.googleMapsUrl}
                 loading="lazy">
             </MapWrapper>
         </MapContainer>

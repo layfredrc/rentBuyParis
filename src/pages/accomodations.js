@@ -6,7 +6,6 @@ import { loadAccomodations } from "../lib/loadAccomodations";
 
 // Components
 import AccomodationsHub from "../components/accomodationsHub";
-import { Skeleton } from "@mantine/core";
 
 // Animation
 import { motion } from "framer-motion";
@@ -21,17 +20,6 @@ const Accomodations = ({ accomodations }) => {
 			? d.attributes.isRent == false
 			: d.attributes.isRent == true
 	);
-
-	if (router.isFallback) {
-		return (
-			<>
-				<Skeleton height={50} circle mb='xl' />
-				<Skeleton height={8} radius='xl' />
-				<Skeleton height={8} mt={6} radius='xl' />
-				<Skeleton height={8} mt={6} width='70%' radius='xl' />
-			</>
-		);
-	}
 
 	return (
 		<div>
@@ -53,7 +41,7 @@ const Accomodations = ({ accomodations }) => {
 
 export async function getStaticProps() {
 	const accomodations = await loadAccomodations();
-	return { props: { accomodations }, revalidate: 1 };
+	return { props: { accomodations }, revalidate: 3 };
 }
 
 export default Accomodations;

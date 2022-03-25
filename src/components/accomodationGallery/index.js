@@ -14,11 +14,8 @@ import {
 } from "../accomodationServices";
 
 export default function AccomodationGallery({ accomodation }) {
-	const { attributes } = accomodation || {};
-	const { photos, street, name } = attributes || {};
-	const { data } = photos || {};
 	const galleryImages = [];
-	data.map((image) => {
+	accomodation?.attributes?.photos.data.map((image) => {
 		galleryImages.push(image.attributes.url);
 	});
 	const [isOpen, setIsOpen] = useState(false);
@@ -28,9 +25,9 @@ export default function AccomodationGallery({ accomodation }) {
 	return (
 		<AccomodationGalleryContainer>
 			<h1 className='accomodation-title'>
-				{name},{" "}
+				{accomodation?.attributes?.name},{" "}
 				<span>
-					{street} <br /> 15ème arrondissement
+					{accomodation?.attributes?.street} <br /> 15ème arrondissement
 				</span>
 			</h1>
 

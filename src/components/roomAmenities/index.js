@@ -13,31 +13,7 @@ import {
 } from "../accomodationServices";
 
 export default function RoomAmenities({ accomodation }) {
-	const { attributes } = accomodation || {};
-	const { amenities } = attributes;
-	const {
-		bed_linen,
-		children_friendly,
-		coffee_maker,
-		dishwasher,
-		draft_hood,
-		drying_machine,
-		elevator,
-		internet,
-		terrace,
-		garden,
-		parking,
-		hairDryer,
-		vacuumCleaner,
-		iron_ironing_board,
-		kettle,
-		microwave,
-		oven,
-		refrigerator,
-		toaster,
-		tv_set,
-		washing_machine,
-	} = amenities;
+
 	return (
 		<Wrapper>
 			<SectionTitleContainer>
@@ -64,7 +40,7 @@ export default function RoomAmenities({ accomodation }) {
 							rooms
 						</li>
 						<li>
-							{elevator ? (<FiCheck size={15} style={{ marginRight: "5px" }} />) : (<MdOutlineClose size={15} style={{ marginRight: "5px" }} />)} Elevator
+							{accomodation?.attributes?.amenities?.elevator ? (<FiCheck size={15} style={{ marginRight: "5px" }} />) : (<MdOutlineClose size={15} style={{ marginRight: "5px" }} />)} Elevator
 						</li>
 						<li>
 							<FiCheck size={15} style={{ marginRight: "5px" }} /> Toilets
@@ -75,14 +51,14 @@ export default function RoomAmenities({ accomodation }) {
 					<h3>Outdoors</h3>
 					<ul>
 						<li>
-							{terrace ? (<FiCheck size={15} style={{ marginRight: "5px" }} />) : (<MdOutlineClose size={15} style={{ marginRight: "5px" }} />)} Terrace /
+							{accomodation?.attributes?.amenities?.terrace ? (<FiCheck size={15} style={{ marginRight: "5px" }} />) : (<MdOutlineClose size={15} style={{ marginRight: "5px" }} />)} Terrace /
 							Balcony
 						</li>
 						<li>
-							{garden ? (<FiCheck size={15} style={{ marginRight: "5px" }} />) : (<MdOutlineClose size={15} style={{ marginRight: "5px" }} />)} Garden
+							{accomodation?.attributes?.amenities?.garden ? (<FiCheck size={15} style={{ marginRight: "5px" }} />) : (<MdOutlineClose size={15} style={{ marginRight: "5px" }} />)} Garden
 						</li>
 						<li>
-							{parking ? (<FiCheck size={15} style={{ marginRight: "5px" }} />) : (<MdOutlineClose size={15} style={{ marginRight: "5px" }} />)} Parking
+							{accomodation?.attributes?.amenities?.parking ? (<FiCheck size={15} style={{ marginRight: "5px" }} />) : (<MdOutlineClose size={15} style={{ marginRight: "5px" }} />)} Parking
 						</li>
 					</ul>
 				</div>
@@ -90,55 +66,55 @@ export default function RoomAmenities({ accomodation }) {
 					<h3>Devices & Equipment</h3>
 					<ul>
 						<li>
-							{internet ? (<FiCheck size={15} style={{ marginRight: "5px" }} />) : (<MdOutlineClose size={15} style={{ marginRight: "5px" }} />)} Internet
+							{accomodation?.attributes?.amenities?.internet ? (<FiCheck size={15} style={{ marginRight: "5px" }} />) : (<MdOutlineClose size={15} style={{ marginRight: "5px" }} />)} Internet
 						</li>
 						<li>
-							{tv_set ? (<FiCheck size={15} style={{ marginRight: "5px" }} />) : (<MdOutlineClose size={15} style={{ marginRight: "5px" }} />)} TV set
+							{accomodation?.attributes?.amenities?.tv_set ? (<FiCheck size={15} style={{ marginRight: "5px" }} />) : (<MdOutlineClose size={15} style={{ marginRight: "5px" }} />)} TV set
 						</li>
 						<li>
-							{refrigerator ? (<FiCheck size={15} style={{ marginRight: "5px" }} />) : (<MdOutlineClose size={15} style={{ marginRight: "5px" }} />)} Refrigerator
+							{accomodation?.attributes?.amenities?.refrigerator ? (<FiCheck size={15} style={{ marginRight: "5px" }} />) : (<MdOutlineClose size={15} style={{ marginRight: "5px" }} />)} Refrigerator
 						</li>
 						<li>
-							{toaster ? (<FiCheck size={15} style={{ marginRight: "5px" }} />) : (<MdOutlineClose size={15} style={{ marginRight: "5px" }} />)} Toaster
+							{accomodation?.attributes?.amenities?.toaster ? (<FiCheck size={15} style={{ marginRight: "5px" }} />) : (<MdOutlineClose size={15} style={{ marginRight: "5px" }} />)} Toaster
 						</li>
 						<li>
-							{oven ? (<FiCheck size={15} style={{ marginRight: "5px" }} />) : (<MdOutlineClose size={15} style={{ marginRight: "5px" }} />)} Oven
+							{accomodation?.attributes?.amenities?.oven ? (<FiCheck size={15} style={{ marginRight: "5px" }} />) : (<MdOutlineClose size={15} style={{ marginRight: "5px" }} />)} Oven
 						</li>
 						<li>
-							{kettle ? (<FiCheck size={15} style={{ marginRight: "5px" }} />) : (<MdOutlineClose size={15} style={{ marginRight: "5px" }} />)} Kettle
+							{accomodation?.attributes?.amenities?.kettle ? (<FiCheck size={15} style={{ marginRight: "5px" }} />) : (<MdOutlineClose size={15} style={{ marginRight: "5px" }} />)} Kettle
 						</li>
 						<li>
-							{microwave ? (<FiCheck size={15} style={{ marginRight: "5px" }} />) : (<MdOutlineClose size={15} style={{ marginRight: "5px" }} />)} Microwave
+							{accomodation?.attributes?.amenities?.microwave ? (<FiCheck size={15} style={{ marginRight: "5px" }} />) : (<MdOutlineClose size={15} style={{ marginRight: "5px" }} />)} Microwave
 						</li>
 						<li>
-							{coffee_maker ? (<FiCheck size={15} style={{ marginRight: "5px" }} />) : (<MdOutlineClose size={15} style={{ marginRight: "5px" }} />)} Coffee maker
+							{accomodation?.attributes?.amenities?.coffee_maker ? (<FiCheck size={15} style={{ marginRight: "5px" }} />) : (<MdOutlineClose size={15} style={{ marginRight: "5px" }} />)} Coffee maker
 						</li>
 						<li>
-							{dishwasher ? (<FiCheck size={15} style={{ marginRight: "5px" }} />) : (<MdOutlineClose size={15} style={{ marginRight: "5px" }} />)} Dish washer
+							{accomodation?.attributes?.amenities?.dishwasher ? (<FiCheck size={15} style={{ marginRight: "5px" }} />) : (<MdOutlineClose size={15} style={{ marginRight: "5px" }} />)} Dish washer
 						</li>
 						<li>
-							{washing_machine ? (<FiCheck size={15} style={{ marginRight: "5px" }} />) : (<MdOutlineClose size={15} style={{ marginRight: "5px" }} />)} Washing
+							{accomodation?.attributes?.amenities?.washing_machine ? (<FiCheck size={15} style={{ marginRight: "5px" }} />) : (<MdOutlineClose size={15} style={{ marginRight: "5px" }} />)} Washing
 							machine
 						</li>
 						<li>
-							{drying_machine ? (<FiCheck size={15} style={{ marginRight: "5px" }} />) : (<MdOutlineClose size={15} style={{ marginRight: "5px" }} />)} Drying machine
+							{accomodation?.attributes?.amenities?.drying_machine ? (<FiCheck size={15} style={{ marginRight: "5px" }} />) : (<MdOutlineClose size={15} style={{ marginRight: "5px" }} />)} Drying machine
 						</li>
 						<li>
-							{draft_hood ? (<FiCheck size={15} style={{ marginRight: "5px" }} />) : (<MdOutlineClose size={15} style={{ marginRight: "5px" }} />)} Draft hood
+							{accomodation?.attributes?.amenities?.draft_hood ? (<FiCheck size={15} style={{ marginRight: "5px" }} />) : (<MdOutlineClose size={15} style={{ marginRight: "5px" }} />)} Draft hood
 						</li>
 						<li>
-							{iron_ironing_board ? (<FiCheck size={15} style={{ marginRight: "5px" }} />) : (<MdOutlineClose size={15} style={{ marginRight: "5px" }} />)} Iron /
+							{accomodation?.attributes?.amenities?.iron_ironing_board ? (<FiCheck size={15} style={{ marginRight: "5px" }} />) : (<MdOutlineClose size={15} style={{ marginRight: "5px" }} />)} Iron /
 							Ironing board
 						</li>
 						<li>
-							{vacuumCleaner ? (<FiCheck size={15} style={{ marginRight: "5px" }} />) : (<MdOutlineClose size={15} style={{ marginRight: "5px" }} />)} Vacuum
+							{accomodation?.attributes?.amenities?.vacuumCleaner ? (<FiCheck size={15} style={{ marginRight: "5px" }} />) : (<MdOutlineClose size={15} style={{ marginRight: "5px" }} />)} Vacuum
 							cleaner
 						</li>
 						<li>
-							{hairDryer ? (<FiCheck size={15} style={{ marginRight: "5px" }} />) : (<MdOutlineClose size={15} style={{ marginRight: "5px" }} />)} Hair dryer
+							{accomodation?.attributes?.amenities?.hairDryer ? (<FiCheck size={15} style={{ marginRight: "5px" }} />) : (<MdOutlineClose size={15} style={{ marginRight: "5px" }} />)} Hair dryer
 						</li>
 						<li>
-							{bed_linen ? (<FiCheck size={15} style={{ marginRight: "5px" }} />) : (<MdOutlineClose size={15} style={{ marginRight: "5px" }} />)} Bed linen
+							{accomodation?.attributes?.amenities?.bed_linen ? (<FiCheck size={15} style={{ marginRight: "5px" }} />) : (<MdOutlineClose size={15} style={{ marginRight: "5px" }} />)} Bed linen
 						</li>
 					</ul>
 				</div>

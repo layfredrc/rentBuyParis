@@ -10,25 +10,25 @@ import Map from "../map";
 import styled from "styled-components";
 
 export default function AccomodationDetail({ accomodation }) {
-	const { data } = accomodation || {};
+
 	return (
 		<>
 			<AccomodationDetailContainer>
-				<AccomodationGallery accomodation={data} />
+				<AccomodationGallery accomodation={accomodation?.data} />
 				<RowWrapper>
 					<ColWrapper>
-						<AccomodationDetails accomodation={data} />
+						<AccomodationDetails accomodation={accomodation?.data} />
 						<AccomodationServices />
 					</ColWrapper>
 					<DesktopCalendarWrapper>
-						<AccomodationCalendar accomodation={data} />
+						<AccomodationCalendar accomodation={accomodation?.data} />
 					</DesktopCalendarWrapper>
 				</RowWrapper>
-				<RoomAmenities accomodation={data} />
+				<RoomAmenities accomodation={accomodation?.data} />
 				<RowWrapperTablet>
-					<Map accomodation={data} />
+					<Map accomodation={accomodation?.data} />
 					<MobileCalendarWrapper>
-						<AccomodationCalendar accomodation={data} />
+						<AccomodationCalendar accomodation={accomodation?.data} />
 					</MobileCalendarWrapper>
 				</RowWrapperTablet>
 

@@ -25,7 +25,7 @@ export default function AccomodationCalendar({ accomodation }) {
 	const [opened, setOpened] = useState(false);
 
 	const reservedDates = [];
-	accomodation.attributes.reservations.forEach((reservation) => {
+	accomodation?.attributes?.reservations.forEach((reservation) => {
 		const startDate = reservation.startDate;
 		const endDate = reservation.endDate;
 		const dateMove = new Date(startDate);

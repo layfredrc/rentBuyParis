@@ -1,4 +1,5 @@
 import Head from "next/head";
+import { useRouter } from "next/router";
 
 // Lib
 import { loadAccomodation } from "../../lib/loadAccomodation";
@@ -7,9 +8,23 @@ import { motion } from "framer-motion";
 import { pageAnimation } from "../../lib/animation";
 // Components
 import AccomodationDetail from "../../components/accomodation";
+import { Skeleton } from "@mantine/core";
+
 
 
 const Accomodation = ({ accomodation }) => {
+	const router = useRouter();
+	if (router.isFallback) {
+		return (
+			<>
+				<Skeleton height={50} circle mb='xl' />
+				<Skeleton height={8} radius='xl' />
+				<Skeleton height={8} mt={6} radius='xl' />
+				<Skeleton height={8} mt={6} width='70%' radius='xl' />
+			</>
+		);
+	}
+
 	return (
 		<>
 			<Head>
@@ -26,7 +41,7 @@ const Accomodation = ({ accomodation }) => {
 
 export async function getStaticProps({ params }) {
 	const accomodation = await loadAccomodation(params.id);
-	return { props: { accomodation }, revalidate: 1, };
+	return { props: { accomodation }, revalidate: 3, };
 }
 
 export async function getStaticPaths() {
