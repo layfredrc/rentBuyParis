@@ -44,7 +44,7 @@ const Home = ({ rents, error }) => {
 
 export async function getStaticProps() {
 	const accomodations = await loadAccomodations();
-	return { props: { rents: accomodations }, revalidate: 120, };
+	return { props: { rents: accomodations }, revalidate: 10, };
 
 }
 

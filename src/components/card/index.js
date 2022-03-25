@@ -63,7 +63,7 @@ export default function Card({ data, id, vertical }) {
 								</div>
 								<div>
 									<GiResize />
-									<span> {data.size} m²</span>
+									<span> {data.space} m²</span>
 								</div>
 							</div>
 						</div>
@@ -133,7 +133,7 @@ export default function Card({ data, id, vertical }) {
 								</div>
 								<div>
 									<GiResize style={{ marginRight: "5px" }} />
-									<span> {data.size} m²</span>
+									<span> {data.space} m²</span>
 								</div>
 							</div>
 						</div>
