@@ -16,6 +16,7 @@ import viber from "../../../public/assets/images/Viber.png";
 import telegram from "../../../public/assets/images/Telegram.png";
 import signal from "../../../public/assets/images/Signal.png";
 import youtube from "../../../public/assets/images/Youtube.png";
+import Logo from "../../../public/assets/images/logo.svg";
 
 const languages = ["Français", "English", "Russian"];
 const currencies = ["EUR", "USD", "RS"];
@@ -70,15 +71,15 @@ export default function BurgerMenu({ setIsBurgerMenuOpened }) {
 					<Link href='/#terms-and-conditions'>
 						<a
 							className={styles.link}
-							style={{ marginTop: "50px" }}
 							onClick={() => setIsBurgerMenuOpened(false)}>
 							Terms and conditions
 						</a>
 					</Link>
 				</div>
 				<div className={styles.contact}>
-					<p className={styles.brand}>RentBuyParis</p>
-					<h2 style={{ fontSize: "20px", fontWeight: "700" }}>
+					<Image src={Logo} width={180} height={65} objectFit="fill" />
+
+					<h2 style={{ fontSize: "20px", fontWeight: "700", marginTop: "20px" }}>
 						Stephan Jaquet
 					</h2>
 					<div className={styles.information}>

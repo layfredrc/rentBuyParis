@@ -8,6 +8,9 @@ import Selector from "../selector";
 import styles from "./index.module.scss";
 import styled from "styled-components";
 
+import Image from "next/image";
+import Logo from "../../../public/assets/images/logo.svg";
+
 const languages = ["Français", "English", "Russian"];
 const currencies = ["EUR", "USD", "RS"];
 
@@ -17,7 +20,7 @@ export default function Header({ setIsBurgerMenuOpened }) {
 			<header className={styles["container"] + " " + styles["desktop"]}>
 				<div className={styles["left"]}>
 					<Link href='/'>
-						<a className={styles["logo"]}>RentBuyParis</a>
+						<Image src={Logo} width={250} height={70} />
 					</Link>
 					<RectangleBackgroundContainer>
 						<RectangleBackground />
@@ -53,7 +56,7 @@ export default function Header({ setIsBurgerMenuOpened }) {
 					onClick={() => setIsBurgerMenuOpened(true)}
 				/>
 				<Link href={"/"}>
-					<a className={styles["logo"]}>RentBuyParis</a>
+					<Image src={Logo} width={220} height={70} objectFit="fill" />
 				</Link>
 			</header>
 		</>

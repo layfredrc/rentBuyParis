@@ -1,8 +1,9 @@
 @import "../../styles/colors.module";
 .container {
-	padding: 30px 10px 10px 10px;
+	padding: 30px 10px 20px 10px;
 	background-color: $bgColorSecondary;
 	color: white;
+	cursor: pointer;
 }
 
 .container > div:first-child {

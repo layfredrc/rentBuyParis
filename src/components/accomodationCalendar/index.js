@@ -16,6 +16,7 @@ import viber from "../../../public/assets/images/Viber.png";
 import telegram from "../../../public/assets/images/Telegram.png";
 import signal from "../../../public/assets/images/Signal.png";
 import youtube from "../../../public/assets/images/Youtube.png";
+import Logo from "../../../public/assets/images/logo.svg";
 
 export default function AccomodationCalendar({ accomodation }) {
 	const [value, setValue] = useState([
@@ -60,7 +61,7 @@ export default function AccomodationCalendar({ accomodation }) {
 				</div>
 				<hr />
 				<div className='title'>
-					<h5>RentBuyParis</h5>
+					<Image src={Logo} width={280} height={70} />
 				</div>
 
 				<CalendarWrapper>
@@ -103,8 +104,9 @@ export default function AccomodationCalendar({ accomodation }) {
 								<div
 									className={styles.contact}
 									style={{ padding: "2rem", animation: "none" }}>
-									<p className={styles.brand}>RentBuyParis</p>
-									<h2 style={{ fontSize: "20px", fontWeight: "700" }}>
+									<Image src={Logo} width={280} height={100} />
+
+									<h2 style={{ fontSize: "20px", fontWeight: "700", marginTop: "50px" }}>
 										Stephan Jaquet
 									</h2>
 									<div className={styles.information}>

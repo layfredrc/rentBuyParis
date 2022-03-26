@@ -1,16 +1,18 @@
 import Link from "next/link";
+import Image from "next/image";
 import { BsTelephone } from "react-icons/bs";
 import { HiOutlineLocationMarker } from "react-icons/hi"
 
 // Style
 import styles from "./index.module.scss";
+import LogoDark from "../../../public/assets/images/Logo-dark.svg";
 
 export default function Footer() {
 	return (
 		<footer className={styles["container"]}>
 			<div>
 				<div>
-					<h2 className={styles["logo"]}>RentBuyParis</h2>
+					<Image src={LogoDark} width={100} height={50} />
 					<div>
 						<HiOutlineLocationMarker size={20} style={{ marginRight: "5px" }} />
 						<a href="https://www.google.fr/maps/place/47+Rue+de+Laborde,+75008+Paris/@48.8754553,2.3156249,17z/data=!3m1!4b1!4m5!3m4!1s0x47e66fc98a30ee49:0xd1c80e7e1cc2e9d5!8m2!3d48.8754518!4d2.3178136"
