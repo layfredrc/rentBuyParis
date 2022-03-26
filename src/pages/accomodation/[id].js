@@ -41,7 +41,7 @@ const Accomodation = ({ accomodation }) => {
 
 export async function getStaticProps({ params }) {
 	const accomodation = await loadAccomodation(params.id);
-	return { props: { accomodation }, revalidate: 3, };
+	return { props: { accomodation }, revalidate: 1, };
 }
 
 export async function getStaticPaths() {
