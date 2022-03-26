@@ -92,7 +92,7 @@ export default function AccomodationGallery({ accomodation }) {
 								setPhotoIndex(4);
 								setIsOpen(true);
 							}}>
-							<h2>+{images.length} Photos</h2>
+							<h2>+{images.length - 5} Photos</h2>
 						</ShowMore>
 					) : (
 						<Image
