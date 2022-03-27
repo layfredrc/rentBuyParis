@@ -20,7 +20,9 @@ export default function Header({ setIsBurgerMenuOpened }) {
 			<header className={styles["container"] + " " + styles["desktop"]}>
 				<div className={styles["left"]}>
 					<Link href='/'>
-						<Image src={Logo} width={250} height={70} />
+						<a>
+							<Image src={Logo} width={180} height={70} />
+						</a>
 					</Link>
 					<RectangleBackgroundContainer>
 						<RectangleBackground />
@@ -55,9 +57,13 @@ export default function Header({ setIsBurgerMenuOpened }) {
 					style={{ marginRight: "15px" }}
 					onClick={() => setIsBurgerMenuOpened(true)}
 				/>
-				<Link href={"/"}>
-					<Image src={Logo} width={220} height={70} objectFit="fill" />
-				</Link>
+				<div className='logoMobile'>
+					<Link href='/'>
+						<a>
+							<Image src={Logo} width={100} height={70} objectFit='contain' />
+						</a>
+					</Link>
+				</div>
 			</header>
 		</>
 	);

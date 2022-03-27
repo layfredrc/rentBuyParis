@@ -12,7 +12,7 @@ export default function Footer() {
 		<footer className={styles["container"]}>
 			<div>
 				<div>
-					<Image src={LogoDark} width={100} height={50} />
+					<Image src={LogoDark} width={150} height={100} />
 					<div>
 						<HiOutlineLocationMarker size={20} style={{ marginRight: "5px" }} />
 						<a href="https://www.google.fr/maps/place/47+Rue+de+Laborde,+75008+Paris/@48.8754553,2.3156249,17z/data=!3m1!4b1!4m5!3m4!1s0x47e66fc98a30ee49:0xd1c80e7e1cc2e9d5!8m2!3d48.8754518!4d2.3178136"
