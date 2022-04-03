@@ -10,7 +10,7 @@ import styled from "styled-components";
 
 export default function SectionAvailableNow({ rents }) {
 	const availableRents = rents.data.filter(
-		(rent) => rent.attributes.disponible && rent.attributes.isRent
+		(rent) => rent.attributes.disponible && rent.attributes.forRent
 	);
 	return (
 		<SectionAvailableNowContainer>
