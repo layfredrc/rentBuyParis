@@ -17,6 +17,7 @@ import viber from "../../../public/assets/images/Viber.png";
 import telegram from "../../../public/assets/images/Telegram.png";
 import signal from "../../../public/assets/images/Signal.png";
 import youtube from "../../../public/assets/images/Youtube.png";
+import Logo from "../../../public/assets/images/logo.svg";
 
 // Style
 import styled from "styled-components";
@@ -184,8 +185,8 @@ export default function AccomodationsHub({ accomodations }) {
 											<div
 												className={stylesPopup.contact}
 												style={{ padding: "2rem", animation: "none" }}>
-												<p className={styles.brand}>RentBuyParis</p>
-												<h2 style={{ fontSize: "20px", fontWeight: "700" }}>
+												<Image src={Logo} width={280} height={100} />
+												<h2 style={{ fontSize: "20px", fontWeight: "700", marginTop: "50px" }}>
 													Stephan Jaquet
 												</h2>
 												<div className={stylesPopup.information}>

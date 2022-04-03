@@ -17,8 +17,8 @@ const Accomodations = ({ accomodations }) => {
 
 	const filteredAccomodations = accomodations.data.filter((d) =>
 		property == "buy"
-			? d.attributes.isRent == false
-			: d.attributes.isRent == true
+			? d.attributes.forRent == false
+			: d.attributes.forRent == true
 	);
 
 	return (
