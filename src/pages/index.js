@@ -38,7 +38,7 @@ const Home = ({ rents, error }) => {
 				<HeroWrapper>
 					<Hero
 						nbRents={rents.data.filter((d) => d.attributes.forRent).length}
-						nbGoods={rents.data.filter((d) => !d.attributes.forSale).length}
+						nbGoods={rents.data.filter((d) => !d.attributes.forRent).length}
 					/>
 				</HeroWrapper>
 				<SectionAvailableNow rents={rents} />

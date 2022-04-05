@@ -46,7 +46,6 @@ export default function AccomodationsHub({ accomodations }) {
 
 	useEffect(() => {
 		var temp_filteredAccomodations = accomodations;
-
 		temp_filteredAccomodations = temp_filteredAccomodations.filter(
 			(a) =>
 				a.attributes.price.value > priceInterval[0] * 100 &&
@@ -54,7 +53,7 @@ export default function AccomodationsHub({ accomodations }) {
 		);
 		if (district)
 			temp_filteredAccomodations = temp_filteredAccomodations.filter(
-				(a) => a.attributes.district.toString() == district
+				(a) => a.attributes.district == district
 			);
 		if (parking)
 			temp_filteredAccomodations = temp_filteredAccomodations.filter(

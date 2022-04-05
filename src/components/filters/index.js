@@ -35,6 +35,7 @@ const districts = [
 	"Bastille",
 	"Gare de Lyon",
 	"Gare d'Austerlitz",
+	"Denfert-Rochereau",
 	"Tour Eiffel",
 	"Trocadéro",
 	"Place des Ternes",
@@ -158,7 +159,7 @@ export default function Filters({
 								defaultValue={0}
 								required
 								min={0}
-								max={19}
+								max={20}
 								value={district}
 								onChange={setDistrict}
 							/>
