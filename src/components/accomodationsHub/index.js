@@ -106,7 +106,8 @@ export default function AccomodationsHub({ accomodations }) {
 
 	useEffect(() => {
 		applyDatesFilter();
-	}, []);
+		resetFilters();
+	}, [property]);
 
 	const resetFilters = () => {
 		setFilteredAccomodations(accomodations);
