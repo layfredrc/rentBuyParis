@@ -28,10 +28,9 @@ export default function AccomodationsHub({ accomodations }) {
 	const router = useRouter();
 	const property = router.query.property;
 	const [opened, setOpened] = useState(false);
-
 	const [dates, setDates] = useState([
-		router.query.enter ? new Date(router.query.enter) : null,
-		router.query.out ? new Date(router.query.out) : null,
+		null,
+		null,
 	]);
 
 	const [filteredAccomodations, setFilteredAccomodations] =
@@ -109,8 +108,9 @@ export default function AccomodationsHub({ accomodations }) {
 	};
 
 	useEffect(() => {
-		applyDatesFilter();
 		resetFilters();
+		setDates([router.query.enter ? new Date(router.query.enter) : null, router.query.out ? new Date(router.query.out) : null])
+		applyDatesFilter();
 	}, [property]);
 
 	const resetFilters = () => {
