@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import Link from "next/link";
 import { BsArrowRight } from "react-icons/bs";
 import { Button } from "@mantine/core";
@@ -12,6 +13,26 @@ export default function SectionAvailableNow({ rents }) {
 	const availableRents = rents.data.filter(
 		(rent) => rent.attributes.disponible && rent.attributes.forRent
 	);
+
+	const scrollHorizontally = (e) => {
+		e = window.event || e;
+		var delta = Math.max(-1, Math.min(1, (e.wheelDelta || -e.detail)));
+		document.getElementsByClassName('scrolling-wrapper-flexbox')[0].scrollLeft -= (delta * 200); // Multiplied by 40
+		e.preventDefault();
+	}
+
+	useEffect(() => {
+		if (document.getElementsByClassName("scrolling-wrapper-flexbox")[0].addEventListener) {
+			// IE9, Chrome, Safari, Opera
+			document.getElementsByClassName('scrolling-wrapper-flexbox')[0].addEventListener('mousewheel', scrollHorizontally, false);
+			// Firefox
+			document.getElementsByClassName('scrolling-wrapper-flexbox')[0].addEventListener('DOMMouseScroll', scrollHorizontally, false);
+		} else {
+			// IE 6/7/8
+			document.getElementsByClassName('scrolling-wrapper-flexbox')[0].attachEvent('onmousewheel', scrollHorizontally);
+		}
+	}, [])
+
 	return (
 		<SectionAvailableNowContainer>
 			<h3 className='sectionHeaderTitle'>
@@ -142,6 +163,7 @@ const SectionAvailableNowContainer = styled.div`
 		overflow-x: scroll;
 		position: relative;
 		z-index: 2;
+		scroll-behavior: smooth;
 	}
 
 	.scrolling-wrapper-flexbox > div {
