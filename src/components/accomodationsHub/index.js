@@ -53,7 +53,7 @@ export default function AccomodationsHub({ accomodations }) {
 		);
 		if (district)
 			temp_filteredAccomodations = temp_filteredAccomodations.filter(
-				(a) => a.attributes.district == district
+				(a) => district.includes(`${a.attributes.district}`)
 			);
 		if (parking)
 			temp_filteredAccomodations = temp_filteredAccomodations.filter(
@@ -81,6 +81,10 @@ export default function AccomodationsHub({ accomodations }) {
 			);
 
 		setFilteredAccomodations(temp_filteredAccomodations);
+
+		if (district && district.length === 0) {
+			setDistrict(null)
+		}
 	}, [district, priceInterval, parking, elevator, garden, terrace, orderBy]);
 
 	const applyDatesFilter = () => {
@@ -112,7 +116,7 @@ export default function AccomodationsHub({ accomodations }) {
 	const resetFilters = () => {
 		setFilteredAccomodations(accomodations);
 		setDates([null, null]);
-		setDistrict(0);
+		setDistrict(null);
 		setPriceInterval([0, 100]);
 		setParking(false);
 		setElevator(false);
