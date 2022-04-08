@@ -15,7 +15,7 @@ import styled from "styled-components";
 import { motion } from "framer-motion";
 import { pageAnimation } from "../lib/animation";
 
-const Home = ({ rents, error }) => {
+const Home = ({ rents, error, currency, currencies }) => {
 	if (error) {
 		return <div>An error occured: {error.message}</div>;
 	}
@@ -41,7 +41,11 @@ const Home = ({ rents, error }) => {
 						nbGoods={rents.data.filter((d) => !d.attributes.forRent).length}
 					/>
 				</HeroWrapper>
-				<SectionAvailableNow rents={rents} />
+        <SectionAvailableNow
+          rents={rents}
+          currency={currency}
+          currencies={currencies}
+        />
 				<SectionText />
 			</motion.div>
 

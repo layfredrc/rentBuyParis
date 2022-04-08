@@ -21,17 +21,6 @@
 .left > * {
 	margin: 15px 40px;
 }
-.right {
-	display: flex;
-}
-.right div {
-	display: flex;
-	align-items: center;
-	margin: 0 25px;
-}
-.right div p {
-	margin-left: 10px;
-}
 
 .logo {
 	font-family: "Croissant One", cursive;
@@ -40,12 +29,6 @@
 @media (min-width: 769px) and (max-width: 1024px) {
 	.left > * {
 		margin: 15px 10px;
-	}
-	.right div p {
-		margin-left: 3px;
-	}
-	.right div {
-		margin: 0 10px;
 	}
 }
 

@@ -10,9 +10,7 @@ import { pageAnimation } from "../../lib/animation";
 import AccomodationDetail from "../../components/accomodation";
 import { Skeleton } from "@mantine/core";
 
-
-
-const Accomodation = ({ accomodation }) => {
+const Accomodation = ({ accomodation, currency, currencies }) => {
 	const router = useRouter();
 	if (router.isFallback) {
 		return (
@@ -33,8 +31,16 @@ const Accomodation = ({ accomodation }) => {
 							ideal conditions and at reasonable prices." />
 				<link rel="icon" href="/favicon.ico" />
 			</Head>
-			<motion.div variants={pageAnimation} initial="hidden" animate="show" exit="exit">
-				<AccomodationDetail accomodation={accomodation} />
+      <motion.div
+        variants={pageAnimation}
+        initial="hidden"
+        animate="show"
+        exit="exit">
+        <AccomodationDetail
+          accomodation={accomodation}
+          currency={currency}
+          currencies={currencies}
+        />
 			</motion.div>
 		</>
 	);

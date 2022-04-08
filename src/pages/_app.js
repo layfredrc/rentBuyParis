@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useScrollLock } from "@mantine/hooks";
+import loadCurrencies from "../lib/loadCurrencies";
 
 // Components
 import BurgerMenu from "../components/burgerMenu";
@@ -13,25 +14,38 @@ import "../styles/globals.scss";
 import { AnimatePresence } from "framer-motion";
 
 function MyApp({ Component, pageProps }) {
-	const [isBurgerMenuOpened, setIsBurgerMenuOpened] = useState(false);
-	const [scrollLocked, setScrollLocked] = useScrollLock();
+  const [isBurgerMenuOpened, setIsBurgerMenuOpened] = useState(false);
+  const [scrollLocked, setScrollLocked] = useScrollLock();
+  const [currency, setCurrency] = useState("EUR");
+  const [currencies, setCurrencies] = useState({
+    conversion_rates: { EUR: 1 },
+  });
 
-	useEffect(() => {
-		isBurgerMenuOpened ? setScrollLocked(true) : setScrollLocked(false);
-	}, [isBurgerMenuOpened]);
+  useEffect(async () => {
+    const currencies = await loadCurrencies();
+    setCurrencies(currencies);
+  }, []);
 
-	return (
-		<>
-			{isBurgerMenuOpened ? (
-				<BurgerMenu setIsBurgerMenuOpened={setIsBurgerMenuOpened} />
-			) : null}
-			<Header setIsBurgerMenuOpened={setIsBurgerMenuOpened} />
-			<AnimatePresence exitBeforeEnter>
-				<Component {...pageProps} />
-			</AnimatePresence>
-			<Footer />
-		</>
-	);
+  useEffect(() => {
+    isBurgerMenuOpened ? setScrollLocked(true) : setScrollLocked(false);
+  }, [isBurgerMenuOpened]);
+
+  return (
+    <>
+      {isBurgerMenuOpened ? (
+        <BurgerMenu setIsBurgerMenuOpened={setIsBurgerMenuOpened} />
+      ) : null}
+      <Header
+        setIsBurgerMenuOpened={setIsBurgerMenuOpened}
+        currency={currency}
+        setCurrency={setCurrency}
+      />
+      <AnimatePresence exitBeforeEnter>
+        <Component {...pageProps} currency={currency} currencies={currencies} />
+      </AnimatePresence>
+      <Footer />
+    </>
+  );
 }
 
 export default MyApp;

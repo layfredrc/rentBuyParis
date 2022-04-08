@@ -9,7 +9,7 @@ import Card from "../card";
 // Style
 import styled from "styled-components";
 
-export default function SectionAvailableNow({ rents }) {
+export default function SectionAvailableNow({ rents, currency, currencies }) {
 	const availableRents = rents.data.filter(
 		(rent) => rent.attributes.disponible && rent.attributes.forRent
 	);
@@ -51,7 +51,14 @@ export default function SectionAvailableNow({ rents }) {
 			</div>
 			<div className='scrolling-wrapper-flexbox'>
 				{availableRents.map((d) => (
-					<Card data={d.attributes} id={d.id} vertical key={d.id} />
+          <Card
+            data={d.attributes}
+            id={d.id}
+            vertical
+            key={d.id}
+            currency={currency}
+            currencies={currencies}
+          />
 				))}
 			</div>
 
