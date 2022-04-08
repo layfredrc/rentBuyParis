@@ -33,7 +33,11 @@ function MyApp({ Component, pageProps }) {
   return (
     <>
       {isBurgerMenuOpened ? (
-        <BurgerMenu setIsBurgerMenuOpened={setIsBurgerMenuOpened} />
+        <BurgerMenu
+          setIsBurgerMenuOpened={setIsBurgerMenuOpened}
+          currency={currency}
+          setCurrency={setCurrency}
+        />
       ) : null}
       <Header
         setIsBurgerMenuOpened={setIsBurgerMenuOpened}

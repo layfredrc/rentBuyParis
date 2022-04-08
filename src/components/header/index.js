@@ -2,8 +2,6 @@ import Link from "next/link";
 import { MdMenu } from "react-icons/md";
 import { Select } from "@mantine/core";
 import { BiMoney } from "react-icons/bi";
-// Components
-import Selector from "../selector";
 
 // Style
 import styles from "./index.module.scss";
@@ -12,7 +10,6 @@ import styled from "styled-components";
 import Image from "next/image";
 import Logo from "../../../public/assets/images/logo.svg";
 
-const languages = ["Français", "English", "Russian"];
 const currencies = ["EUR", "USD", "RUB"];
 
 export default function Header({
