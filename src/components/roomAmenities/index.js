@@ -122,42 +122,47 @@ export default function RoomAmenities({ accomodation }) {
 					<h3>House rules</h3>
 					<ul>
 						<li>
-							<MdDoNotDisturbAlt size={15} style={{ marginRight: "5px" }} /> No
-							parties
+							<AiOutlineExclamationCircle
+								size={15}
+								style={{ marginRight: "5px" }}
+							/>
+							Check-In / Check-Out
 						</li>
 						<li>
-							<MdDoNotDisturbAlt size={15} style={{ marginRight: "5px" }} />
+							<AiOutlineExclamationCircle size={15} style={{ marginRight: "5px" }} />
+							No parties
+						</li>
+						<li>
+							<AiOutlineExclamationCircle size={15} style={{ marginRight: "5px" }} />
 							Pets not allowed
 						</li>
-						<li>
-							<MdDoNotDisturbAlt size={15} style={{ marginRight: "5px" }} />
-							Guests not allowed
-						</li>
+
 					</ul>
 				</div>
 				<div className='front-desk'>
 					<h3>Front Desk Services</h3>
 					<ul>
-						<li>
-							<AiOutlineExclamationCircle
-								size={15}
-								style={{ marginRight: "5px" }}
-							/>
-							Check in
-						</li>
-						<li>
-							<AiOutlineExclamationCircle
-								size={15}
-								style={{ marginRight: "5px" }}
-							/>
-							Check out
-						</li>
+
 						<li>
 							<AiOutlineExclamationCircle
 								size={15}
 								style={{ marginRight: "5px" }}
 							/>
 							Cleaning
+						</li>
+						<li>
+							<AiOutlineExclamationCircle
+								size={15}
+								style={{ marginRight: "5px" }}
+							/>
+							Inventory
+						</li>
+						<li>
+							<AiOutlineExclamationCircle
+								size={15}
+								style={{ marginRight: "5px" }}
+							/>
+							Repair Services
 						</li>
 					</ul>
 				</div>

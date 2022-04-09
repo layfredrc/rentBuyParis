@@ -43,7 +43,6 @@ export default function AccomodationsHub({
 	const [garden, setGarden] = useState(false);
 	const [terrace, setTerrace] = useState(false);
 	const [orderBy, setOrderBy] = useState("");
-	const [orderByAvailable, setOrderByAvailable] = useState(false);
 	useEffect(() => {
 		var temp_filteredAccomodations = accomodations;
 		temp_filteredAccomodations = temp_filteredAccomodations.filter(
@@ -99,9 +98,9 @@ export default function AccomodationsHub({
 				)
 			);
 
-		temp_filteredAccomodations = temp_filteredAccomodations.sort(
-			(a1, a2) => a1.attributes.price.value - a2.attributes.price.value
-		);
+		// temp_filteredAccomodations = temp_filteredAccomodations.sort(
+		// 	(a1, a2) => a1.attributes.price.value - a2.attributes.price.value
+		// );
 
 		setFilteredAccomodations(temp_filteredAccomodations);
 	};
@@ -266,8 +265,6 @@ export default function AccomodationsHub({
 							resetFilters={resetFilters}
 							orderBy={orderBy}
 							setOrderBy={setOrderBy}
-							orderByAvailable={orderByAvailable}
-							setOrderByAvailable={setOrderByAvailable}
 						/>
 					</div>
 					<div className={styles.accomodations}>

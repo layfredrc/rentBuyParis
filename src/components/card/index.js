@@ -60,7 +60,8 @@ export default function Card({ data, id, vertical, currency, currencies }) {
 										style={{ marginRight: "5px" }}
 									/>
 									<span>
-										Available {formatedDate !== false ? formatedDate : ""}
+										Available{" "}
+										{formatedDate !== false ? `from ${formatedDate}` : ""}
 									</span>
 								</div>
 							) : (

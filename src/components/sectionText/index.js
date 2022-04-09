@@ -255,7 +255,7 @@ const SectionTextContainer = styled.div`
 	}
 	@media screen and (min-width: 1024px) {
 		padding: 15rem 5rem 5rem 5rem;
-		margin-top: -20.1rem;
+		margin-top: -22.25rem;
 	}
 	@media screen and (min-width: 1440px) {
 		padding: 15rem 15rem 5rem 15rem;
@@ -306,6 +306,11 @@ const SectionTextContainerMobile = styled.div`
 const StayInParis = styled(motion.div)`
 	display: flex;
 	justify-content: space-between;
+	
+	@media screen and (min-width: 1024px) {
+			margin-top: 5rem;
+		
+	}
 
 	h1 {
 		font-family: 48px;
