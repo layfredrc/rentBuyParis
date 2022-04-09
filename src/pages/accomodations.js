@@ -21,6 +21,11 @@ const Accomodations = ({ accomodations, currency, currencies }) => {
       : d.attributes.forRent == true
   );
 
+  const filteredAccomodationsSortedByAvailable = filteredAccomodations.sort(
+    (a1, a2) => Number(a2.attributes.disponible) - Number(a1.attributes.disponible)
+  );
+
+
   return (
     <div>
       <Head>
@@ -38,7 +43,7 @@ const Accomodations = ({ accomodations, currency, currencies }) => {
         animate='show'
         exit='exit'>
         <AccomodationsHub
-          accomodations={filteredAccomodations}
+          accomodations={filteredAccomodationsSortedByAvailable}
           currency={currency}
           currencies={currencies}
         />

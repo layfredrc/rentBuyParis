@@ -35,8 +35,8 @@ export default function Hero({ nbRents, nbGoods }) {
 						className='slogan-title'>
 						<span className='title'>
 							Rentals and sales of apartments in <br />
+							Paris
 						</span>
-						<span className='paris'>Paris</span>
 					</motion.h1>
 				</Slogan>
 
@@ -134,8 +134,8 @@ export default function Hero({ nbRents, nbGoods }) {
 							onValidate={() => {
 								dates[0] && dates[1]
 									? router.push(
-											`/accomodations?property=rent&enter=${dates[0]}&out=${dates[1]}`
-									  )
+										`/accomodations?property=rent&enter=${dates[0]}&out=${dates[1]}`
+									)
 									: null;
 							}}
 						/>

@@ -25,14 +25,14 @@ import styles from "./index.module.css";
 import stylesPopup from "../burgerMenu/index.module.scss";
 
 export default function AccomodationsHub({
-  accomodations,
-  currency,
-  currencies,
+	accomodations,
+	currency,
+	currencies,
 }) {
 	const router = useRouter();
 	const property = router.query.property;
 	const [opened, setOpened] = useState(false);
-  const [dates, setDates] = useState([null, null]);
+	const [dates, setDates] = useState([null, null]);
 
 	const [filteredAccomodations, setFilteredAccomodations] =
 		useState(accomodations);
@@ -42,8 +42,8 @@ export default function AccomodationsHub({
 	const [elevator, setElevator] = useState(false);
 	const [garden, setGarden] = useState(false);
 	const [terrace, setTerrace] = useState(false);
-	const [orderBy, setOrderBy] = useState("ascending");
-
+	const [orderBy, setOrderBy] = useState("");
+	const [orderByAvailable, setOrderByAvailable] = useState(false);
 	useEffect(() => {
 		var temp_filteredAccomodations = accomodations;
 		temp_filteredAccomodations = temp_filteredAccomodations.filter(
@@ -75,14 +75,14 @@ export default function AccomodationsHub({
 			temp_filteredAccomodations = temp_filteredAccomodations.sort(
 				(a1, a2) => a1.attributes.price.value - a2.attributes.price.value
 			);
-		else
+		if (orderBy == "descending")
 			temp_filteredAccomodations = temp_filteredAccomodations.sort(
 				(a1, a2) => a2.attributes.price.value - a1.attributes.price.value
 			);
 
 		setFilteredAccomodations(temp_filteredAccomodations);
 
-    if (district && district.length === 0) setDistrict(null);
+		if (district && district.length === 0) setDistrict(null);
 	}, [district, priceInterval, parking, elevator, garden, terrace, orderBy]);
 
 	const applyDatesFilter = () => {
@@ -108,10 +108,10 @@ export default function AccomodationsHub({
 
 	useEffect(() => {
 		resetFilters();
-    setDates([
-      router.query.enter ? new Date(router.query.enter) : null,
-      router.query.out ? new Date(router.query.out) : null,
-    ]);
+		setDates([
+			router.query.enter ? new Date(router.query.enter) : null,
+			router.query.out ? new Date(router.query.out) : null,
+		]);
 		applyDatesFilter();
 	}, [property]);
 
@@ -124,6 +124,7 @@ export default function AccomodationsHub({
 		setElevator(false);
 		setGarden(false);
 		setTerrace(false);
+		setOrderBy("");
 	};
 
 	return (
@@ -192,12 +193,12 @@ export default function AccomodationsHub({
 												className={stylesPopup.contact}
 												style={{ padding: "2rem", animation: "none" }}>
 												<Image src={Logo} width={280} height={100} />
-                        <h2
-                          style={{
-                            fontSize: "20px",
-                            fontWeight: "700",
-                            marginTop: "50px",
-                          }}>
+												<h2
+													style={{
+														fontSize: "20px",
+														fontWeight: "700",
+														marginTop: "50px",
+													}}>
 													Stephan Jaquet
 												</h2>
 												<div className={stylesPopup.information}>
@@ -265,18 +266,20 @@ export default function AccomodationsHub({
 							resetFilters={resetFilters}
 							orderBy={orderBy}
 							setOrderBy={setOrderBy}
+							orderByAvailable={orderByAvailable}
+							setOrderByAvailable={setOrderByAvailable}
 						/>
 					</div>
 					<div className={styles.accomodations}>
 						<div className={styles.decoration} />
 						{filteredAccomodations.map((d) => (
-              <Card
-                data={d.attributes}
-                id={d.id}
-                key={d.id}
-                currency={currency}
-                currencies={currencies}
-              />
+							<Card
+								data={d.attributes}
+								id={d.id}
+								key={d.id}
+								currency={currency}
+								currencies={currencies}
+							/>
 						))}
 					</div>
 				</div>
