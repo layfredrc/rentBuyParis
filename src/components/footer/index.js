@@ -7,6 +7,13 @@ import { HiOutlineLocationMarker } from "react-icons/hi"
 import styles from "./index.module.scss";
 import LogoDark from "../../../public/assets/images/Logo-dark.svg";
 
+// Assets
+import whatsapp from "../../../public/assets/images/WhatsApp.png";
+import viber from "../../../public/assets/images/Viber.png";
+import telegram from "../../../public/assets/images/Telegram.png";
+import signal from "../../../public/assets/images/Signal.png";
+import youtube from "../../../public/assets/images/Youtube.png";
+
 export default function Footer() {
 	return (
 		<footer className={styles["container"]}>
@@ -23,6 +30,13 @@ export default function Footer() {
 					<div>
 						<BsTelephone size={20} style={{ marginRight: "5px" }} />
 						<a href="tel:06-72-64-44-44">+33 6 72 64 44 44</a>
+					</div>
+					<div>
+						<Image src={telegram} alt='telegram' />
+						<Image src={youtube} alt='youtube' />
+						<Image src={whatsapp} alt='whatsapp' />
+						<Image src={viber} alt='viber' />
+						<Image src={signal} alt='signal' />
 					</div>
 				</div>
 				<div>

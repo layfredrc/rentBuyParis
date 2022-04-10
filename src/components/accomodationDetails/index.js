@@ -51,7 +51,7 @@ export default function AccomodationDetails({ accomodation }) {
 							? "rst"
 							: accomodation?.attributes?.floor === 2
 							? "nd"
-							: accomodation?.attributes?.floor
+							: accomodation?.attributes?.floor === 3
 							? "rd"
 							: "th"}{" "}
 						Floor
