@@ -44,12 +44,13 @@ export default function AccomodationCalendar({
   });
 
   const monthDiff = (d1, d2) => {
-    if (!d1 && !d2) return 0;
-    var months;
-    months = (d2.getFullYear() - d1.getFullYear()) * 12;
-    months -= d1.getMonth();
-    months += d2.getMonth();
-    return months <= 0 ? 0 : months;
+    if (d1 && d2) {
+      var months;
+      months = (d2.getFullYear() - d1.getFullYear()) * 12;
+      months -= d1.getMonth();
+      months += d2.getMonth();
+      return months <= 0 ? 0 : months;
+    } else return 0;
   };
 
   const dayDiff = (d1, d2) => {
