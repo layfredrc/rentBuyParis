@@ -1,0 +1,44 @@
+.accomodations {
+  position: relative;
+}
+.decoration {
+  position: absolute;
+  background-color: #e5f9ff;
+  width: 80%;
+  height: 200px;
+  z-index: -1;
+  bottom: 0;
+  top: -25px;
+  left: -20px;
+}
+@media (min-width: 1025px) {
+  .container {
+    display: flex;
+    margin-top: 70px;
+  }
+  .filters {
+    flex: 1;
+    display: block;
+    margin: 0;
+  }
+  .filters > div {
+    margin-right: 50px;
+    margin-bottom: 30px;
+  }
+  .accomodations {
+    flex: 2;
+  }
+}
+@media (max-width: 1024px) {
+  .filters {
+    margin: 20px 15% 25px 15%;
+  }
+  .decoration {
+    display: none;
+  }
+}
+@media (max-width: 768px) {
+  .accomodations {
+    margin-top: 0;
+  }
+}

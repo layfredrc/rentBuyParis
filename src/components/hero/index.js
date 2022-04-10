@@ -48,7 +48,7 @@ export default function Hero({ nbRents, nbGoods }) {
 						</motion.h2>
 
 						<ButtonContainerDesktop variants={fade}>
-							<Link href={"/accomodations?property=rent"}>
+							<Link href={"/accomodations/rents"}>
 								<Button
 									size='sm'
 									color='dark'
@@ -58,7 +58,7 @@ export default function Hero({ nbRents, nbGoods }) {
 									Apartment <br /> rental
 								</Button>
 							</Link>
-							<Link href={"/accomodations?property=buy"}>
+							<Link href={"/accomodations/properties"}>
 								<Button
 									size='sm'
 									color='dark'
@@ -86,7 +86,7 @@ export default function Hero({ nbRents, nbGoods }) {
 								<br />
 								<p>
 									Properties for sale ? <br />
-									<Link href='/accomodations?property=buy'>
+									<Link href='/accomodations/properties'>
 										<a style={{ textDecoration: "underline" }}>
 											We take care of yours !
 										</a>
@@ -105,7 +105,7 @@ export default function Hero({ nbRents, nbGoods }) {
 						/>
 					</ImageWrapper>
 					<ButtonContainerMobile>
-						<Link href={"/accomodations?property=rent"}>
+						<Link href={"/accomodations/rents"}>
 							<Button
 								size='xs'
 								color='dark'
@@ -115,7 +115,7 @@ export default function Hero({ nbRents, nbGoods }) {
 								Apartment <br /> rental
 							</Button>
 						</Link>
-						<Link href={"/accomodations?property=buy"}>
+						<Link href={"/accomodations/properties"}>
 							<Button
 								size='xs'
 								color='dark'
@@ -134,7 +134,7 @@ export default function Hero({ nbRents, nbGoods }) {
 							onValidate={() => {
 								dates[0] && dates[1]
 									? router.push(
-											`/accomodations?property=rent&enter=${dates[0]}&out=${dates[1]}`
+											`/accomodations/rents?enter=${dates[0]}&out=${dates[1]}`
 									  )
 									: null;
 							}}

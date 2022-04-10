@@ -1,0 +1,48 @@
+.header {
+  background-image: url("../../../../public/assets/images/popup-image.jpg");
+  background-position: center;
+  background-size: cover;
+  padding: 10em 5em 15em 40em;
+}
+.header h1 {
+  font-size: 40px;
+  font-weight: 600;
+  color: #fff;
+}
+.main {
+  margin: 0 80px;
+  position: relative;
+  top: -60px;
+}
+.accomodations {
+  position: relative;
+}
+@media (min-width: 1025px) {
+  .content {
+    display: flex;
+    margin-top: 70px;
+  }
+  .accomodations {
+    flex: 2;
+  }
+}
+@media (max-width: 1024px) {
+  .main {
+    margin: 0 10px;
+  }
+  .header {
+    padding: 4em 5em 12em 5em;
+  }
+  .header h1 {
+    font-size: 30px;
+  }
+}
+@media (max-width: 768px) {
+  .main {
+    position: relative;
+    top: -75px;
+  }
+  .accomodations {
+    margin-top: 0;
+  }
+}

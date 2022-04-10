@@ -221,7 +221,7 @@ export default function Filters({
 				</Filter>
 				<Filter title='Price'>
 					<RangeSlider
-						defaultValue={[priceInterval[0], priceInterval[1]]}
+						value={[priceInterval[0], priceInterval[1]]}
 						color='#3EA6C7'
 						marks={marks}
 						label={(value) => `${value * 100} €`}

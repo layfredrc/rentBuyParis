@@ -53,14 +53,14 @@ export default function BurgerMenu({
               Home
             </a>
           </Link>
-          <Link href='/accomodations?property=rent'>
+          <Link href='/accomodations/rents'>
             <a
               className={styles.link}
               onClick={() => setIsBurgerMenuOpened(false)}>
               Apartment rental
             </a>
           </Link>
-          <Link href='/accomodations?property=buy'>
+          <Link href='/accomodations/properties'>
             <a
               className={styles.link}
               onClick={() => setIsBurgerMenuOpened(false)}>

@@ -28,14 +28,14 @@ export default function Header({
           </Link>
           <RectangleBackgroundContainer>
             <RectangleBackground />
-            <Link href='/accomodations?property=rent'>
+            <Link href='/accomodations/rents'>
               <a>Apartments for rent</a>
             </Link>
           </RectangleBackgroundContainer>
 
           <RectangleBackgroundContainer>
             <RectangleBackground />
-            <Link href='/accomodations?property=buy'>
+            <Link href='/accomodations/properties'>
               <a>Properties for sale</a>
             </Link>
           </RectangleBackgroundContainer>

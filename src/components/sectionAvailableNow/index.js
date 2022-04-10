@@ -65,7 +65,7 @@ export default function SectionAvailableNow({ rents, currency, currencies }) {
       <div className='sectionHeader'>
         <h1 className='sectionTitle'>Available apartments</h1>
 
-        <Link href={"/accomodations?property=rent"}>
+        <Link href={"/accomodations/rents"}>
           <div className='exploreAll'>
             Explore All{" "}
             <BsArrowRight size={20} style={{ transform: "translateY(5px)" }} />
@@ -86,7 +86,7 @@ export default function SectionAvailableNow({ rents, currency, currencies }) {
       </div>
 
       <ButtonMobileContainer>
-        <Link href={"/accomodations?property=rent"}>
+        <Link href={"/accomodations/rents"}>
           <Button
             size='md'
             variant='default'

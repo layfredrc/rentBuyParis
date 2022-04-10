@@ -37,12 +37,12 @@ export default function Footer() {
 				<div>
 					<h2>Sitemap</h2>
 					<div>
-						<Link href="/accomodations?property=rent">
+						<Link href="/accomodations/rents">
 							<a>Apartment rental</a>
 						</Link>
 					</div>
 					<div>
-						<Link href="/accomodations?property=buy">
+						<Link href="/accomodations/properties">
 							<a>Properties for sale</a>
 						</Link>
 					</div>
