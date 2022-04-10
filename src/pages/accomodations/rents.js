@@ -11,6 +11,11 @@ import { motion } from "framer-motion";
 import { pageAnimation } from "../../lib/animation";
 
 const Rents = ({ rents, currency, currencies }) => {
+  const rentsSortedByAvailable = rents.data.sort(
+    (a1, a2) =>
+      Number(a2.attributes.disponible) - Number(a1.attributes.disponible)
+  );
+
   return (
     <div>
       <Head>
@@ -28,7 +33,7 @@ const Rents = ({ rents, currency, currencies }) => {
         animate='show'
         exit='exit'>
         <RentsHub
-          rents={rents.data}
+          rents={rentsSortedByAvailable}
           currency={currency}
           currencies={currencies}
         />

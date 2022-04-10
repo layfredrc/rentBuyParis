@@ -25,7 +25,7 @@ export default function Content({
   const [elevator, setElevator] = useState(false);
   const [garden, setGarden] = useState(false);
   const [terrace, setTerrace] = useState(false);
-  const [orderBy, setOrderBy] = useState("ascending");
+  const [orderBy, setOrderBy] = useState("");
 
   const [isLoading, setIsLoading] = useState(false);
 
@@ -73,7 +73,7 @@ export default function Content({
       temp_filteredAccomodations = temp_filteredAccomodations.sort(
         (a1, a2) => a1.attributes.price.value - a2.attributes.price.value
       );
-    else
+    if (orderBy == "descending")
       temp_filteredAccomodations = temp_filteredAccomodations.sort(
         (a1, a2) => a2.attributes.price.value - a1.attributes.price.value
       );
@@ -100,6 +100,7 @@ export default function Content({
     setElevator(false);
     setGarden(false);
     setTerrace(false);
+    setOrderBy("");
   };
 
   return (

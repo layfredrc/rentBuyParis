@@ -35,8 +35,8 @@ export default function Hero({ nbRents, nbGoods }) {
 						className='slogan-title'>
 						<span className='title'>
 							Rentals and sales of apartments in <br />
+							Paris
 						</span>
-						<span className='paris'>Paris</span>
 					</motion.h1>
 				</Slogan>
 

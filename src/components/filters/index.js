@@ -135,7 +135,8 @@ export default function Filters({
 					size='md'
 					className={styles.button}
 					leftIcon={<BiSlider color='white' size={18} />}
-					onClick={() => setOpen((o) => !o)}>
+					onClick={() => setOpen((o) => !o)}
+					style={{ marginTop: "1.5rem" }}>
 					Apply Filter
 				</Button>
 				<Collapse in={opened} style={{ marginTop: "2rem" }}>
@@ -199,6 +200,16 @@ export default function Filters({
 							</Filter>
 						</div>
 					</Group>
+					<div style={{ textAlign: "center", marginTop: "1rem" }}>
+						<Button
+							color='dark'
+							radius={0}
+							size='md'
+							leftIcon={<BiSlider color='white' size={18} />}
+							onClick={resetFilters}>
+							Reset filters
+						</Button>
+					</div>
 				</Collapse>
 			</div>
 

@@ -7,6 +7,7 @@ import paris3 from "../../../public/assets/images/paris-3.jpg";
 import paris4 from "../../../public/assets/images/paris-4.png";
 import paris5 from "../../../public/assets/images/paris-5.png";
 import paris6 from "../../../public/assets/images/paris-6.png";
+import LogoDark from "../../../public/assets/images/Logo-dark.svg";
 
 // Style
 import styled from "styled-components";
@@ -16,7 +17,7 @@ import { motion } from "framer-motion";
 import { fade } from "../../lib/animation";
 import { useScroll } from "../../lib/useScroll";
 
-export default function SectionText({}) {
+export default function SectionText({ }) {
 	const [element, controls] = useScroll();
 	return (
 		<>
@@ -24,8 +25,8 @@ export default function SectionText({}) {
 				<StayInParis id='terms-and-conditions'>
 					<div className='left'>
 						<motion.h1 variants={fade} ref={element} animate={controls}>
-							Stay in Paris with <br />
-							<span>RentBuyParis</span>
+							Stay in Paris with <br /> <br />
+							<Image src={LogoDark} width={160} height={80} />
 						</motion.h1>
 						<p>
 							Hi, I’m Stephan Jaquet, offering rentals starting from one month
@@ -254,7 +255,7 @@ const SectionTextContainer = styled.div`
 	}
 	@media screen and (min-width: 1024px) {
 		padding: 15rem 5rem 5rem 5rem;
-		margin-top: -20.1rem;
+		margin-top: -22.25rem;
 	}
 	@media screen and (min-width: 1440px) {
 		padding: 15rem 15rem 5rem 15rem;
@@ -305,6 +306,11 @@ const SectionTextContainerMobile = styled.div`
 const StayInParis = styled(motion.div)`
 	display: flex;
 	justify-content: space-between;
+	
+	@media screen and (min-width: 1024px) {
+			margin-top: 5rem;
+		
+	}
 
 	h1 {
 		font-family: 48px;
