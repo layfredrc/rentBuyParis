@@ -27,7 +27,13 @@ export default function AccomodationGallery({ accomodation }) {
 			<h1 className='accomodation-title'>
 				{accomodation?.attributes?.name},{" "}
 				<span>
-					{accomodation?.attributes?.street} <br /> 15ème arrondissement
+					{accomodation?.attributes?.street} <br />
+					{accomodation?.attributes?.district}
+					{accomodation?.attributes?.district > 20
+						? "th department"
+						: accomodation?.attributes?.district === 1
+							? "er arrondissement"
+							: "ème arrondissement"}
 				</span>
 			</h1>
 

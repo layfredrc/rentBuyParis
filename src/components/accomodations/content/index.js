@@ -80,7 +80,7 @@ export default function Content({
 
     setFilteredAccomodations(temp_filteredAccomodations);
 
-    window.setTimeout(() => setIsLoading(false), 500);
+    window.setTimeout(() => setIsLoading(false), 600);
   }, [
     district,
     priceInterval,
@@ -128,7 +128,17 @@ export default function Content({
         {isLoading ? (
           <div style={{ textAlign: "center" }}>
             <div className={styles.decoration} />
-            <Skeleton animate={true} height={180} style={{ marginTop: 35 }} />
+            <div style={{ marginTop: 35, }}  >
+              <div className={styles.circle}  >
+                <Skeleton height={50} circle mb="xl" width="70%" />
+              </div>
+              <div className={styles.skeletons}>
+                <Skeleton height={8} width="70%" radius="xl" />
+                <Skeleton height={8} mt={6} width="70%" radius="xl" />
+                <Skeleton height={8} mt={6} width="70%" radius="xl" />
+                <Skeleton height={8} mt={6} width="70%" radius="xl" />
+              </div>
+            </div>
           </div>
         ) : filteredAccomodations.length == 0 ? (
           <p style={{ textAlign: "center" }}>

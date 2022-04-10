@@ -1,44 +1,55 @@
 .accomodations {
-  position: relative;
+	position: relative;
 }
 .decoration {
-  position: absolute;
-  background-color: #e5f9ff;
-  width: 80%;
-  height: 200px;
-  z-index: -1;
-  bottom: 0;
-  top: -25px;
-  left: -20px;
+	position: absolute;
+	background-color: #e5f9ff;
+	width: 80%;
+	height: 200px;
+	z-index: -1;
+	bottom: 0;
+	top: -25px;
+	left: -20px;
 }
 @media (min-width: 1025px) {
-  .container {
-    display: flex;
-    margin-top: 70px;
-  }
-  .filters {
-    flex: 1;
-    display: block;
-    margin: 0;
-  }
-  .filters > div {
-    margin-right: 50px;
-    margin-bottom: 30px;
-  }
-  .accomodations {
-    flex: 2;
-  }
+	.container {
+		display: flex;
+		margin-top: 70px;
+	}
+	.filters {
+		flex: 1;
+		display: block;
+		margin: 0;
+	}
+	.filters > div {
+		margin-right: 50px;
+		margin-bottom: 30px;
+	}
+	.accomodations {
+		flex: 2;
+	}
 }
 @media (max-width: 1024px) {
-  .filters {
-    margin: 20px 15% 25px 15%;
-  }
-  .decoration {
-    display: none;
-  }
+	.filters {
+		margin: 20px 15% 25px 15%;
+	}
+	.decoration {
+		display: none;
+	}
+	.skeletons {
+		display: flex;
+		flex-flow: column;
+		align-items: center;
+	}
+	.circle {
+		display: flex;
+		flex-flow: column;
+		align-items: flex-start;
+		margin-left: 15%;
+	}
 }
 @media (max-width: 768px) {
-  .accomodations {
-    margin-top: 0;
-  }
+	.accomodations {
+		margin-top: 0;
+	}
 }

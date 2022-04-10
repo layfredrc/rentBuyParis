@@ -1,7 +1,12 @@
-import { RiUserAddLine, RiHotelBedLine } from "react-icons/ri";
+import {
+	RiUserAddLine,
+	RiHotelBedLine,
+	RiDoorOpenLine,
+	RiHomeWifiLine,
+} from "react-icons/ri";
 import { GiResize } from "react-icons/gi";
-import { MdOutlineShower } from "react-icons/md";
-
+import { MdOutlineShower, MdOutlineStairs } from "react-icons/md";
+import { FiAirplay } from "react-icons/fi";
 // Components
 import {
 	SectionTitle,
@@ -13,7 +18,10 @@ import {
 import styled from "styled-components";
 
 export default function AccomodationDetails({ accomodation }) {
-
+	const numberBed =
+		accomodation?.attributes?.lit_simple +
+		accomodation?.attributes?.lit_double +
+		accomodation?.attributes?.canape_lit;
 	return (
 		<AccomodationDetailsContainer>
 			<SectionTitleContainer>
@@ -23,7 +31,31 @@ export default function AccomodationDetails({ accomodation }) {
 			<DetailsCardContainer>
 				<DetailsCard>
 					<RiUserAddLine size={30} style={{ color: "#2385be" }} />
-					<h3>{`${accomodation?.attributes?.guests}`} Guests</h3>
+					<h3>
+						{`${accomodation?.attributes?.guests}`}{" "}
+						{accomodation?.attributes?.guests === 1 ? "Guest" : "Guests"}
+					</h3>
+				</DetailsCard>
+				<DetailsCard>
+					<RiDoorOpenLine size={30} style={{ color: "#2385be" }} />
+					<h3>
+						{`${accomodation?.attributes?.rooms}`}{" "}
+						{accomodation?.attributes?.rooms === 1 ? "Room" : "Rooms"}{" "}
+					</h3>
+				</DetailsCard>
+				<DetailsCard>
+					<MdOutlineStairs size={30} style={{ color: "#2385be" }} />
+					<h3>
+						{`${accomodation?.attributes?.floor}`}
+						{accomodation?.attributes?.floor === 1
+							? "rst"
+							: accomodation?.attributes?.floor === 2
+							? "nd"
+							: accomodation?.attributes?.floor
+							? "rd"
+							: "th"}{" "}
+						Floor
+					</h3>
 				</DetailsCard>
 				<DetailsCard>
 					<GiResize size={30} style={{ color: "#2385be" }} />
@@ -31,18 +63,36 @@ export default function AccomodationDetails({ accomodation }) {
 				</DetailsCard>
 				<DetailsCard>
 					<RiHotelBedLine size={30} style={{ color: "#2385be" }} />
-					<h3>{`${accomodation?.attributes?.bedroom}`} Bedrooms</h3>
+					<p className='beds'>
+						{`${numberBed}`} {numberBed === 1 ? "Bed" : "Beds"} <br />(
+						{accomodation?.attributes?.lit_simple
+							? `${accomodation?.attributes?.lit_simple} single bed / `
+							: ""}
+						{accomodation?.attributes?.lit_double
+							? `${accomodation?.attributes?.lit_double} double bed `
+							: ""}
+						{accomodation?.attributes?.canape_lit
+							? `${accomodation?.attributes?.canape_lit} sofa bed`
+							: ""}
+						)
+					</p>
 				</DetailsCard>
 				<DetailsCard>
 					<MdOutlineShower size={30} style={{ color: "#2385be" }} />
 					<h3>{`${accomodation?.attributes?.bathroom}`} Bathrooms</h3>
 				</DetailsCard>
+				<DetailsCard>
+					<RiHomeWifiLine size={30} style={{ color: "#2385be" }} />
+					<h3>WiFi</h3>
+				</DetailsCard>
+				<DetailsCard>
+					<FiAirplay size={30} style={{ color: "#2385be" }} />
+					<h3>TV Set</h3>
+				</DetailsCard>
 			</DetailsCardContainer>
 
 			<TextContent>
-				<p>
-					{`${accomodation?.attributes?.description}`}
-				</p>
+				<p>{`${accomodation?.attributes?.description}`}</p>
 			</TextContent>
 		</AccomodationDetailsContainer>
 	);
@@ -60,7 +110,6 @@ const DetailsCardContainer = styled.div`
 
 	@media screen and (min-width: 375px) {
 		grid-column-gap: 0px;
-
 	}
 
 	@media screen and (min-width: 400px) {
@@ -87,11 +136,17 @@ const DetailsCard = styled.div`
 	flex-direction: column;
 	border: 1px solid #d5d5d5;
 	border-radius: 10px;
-	box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+	box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+		rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
 
 	h3 {
 		margin-top: 1rem;
 		font-size: 11px;
+		font-weight: 600;
+	}
+	.beds {
+		margin-top: 1rem;
+		font-size: 8px;
 		font-weight: 600;
 	}
 
