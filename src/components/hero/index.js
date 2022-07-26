@@ -10,7 +10,7 @@ import Link from "next/link";
 import CalendarDates from "../calendar";
 
 // Assets
-import heroImg from "../../../public/assets/images/hero.jpg";
+// import heroImg from "../../../public/assets/images/hero.jpg";
 
 // Style
 import styled from "styled-components";
@@ -34,8 +34,7 @@ export default function Hero({ nbRents, nbGoods }) {
 						animate='show'
 						className='slogan-title'>
 						<span className='title'>
-							Rentals and sales of apartments in <br />
-							Paris
+							Rentals and sales of apartments in Paris
 						</span>
 					</motion.h1>
 				</Slogan>
@@ -95,15 +94,15 @@ export default function Hero({ nbRents, nbGoods }) {
 							</h3>
 						</motion.div>
 					</div>
-					<ImageWrapper variants={fade}>
+					{/* <ImageWrapper variants={fade}>
 						<Image
-							src={heroImg}
+							src={heroConciergerie}
 							alt='RentBuyParis'
 							layout='fill'
 							className='hero-image'
 							priority
 						/>
-					</ImageWrapper>
+					</ImageWrapper> */}
 					<ButtonContainerMobile>
 						<Link href={"/accomodations/rents"}>
 							<Button
@@ -147,11 +146,9 @@ export default function Hero({ nbRents, nbGoods }) {
 }
 
 const HeroContainer = styled.div`
-	background-color: #e5f9ff;
 	max-width: 100vw;
-
+	color: white;
 	@media screen and (max-width: 768px) {
-		background-color: #e5f9ff;
 		padding: 2rem 2rem 0rem 2rem;
 	}
 
@@ -174,18 +171,14 @@ const HeroContainer = styled.div`
 
 const Slogan = styled.div`
 	.slogan-title {
+		display: flex;
+		justify-content: center;
 		font-size: 36px;
 		font-weight: 600;
 		text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 		line-height: 1.2;
 		overflow: hidden;
-
-		.paris {
-			font-family: "Croissant One", cursive;
-			font-weight: 400;
-			line-height: 1.5;
-			overflow: hidden;
-		}
+		text-align: center;
 
 		@media screen and (max-width: 465px) {
 			font-size: 25px;
@@ -196,7 +189,6 @@ const Slogan = styled.div`
 		}
 		@media screen and (min-width: 1024px) {
 			font-size: 50px;
-			width: 40rem;
 		}
 		@media screen and (min-width: 1440px) {
 			font-size: 52px;
@@ -206,7 +198,7 @@ const Slogan = styled.div`
 
 const HeroContentWrapper = styled.div`
 	display: flex;
-	justify-content: space-between;
+	justify-content: center;
 	transform: translateY(-25px);
 	position: relative;
 	@media screen and (min-width: 1024px) {
@@ -220,48 +212,51 @@ const HeroContentWrapper = styled.div`
 
 	.text-content {
 		height: min-content;
+		text-align: center;
 		h2 {
 			margin-top: 3rem;
 			font-weight: 500;
 			font-size: 16px;
 			width: 100%;
+			text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
 			@media screen and (max-width: 425px) {
-				font-size: 12px;
+				font-size: 18px;
 			}
 
 			@media screen and (min-width: 768px) {
-				width: 320px;
-				font-size: 18px;
+				width: 420px;
+				font-size: 22px;
 			}
 			@media screen and (min-width: 1024px) {
 				width: 460px;
-				font-size: 18px;
+				font-size: 24px;
 				margin-top: 4rem;
 			}
 			@media screen and (min-width: 1440px) {
-				width: 380px;
 				margin-top: 6rem;
 			}
 		}
 
 		.digits span {
 			color: #3ea6c7;
+			text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 		}
 
 		.digits {
-			height: 150px;
-			width: 120px;
 			display: flex;
-			flex-flow: column;
-			justify-content: space-between;
+			flex-flow: row;
+			justify-content: space-evenly;
 			margin-top: 2rem;
-			font-size: 24px;
+			font-size: 32px;
 			font-weight: 600;
+			text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 
 			p {
 				margin-top: 0.25rem;
 				font-size: 12px;
 				font-weight: 500;
+				text-align: center;
 
 				@media screen and (max-width: 425px) {
 					font-size: 8px;
@@ -273,11 +268,9 @@ const HeroContentWrapper = styled.div`
 					font-size: 12px;
 				}
 				@media screen and (min-width: 1024px) {
-					width: 260px;
 					font-size: 14px;
 				}
 				@media screen and (min-width: 1440px) {
-					width: 300px;
 				}
 
 				@media screen and (min-width: 2550px) {
@@ -286,24 +279,18 @@ const HeroContentWrapper = styled.div`
 
 			@media screen and (max-width: 425px) {
 				margin-top: -1rem;
-				font-size: 16px;
-				justify-content: space-evenly;
+				font-size: 22px;
 			}
 
 			@media screen and (max-width: 768px) {
-				margin-top: -0.25rem;
-				font-size: 20px;
-				width: 140px;
-				justify-content: space-evenly;
+				margin-top: 3rem;
+				font-size: 28px;
 			}
 
 			@media screen and (min-width: 768px) {
-				width: 200px;
-				font-size: 24px;
+				font-size: 32px;
 			}
 			@media screen and (min-width: 1024px) {
-				width: 300px;
-				flex-flow: row;
 			}
 			@media screen and (min-width: 1440px) {
 				width: 500px;
@@ -316,7 +303,7 @@ const CalendarWrapper = styled.div`
 	position: absolute;
 	bottom: -16.5rem;
 	width: 100%;
-
+	color: black;
 	@media screen and (min-width: 600px) {
 		bottom: -11rem;
 	}
@@ -364,7 +351,7 @@ const ImageWrapper = styled(motion.div)`
 
 const ButtonContainerDesktop = styled(motion.div)`
 	display: flex;
-	justify-content: space-between;
+	justify-content: space-evenly;
 	font-size: 12px;
 	margin-top: 2rem;
 

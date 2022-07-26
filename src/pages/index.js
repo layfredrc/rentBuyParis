@@ -41,11 +41,11 @@ const Home = ({ rents, error, currency, currencies }) => {
 						nbGoods={rents.data.filter((d) => !d.attributes.forRent).length}
 					/>
 				</HeroWrapper>
-        <SectionAvailableNow
-          rents={rents}
-          currency={currency}
-          currencies={currencies}
-        />
+				<SectionAvailableNow
+					rents={rents}
+					currency={currency}
+					currencies={currencies}
+				/>
 				<SectionText />
 			</motion.div>
 
@@ -60,8 +60,10 @@ export async function getStaticProps() {
 }
 
 const HeroWrapper = styled.div`
+		background-image: url("/assets/images/conciergerie-1.jpg")  ;
+		background-size: cover;
+
 	@media screen and (min-width: 768px) {
-		background-color: #e5f9ff;
 		padding: 0rem 2rem 0rem 2rem;
 	}
 
