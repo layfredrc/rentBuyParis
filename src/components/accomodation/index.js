@@ -17,7 +17,10 @@ export default function AccomodationDetail({
   return (
     <>
       <AccomodationDetailContainer>
-        <AccomodationGallery accomodation={accomodation?.data} />
+        <AccomodationGallery
+          accomodation={accomodation?.data}
+          currency={currency}
+          currencies={currencies} />
         <RowWrapper>
           <ColWrapper>
             <AccomodationDetails accomodation={accomodation?.data} />

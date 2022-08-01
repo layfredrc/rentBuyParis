@@ -24,17 +24,38 @@ const Home = ({ rents, error, currency, currencies }) => {
 		<>
 			<Head>
 				<title>RentBuyParis | Rentals and sales of apartments in Paris</title>
-				<meta name="description" content="Apartments for rent and for sale in the very center of Paris, in
-							ideal conditions and at reasonable prices." />
-				<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-				<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
-				<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
-				<link rel="manifest" href="/site.webmanifest" />
-				<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5" />
-				<meta name="msapplication-TileColor" content="#da532c" />
-				<meta name="theme-color" content="#ffffff" />
+				<meta
+					name='description'
+					content='Apartments for rent and for sale in the very center of Paris, in
+							ideal conditions and at reasonable prices.'
+				/>
+				<link
+					rel='apple-touch-icon'
+					sizes='180x180'
+					href='/apple-touch-icon.png'
+				/>
+				<link
+					rel='icon'
+					type='image/png'
+					sizes='32x32'
+					href='/favicon-32x32.png'
+				/>
+				<link
+					rel='icon'
+					type='image/png'
+					sizes='16x16'
+					href='/favicon-16x16.png'
+				/>
+				<link rel='manifest' href='/site.webmanifest' />
+				<link rel='mask-icon' href='/safari-pinned-tab.svg' color='#5bbad5' />
+				<meta name='msapplication-TileColor' content='#da532c' />
+				<meta name='theme-color' content='#ffffff' />
 			</Head>
-			<motion.div variants={pageAnimation} initial="hidden" animate="show" exit="exit">
+			<motion.div
+				variants={pageAnimation}
+				initial='hidden'
+				animate='show'
+				exit='exit'>
 				<HeroWrapper>
 					<Hero
 						nbRents={rents.data.filter((d) => d.attributes.forRent).length}
@@ -48,7 +69,6 @@ const Home = ({ rents, error, currency, currencies }) => {
 				/>
 				<SectionText />
 			</motion.div>
-
 		</>
 	);
 };
@@ -56,13 +76,11 @@ const Home = ({ rents, error, currency, currencies }) => {
 export async function getStaticProps() {
 	const accomodations = await loadAccomodations();
 	return { props: { rents: accomodations }, revalidate: 1 };
-
 }
 
 const HeroWrapper = styled.div`
-		background-image: url("/assets/images/conciergerie-1.jpg")  ;
-		background-size: cover;
-
+	background-image: url("/assets/images/conciergerie-1.jpg");
+	background-size: cover;
 	@media screen and (min-width: 768px) {
 		padding: 0rem 2rem 0rem 2rem;
 	}

@@ -13,7 +13,11 @@ import {
 	SectionTitleContainer,
 } from "../accomodationServices";
 
-export default function AccomodationGallery({ accomodation }) {
+export default function AccomodationGallery({
+	accomodation,
+	currency,
+	currencies,
+}) {
 	const galleryImages = [];
 	accomodation?.attributes?.photos.data.map((image) => {
 		galleryImages.push(image.attributes.url);
@@ -24,19 +28,36 @@ export default function AccomodationGallery({ accomodation }) {
 
 	return (
 		<AccomodationGalleryContainer>
-			<h1 className='accomodation-title'>
-				{accomodation?.attributes?.name},{" "}
-				<span>
-					{accomodation?.attributes?.street} <br />
-					{accomodation?.attributes?.district}
-					{accomodation?.attributes?.district > 20
-						? "th department"
-						: accomodation?.attributes?.district === 1
+			<div className='flex-wrapper'>
+				<h1 className='accomodation-title'>
+					{accomodation?.attributes?.name},{" "}
+					<span>
+						{accomodation?.attributes?.street} <br />
+						{accomodation?.attributes?.district}
+						{accomodation?.attributes?.district > 20
+							? "th department"
+							: accomodation?.attributes?.district === 1
 							? "er arrondissement"
 							: "ème arrondissement"}
-				</span>
-			</h1>
-
+						,
+					</span>
+				</h1>
+				<div className='price'>
+					<h4>
+						{new Intl.NumberFormat("fr-FR", {
+							style: "currency",
+							currency: currency,
+							currencyDisplay: "symbol",
+							minimumFractionDigits: 0,
+							maximumFractionDigits: 0,
+						}).format(
+							currencies.conversion_rates[currency] *
+								accomodation?.attributes?.price?.value
+						)}
+					</h4>{" "}
+					<span>per {accomodation?.attributes?.price?.regularity}</span>
+				</div>
+			</div>
 			<SectionTitleContainer>
 				<CircleBackground />
 				<SectionTitle>Gallery</SectionTitle>
@@ -145,6 +166,32 @@ const AccomodationGalleryContainer = styled.div`
 		span {
 			font-family: "Croissant One", cursive;
 			font-weight: 400;
+		}
+	}
+
+	.flex-wrapper {
+		display: flex;
+		flex-flow: column;
+
+		.price {
+			@media screen and (max-width: 767px) {
+				margin-top: -2rem;
+				margin-bottom: 3rem;
+			}
+		}
+		h4 {
+			font-size: 24px;
+			font-weight: 600;
+		}
+
+		p {
+			font-size: 14px;
+			font-weight: 400;
+		}
+
+		@media screen and (min-width: 768px) {
+			flex-flow: row;
+			justify-content: space-between;
 		}
 	}
 `;
