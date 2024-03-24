@@ -2,7 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { BsTelephone } from "react-icons/bs";
 import { HiOutlineLocationMarker } from "react-icons/hi"
-
+import { MdOutlineWorkOutline } from "react-icons/md";
 // Style
 import styles from "./index.module.scss";
 import LogoDark from "../../../public/assets/images/Logo-dark.svg";
@@ -26,6 +26,10 @@ export default function Footer() {
 							target="_blank" rel="noreferrer">
 							47 rue de Laborde 75008 Paris
 						</a>
+					</div>
+					<div>
+						<MdOutlineWorkOutline size={20} style={{ marginRight: "5px" }} />
+							SIRET 79079713800043
 					</div>
 					<div>
 						<BsTelephone size={20} style={{ marginRight: "5px" }} />
