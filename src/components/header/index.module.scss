@@ -1,59 +1,59 @@
 .container {
-	display: flex;
-	align-items: center;
-	background-color: #e5f9ff;
-	padding: 1rem;
-	max-width: 100vw;
-	cursor: pointer;
+  display: flex;
+  align-items: center;
+  background-color: #e5f9ff;
+  padding: 1rem;
+  max-width: 100vw;
+  cursor: pointer;
 }
 .mobile {
-	display: none;
+  display: none;
 }
 .left {
-	display: flex;
-	align-items: center;
+  display: flex;
+  align-items: center;
 
-	a {
-		font-weight: 500;
-		z-index: 2;
-	}
+  a {
+    font-weight: 500;
+    z-index: 2;
+  }
 }
 .left > * {
-	margin: 15px 40px;
+  margin: 15px 40px;
 }
 
 .logo {
-	font-family: "Croissant One", cursive;
+  font-family: "Croissant One", cursive;
 }
 
 @media (min-width: 769px) and (max-width: 1024px) {
-	.left > * {
-		margin: 15px 10px;
-	}
+  .left > * {
+    margin: 15px 10px;
+  }
 }
 
 @media (min-width: 769px) {
-	.container {
-		justify-content: space-between;
-	}
+  .container {
+    justify-content: space-between;
+  }
 }
 
 @media (max-width: 768px) {
-	.container {
-		padding: 20px;
-	}
+  .container {
+    padding: 20px;
+  }
 
-	.mobile {
-		display: flex;
+  .mobile {
+    display: flex;
 
-		.logoMobile {
-			justify-content: center;
-			align-items: center;
-			text-align: center;
-			align-content: center;
-		}
-	}
-	.desktop {
-		display: none;
-	}
+    .logoMobile {
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      align-content: center;
+    }
+  }
+  .desktop {
+    display: none;
+  }
 }

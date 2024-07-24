@@ -9,8 +9,8 @@ import Card from "../card";
 // Style
 import styled from "styled-components";
 
-export default function SectionAvailableNow({ rents, currency, currencies }) {
-  const availableRents = rents.data.filter(
+export default function SectionAvailableNow ({ rents, currency, currencies }) {
+  const availableRents = rents?.data?.filter(
     (rent) => rent.attributes.disponible && rent.attributes.forRent
   );
 
@@ -65,32 +65,32 @@ export default function SectionAvailableNow({ rents, currency, currencies }) {
       <div className='sectionHeader'>
         <h1 className='sectionTitle'>Available apartments</h1>
 
-        <Link href={"/accomodations/rents"}>
+        <Link href={ "/accomodations/rents" }>
           <div className='exploreAll'>
-            Explore All{" "}
-            <BsArrowRight size={20} style={{ transform: "translateY(5px)" }} />
+            Explore All{ " " }
+            <BsArrowRight size={ 20 } style={ { transform: "translateY(5px)" } } />
           </div>
         </Link>
       </div>
       <div className='scrolling-wrapper-flexbox'>
-        {availableRents.map((d) => (
+        { availableRents?.map((d) => (
           <Card
-            data={d.attributes}
-            id={d.id}
+            data={ d.attributes }
+            id={ d.id }
             vertical
-            key={d.id}
-            currency={currency}
-            currencies={currencies}
+            key={ d.id }
+            currency={ currency }
+            currencies={ currencies }
           />
-        ))}
+        )) }
       </div>
 
       <ButtonMobileContainer>
-        <Link href={"/accomodations/rents"}>
+        <Link href={ "/accomodations/rents" }>
           <Button
             size='md'
             variant='default'
-            radius={0}
+            radius={ 0 }
             className='hero-button-mobile'>
             Explore All
           </Button>
