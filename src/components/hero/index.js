@@ -60,7 +60,7 @@ export default function Hero ({ nbRents, nbGoods }) {
                 <Button
                   size="sm"
                   color="dark"
-                  radius={ 4 }
+                  radius={ 13 }
                   className="hero-button-desktop"
                   leftIcon={ <GiHouseKeys size={ 18 } /> }
                 >

@@ -140,11 +140,11 @@ const HeroWrapper = styled.div`
 	}
 
 	@media screen and (min-width: 2100px) {
-		padding: 0rem 24rem 0rem 24rem;
+		padding: 18rem 24rem 0rem 24rem;
 	}
 
 	@media screen and (min-width: 2550px) {
-		padding: 0rem 30rem 0rem 30rem;
+		padding: 25rem 30rem 0rem 30rem;
 	}
 
 	@keyframes fadeIn {
