@@ -1,16 +1,8 @@
-import { useState } from "react";
-import { useRouter } from "next/router";
-import Image from "next/image";
 import { Button } from "@mantine/core";
 import { GiHouseKeys } from "react-icons/gi";
 import { MdMapsHomeWork } from "react-icons/md";
 import Link from "next/link";
 
-// Components
-import CalendarDates from "../calendar";
-
-// Assets
-// import heroImg from "../../../public/assets/images/hero.jpg";
 
 // Style
 import styled from "styled-components";
@@ -108,7 +100,7 @@ export default function Hero ({ nbRents, nbGoods }) {
               <Button
                 size="xs"
                 color="dark"
-                radius={ 0 }
+                radius={ 7 }
                 leftIcon={ <MdMapsHomeWork size={ 15 } /> }
                 className="hero-button-mobile"
               >
@@ -119,7 +111,7 @@ export default function Hero ({ nbRents, nbGoods }) {
               <Button
                 size="xs"
                 color="dark"
-                radius={ 0 }
+                radius={ 7 }
                 leftIcon={ <GiHouseKeys size={ 15 } /> }
                 className="hero-button-mobile"
               >
@@ -359,11 +351,12 @@ const ButtonContainerMobile = styled.div`
 
   @media screen and (min-width: 320px) {
     font-size: 8px;
+    gap: 14px;
   }
 
   @media screen and (min-width: 375px) {
     font-size: 8px;
-
+    gap: 14px;
     .hero-button-mobile {
       width: 140px;
       font-size: 10px;
@@ -374,6 +367,7 @@ const ButtonContainerMobile = styled.div`
 
     font-size: 9px;
     justify-content: space-around;
+    gap: 20px;
     .hero-button-mobile {
       width: 150px;
       height: 50px;
