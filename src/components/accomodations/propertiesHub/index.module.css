@@ -2,7 +2,7 @@
   background-image: url(../../../../public/assets/images/background.jpg);
   background-position: center;
   background-size: cover;
-  padding: 10em 5em 15em 40em;
+  padding: 15em 5em 15em 40em;
   min-height: 35vh;
 }
 .header h1 {

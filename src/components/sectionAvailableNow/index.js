@@ -106,7 +106,7 @@ const SectionAvailableNowContainer = styled.div`
   padding: 2rem 2rem 3rem 2rem;
 
   @media screen and (min-width: 320px) {
-    margin-top: 16rem;
+    margin-top: 4rem;
   }
   @media screen and (min-width: 425px) {
   }
