@@ -128,13 +128,15 @@ const HeroWrapper = styled.div`
     height: 100vh;
     padding: 10rem 2rem 0rem 2rem;
 
-    @media screen and (max-width: 767px) {
+    @media screen and (min-width: 320px) {
         background-image: url(${(props) => props.bgImageMobile});
 		height: 80vh;
         padding: 8rem 2rem 0rem 2rem;
     }
 
     @media screen and (min-width: 768px) {
+		background-image: url(${(props) => props.bgImage});
+		height: 100vh;
         padding: 10rem 2rem 0rem 2rem;
     }
 
@@ -166,6 +168,10 @@ const HeroWrapper = styled.div`
         100% {
             opacity: 1;
         }
+    }
+
+	@media screen and (max-height: 500px) {
+		height: 160vh;
     }
 `;
 

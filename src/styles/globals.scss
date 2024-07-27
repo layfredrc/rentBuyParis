@@ -1,7 +1,5 @@
 /* RESET CSS */
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Croissant+One&family=Montserrat:wght@300;400;500;600;700&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Croissant+One&family=Lora:ital,wght@0,400..700;1,400..700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
 
 html,
 body,
@@ -84,14 +82,14 @@ time,
 mark,
 audio,
 video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
-	text-decoration: none;
-	color: inherit;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+  text-decoration: none;
+  color: inherit;
 }
 /* HTML5 display-role reset for older browsers */
 article,
@@ -105,50 +103,50 @@ hgroup,
 menu,
 nav,
 section {
-	display: block;
+  display: block;
 }
 body {
-	line-height: 1;
-	font-family: "Montserrat", sans-serif;
+  line-height: 1;
+  font-family: "Montserrat", sans-serif;
 }
 ol,
 ul {
-	list-style: none;
+  list-style: none;
 }
 blockquote,
 q {
-	quotes: none;
+  quotes: none;
 }
 blockquote:before,
 blockquote:after,
 q:before,
 q:after {
-	content: "";
-	content: none;
+  content: "";
+  content: none;
 }
 table {
-	border-collapse: collapse;
-	border-spacing: 0;
+  border-collapse: collapse;
+  border-spacing: 0;
 }
 a {
-	cursor: pointer;
+  cursor: pointer;
 }
 
 * {
-	scrollbar-width: thin;
-	scrollbar-color: #98c5e5;
+  scrollbar-width: thin;
+  scrollbar-color: #98c5e5;
 }
 
 *::-webkit-scrollbar {
-	width: 6px;
+  width: 6px;
 }
 
 *::-webkit-scrollbar-track {
-	background: transparent;
+  background: transparent;
 }
 
 *::-webkit-scrollbar-thumb {
-	background-color: #98c5e5;
-	border-radius: 50px;
-	border: transparent;
+  background-color: #98c5e5;
+  border-radius: 50px;
+  border: transparent;
 }
