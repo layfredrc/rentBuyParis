@@ -230,6 +230,7 @@ const HeroContentWrapper = styled.div`
       justify-content: space-evenly;
       margin-top: 2rem;
       font-size: 32px;
+      gap: 20px;
       font-weight: 600;
       text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 

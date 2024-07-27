@@ -124,20 +124,19 @@ const HeroWrapper = styled.div`
     background-position: top center;
     object-fit: cover;
     animation: fadeIn 3s ease-out;
-    transition: background-image 0.8s ease-out;
     height: 100vh;
     padding: 10rem 2rem 0rem 2rem;
 
-    @media screen and (min-width: 320px) {
+    @media screen and (max-aspect-ratio: 1/1) {
         background-image: url(${(props) => props.bgImageMobile});
 		height: 80vh;
-        padding: 8rem 2rem 0rem 2rem;
+        animation: none;
     }
 
-    @media screen and (min-width: 768px) {
-		background-image: url(${(props) => props.bgImage});
-		height: 100vh;
-        padding: 10rem 2rem 0rem 2rem;
+    @media screen and (min-aspect-ratio: 1/1) {
+        padding: 0rem 2rem 0rem 2rem;
+		height: 130vh;
+        transition: background-image 0.8s ease-out;
     }
 
     @media screen and (min-width: 1440px) {
@@ -168,10 +167,6 @@ const HeroWrapper = styled.div`
         100% {
             opacity: 1;
         }
-    }
-
-	@media screen and (max-height: 500px) {
-		height: 160vh;
     }
 `;
 
